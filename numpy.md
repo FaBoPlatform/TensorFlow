@@ -8,7 +8,7 @@ $ pip install numpy
 $ pip install scipy
 ```
 
-# Sample
+# Sample1
 
 ```shell
 import numpy as np
@@ -32,3 +32,42 @@ print X
  [ 0.14558376  0.37880808]]
 ```
 
+# Sample2
+
+```python
+import numpy as np
+array = np.array([1,5,10,4,11,22,21,11,10,1])
+print array
+
+array = array.reshape([5,2])
+
+print array
+```
+
+# Sample3
+
+```python
+import numpy as np
+
+array = np.zeros([3,2])
+print array
+```
+
+# Sample4
+
+```python
+import numpy as np
+
+matrix = np.random.randn(20,3)
+print matrix
+```
+
+# Sample5
+
+```python
+import numpy as np
+
+array = np.array([0]*100)
+
+print array
+```
