@@ -5,4 +5,5 @@
     * [Numpyをインストール](numpy.md)
     * [Matplotlibのインストール](matplotlib.md)
     * [iPythonのインストール](ipython.md)
-
+    * [TensorBoard](tensorboard.md)
+    * [Link](link.md)
