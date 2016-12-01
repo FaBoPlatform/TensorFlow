@@ -9,7 +9,10 @@
     * [ゼロのはいった配列を作る](numpy004.md)
     * [標準正規分布の配列を作る](numpy005.md)
 * TensorFlow
-    * [TensorFlowのインストール](tensorflow.md)
+    * [TensofFlowのインストール](tensorflow001.md)
+    * [HelloWorld](tensorflow002.md)
+    * [行列の足し算と掛け算](tensorflow003.md)
+    * [Placeholder](tensorflow004.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
