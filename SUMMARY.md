@@ -8,6 +8,7 @@
     * [ゼロのはいった行列を作る](numpy003.md)
     * [ゼロのはいった配列を作る](numpy004.md)
     * [標準正規分布の配列を作る](numpy005.md)
+    * [行列の演算](numpy006.md)
 * TensorFlow
     * [TensofFlowのインストール](tensorflow001.md)
     * [HelloWorld](tensorflow002.md)
