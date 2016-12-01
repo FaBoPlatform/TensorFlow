@@ -1,6 +1,6 @@
 # ゼロのはいった配列を作る
 
-# Sample5
+## Sample
 
 ```python
 import numpy as np

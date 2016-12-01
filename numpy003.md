@@ -1,6 +1,6 @@
 # ゼロのはいった行列を作る
 
-# Sample
+## Sample
 
 ```python
 import numpy as np
