@@ -2,18 +2,19 @@
 * [はじめに](README.md)
 * 開発環境
 	* [CloudMLの設定](cloudml.md)
-    * [TensorFlowのインストール](tensorflow.md)
 * Numpy 
     * [Numpyをインストール](numpy001.md)
     * [配列から行列を作る](numpy002.md)
     * [ゼロのはいった行列を作る](numpy003.md)
     * [ゼロのはいった配列を作る](numpy004.md)
     * [標準正規分布の配列を作る](numpy005.md)
+* TensorFlow
+    * [TensorFlowのインストール](tensorflow.md)
+* TensorBoard
+    * [TensorBoard](tensorboard.md)
 * Matplotlib
     * [Matplotlibのインストール](matplotlib.md)
 * iPython
     * [iPythonのインストール](ipython.md)
-* TensorBoard
-    * [TensorBoard](tensorboard.md)
 * Etc
     * [Link](link.md)
