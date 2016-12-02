@@ -12,6 +12,7 @@
     * [スライシング](numpy008.md)
 * TensorFlow
     * [HelloWorld](tensorflow002.md)
+    * [行列の和](tensorflow_add.md)
     * [行列の足し算と掛け算](tensorflow003.md)
     * [Placeholder](tensorflow004.md)
     * [正規分布のTensorを作る](tensorflow005.md)
