@@ -39,4 +39,11 @@ result_mat = sess.run(add_op1, feed_dict={x:mat1, y:mat2})
 print result_mat
 ```
 
+結果
+
+```shell
+[[ 12.  14.]
+ [ 16.  18.]]
+```
+
 
