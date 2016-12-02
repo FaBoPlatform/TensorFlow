@@ -22,11 +22,11 @@ a2 = tf.reduce_sum(x, 0)
 # 行ごとの和
 a3 = tf.reduce_sum(x, 1)
 
-# 全要素の和
+# 全要素の積
 b1 = tf.reduce_prod(x)
-# 列ごとの和
+# 列ごとの積
 b2 = tf.reduce_prod(x, 0)
-# 行ごとの和
+# 行ごとの積
 b3 = tf.reduce_prod(x, 1)
 
 with tf.Session() as sess:
