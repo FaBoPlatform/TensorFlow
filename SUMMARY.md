@@ -3,7 +3,6 @@
 * 開発環境
 	* [CloudMLの設定](cloudml.md)
 * Numpy
-    * [Numpyをインストール](numpy001.md)
     * [配列から行列を作る](numpy002.md)
     * [ゼロのはいった行列を作る](numpy003.md)
     * [ゼロのはいった配列を作る](numpy004.md)
@@ -12,7 +11,6 @@
     * [乱数のシード](numpy007.md)
     * [スライシング](numpy008.md)
 * TensorFlow
-    * [TensofFlowのインストール](tensorflow001.md)
     * [HelloWorld](tensorflow002.md)
     * [行列の足し算と掛け算](tensorflow003.md)
     * [Placeholder](tensorflow004.md)
