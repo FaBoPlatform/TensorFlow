@@ -16,7 +16,7 @@
     * [Placeholder](tensorflow004.md)
     * [正規分布のTensorを作る](tensorflow005.md)
     * [乱数のシード](tensorflow006.md)
-    * [Tensorの総和・総責](tensorflow007.md)
+    * [Tensorの総和・総積](tensorflow007.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
