@@ -3,7 +3,7 @@
 
 ## tf.add
 
-tf.add(x, y, name=None)
+> tf.add(x, y, name=None)
 
 |変数|概要|
 |:--|:--|
