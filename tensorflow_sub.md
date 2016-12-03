@@ -11,6 +11,12 @@
 |y|half, float32, float64, int32, int64, complex64, complex128の型の値を引数で渡せる|
 |name|操作の名前(任意)|
 
+## Sample
+
+> mat2 - mat1 = result_mat
+![](/img/tf_sub.png)
+
+
 ```python
 import tensorflow as tf 
 import numpy as np
