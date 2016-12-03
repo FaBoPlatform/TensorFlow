@@ -46,4 +46,8 @@ print result_mat
  [ 16.  18.]]
 ```
 
+# 参考
+
+https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#add
+
 
