@@ -16,6 +16,7 @@
     * [CSVファイルの読み込み・保存](numpy012.md)
     * [Numpyオブジェクトの型・次元数・サイズ](numpy013.md)
     * [平均・標準偏差](numpy014.md)
+    * [ユニバーサル関数](numpy015.md)
 * TensorFlow
     * [HelloWorld](tensorflow002.md)
     * [行列の要素の和](tensorflow_add.md)
@@ -27,6 +28,7 @@
     * [乱数のシード](tensorflow006.md)
     * [Tensorの総和・総積](tensorflow007.md)
     * [Tensorの型・次元数・ランク・サイズ](tensorflow008.md)
+    * [セッションの保存・読み込み](tensorflow009.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
