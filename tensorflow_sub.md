@@ -14,8 +14,8 @@
 ## Sample
 
 > mat2 - mat1 = result_mat
-![](/img/tf_sub.png)
 
+![](/img/tf_sub.png)
 
 ```python
 import tensorflow as tf 
