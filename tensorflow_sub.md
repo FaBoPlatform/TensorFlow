@@ -7,8 +7,8 @@
 
 |変数|概要|
 |:--|:--|
-|x|half, float32, float64, uint8, int8, int16, int32, int64, complex64, complex128, stringの型の値を引数で渡せる|
-|y|half, float32, float64, uint8, int8, int16, int32, int64, complex64, complex128, stringの型の値を引数で渡せる|
+|x|half, float32, float64, int32, int64, complex64, complex128の型の値を引数で渡せる|
+|y|half, float32, float64, int32, int64, complex64, complex128の型の値を引数で渡せる|
 |name|操作の名前(任意)|
 
 ```python
@@ -27,13 +27,13 @@ mat1 = np.arange(1,5).reshape(2,2)
 mat2 = np.arange(11,15).reshape(2,2)
 
 # 和のオペレーション
-add_op1 = tf.add(x, y, name="add_op1")
+sub_op1 = tf.sub(x, y, name="sub_op1")
 
 # セッション
 sess = tf.Session()
 
 # 実行
-result_mat = sess.run(add_op1, feed_dict={x:mat1, y:mat2})
+result_mat = sess.run(sub_op1, feed_dict={x:mat2, y:mat1})
 
 # 結果を表示
 print result_mat
@@ -42,12 +42,11 @@ print result_mat
 結果
 
 ```shell
-[[ 12.  14.]
- [ 16.  18.]]
+[[ 10.  10.]
+ [ 10.  10.]]
 ```
 
 # 参考
 
-https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#add
-
+https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#sub
 
