@@ -10,6 +10,12 @@
     * [行列の演算](numpy006.md)
     * [乱数のシード](numpy007.md)
     * [スライシング](numpy008.md)
+    * [ブールインデックス](numpy009.md)
+    * [転置行列](numpy010.md)
+    * [Numpyオブジェクトの保存](numpy011.md)
+    * [CSVファイルの読み込み・保存](numpy012.md)
+    * [Numpyオブジェクトの型・次元数・サイズ](numpy013.md)
+    * [平均・標準偏差](numpy014.md)
 * TensorFlow
     * [HelloWorld](tensorflow002.md)
     * [行列の足し算と掛け算](tensorflow003.md)
@@ -17,6 +23,7 @@
     * [正規分布のTensorを作る](tensorflow005.md)
     * [乱数のシード](tensorflow006.md)
     * [Tensorの総和・総積](tensorflow007.md)
+    * [Tensorの型・次元数・ランク・サイズ](tensorflow008.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
