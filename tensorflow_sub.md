@@ -1,9 +1,9 @@
 
 # 行列の和
 
-## tf.add
+## tf.sub
 
-> tf.add(x, y, name=None)
+> tf.sub(x, y, name=None)
 
 |変数|概要|
 |:--|:--|
