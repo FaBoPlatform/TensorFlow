@@ -1,4 +1,4 @@
-# Tensorの総和・総責
+# Tensorの総和・総積
 
 Sample
 
@@ -35,7 +35,7 @@ with tf.Session() as sess:
     print sess.run(a1, feed_dict={x:x_data})
     print sess.run(a2, feed_dict={x:x_data})
     print sess.run(a3, feed_dict={x:x_data})
-    # 総乗
+    # 総積
     print sess.run(b1, feed_dict={x:x_data})
     print sess.run(b2, feed_dict={x:x_data})
     print sess.run(b3, feed_dict={x:x_data})
