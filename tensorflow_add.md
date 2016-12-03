@@ -11,6 +11,10 @@
 |y|half, float32, float64, uint8, int8, int16, int32, int64, complex64, complex128, stringの型の値を引数で渡せる|
 |name|操作の名前(任意)|
 
+## Sample
+
+> mat1 + mat2 = result_mat
+
 ![](/img/tf_add.png)
 
 ```python
