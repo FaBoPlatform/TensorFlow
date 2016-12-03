@@ -7,7 +7,7 @@ Sample
 import numpy as np
 import tensorflow as tf
 
-# 2x2行列
+# 2x2行列(Tensor)
 # [[1, 2],
 #  [3, 4]])
 x_data = np.arange(1, 5).reshape((2,2))
