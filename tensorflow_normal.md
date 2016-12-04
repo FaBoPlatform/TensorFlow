@@ -5,10 +5,14 @@
 > tf.random_normal(shape, mean=0.0, stddev=1.0, dtype=tf.float32, seed=None, name=None)
 
 
-* `shape` Tensorのサイズ
-* `mean` 平均
-* `stddev` 標準偏差
-* `dtype` 値の型
+|変数|概要|
+|:--|:--|
+|shape|Tensorのサイズ|
+|mean|平均|
+|stdev|標準偏差| 
+|dtype|値の型|
+|seed|シード|
+|name|操作名|
 
 デフォルトでは`mean=0.0, stddev=1.0`となっており、標準正規分布になっている。
 
