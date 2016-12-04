@@ -35,13 +35,33 @@ https://console.cloud.google.com/ml
 
 ![](/img/ml002.png)
 
-# TensorFlow
+# CloudMLの設定
 
-VIMで下記を作成して動作を確認する。
+```shell
+$ curl https://raw.githubusercontent.com/GoogleCloudPlatform/cloudml-samples/master/tools/setup_cloud_shell.sh | bash
+$ export PATH=${HOME}/.local/bin:${PATH}
+$ curl https://raw.githubusercontent.com/GoogleCloudPlatform/cloudml-samples/master/tools/check_environment.py | python
+$ gcloud beta ml init-project
+```
+
+バケットの設定、your_bucket_nameを任意の名前にする
+
+```shell
+$ PROJECT_ID=$(gcloud config list project --format "value(core.project)")
+$ BUCKET_NAME=${PROJECT_ID}-ml
+$ BUCKET_NAME="your_bucket_name"
+$ gsutil mb -l us-central1 gs://$BUCKET_NAME
+```
+
+# HelloTensor
+
+![](/img/ipython001.png)
 
 ```python
-$ vim helloworld.py
+$ ipython
 ```
+
+![](/img/ipython002.png)
 
 ```python
 import tensorflow as tf
@@ -51,7 +71,3 @@ sess = tf.Session()
 print sess.run(hello)
 ```
 
-```python
-$ python helloworld.py
-$ hello
-```
