@@ -1,8 +1,10 @@
-# 活性化関数
+# 活性化関数・出力層の関数
 
-ニューロンをどのように活性化させる決める、活性化関数のサンプル
+ニューロンをどのように活性化させるかを決める活性化関数および出力層の関数のサンプル
 
-出力層に用いる活性化関数は以下の表のように目的に応じて選択する。
+かつてはシグモイド関数が一般的に活性化関数として使われていたが、現在はReLU関数がよく用いられている。
+
+出力層に用いる関数は以下の表のように目的に応じて選択する。
 
 |問題の種別|出力層の活性化関数|
 |:-:|:-:|
@@ -30,7 +32,7 @@ x = tf.constant(x_data , tf.float32)
 sigmoid = tf.sigmoid(x)
 # ハイパボリックタンジェント(双曲線関数)
 tanh = tf.tanh(x)
-# ReLu関数
+# ReLU関数
 relu = tf.nn.relu(x)
 
 # ソフトマックス関数
@@ -48,7 +50,7 @@ with tf.Session() as sess:
     sigmoid_y = sess.run(sigmoid)
     # ハイパボリックタンジェント
     tanh_y = sess.run(tanh)
-    # Relu関数
+    # ReLU関数
     relu_y = sess.run(relu)
     # ソフトマックス関数
     softmax_y = sess.run(softmax, feed_dict={xx:x_data.reshape(600,1)})
@@ -63,7 +65,7 @@ with tf.Session() as sess:
     ax2.set_ylim([-1.1,1.1])
     ax2.plot(x_data, tanh_y, label="tanh")
     ax2.legend(loc="upper left", fontsize=8)
-    # Relu関数
+    # ReLU関数
     ax3.set_ylim([-0.1,30])
     ax3.plot(x_data, relu_y, label="Relu")
     ax3.legend(loc="upper left", fontsize=8)
