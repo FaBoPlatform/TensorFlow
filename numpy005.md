@@ -1,13 +1,15 @@
 # 標準正規分布の配列を作る
 
+各値の平均値を取ると0、標準偏差を取ると1に収束する分布になる。
+
 ## Sample
 
 ```python
 import numpy as np
 
-X = np.random.randn(10, 2)
+x = np.random.randn(10, 2)
 
-print X
+print x
 ```
 
 出力結果
@@ -23,4 +25,27 @@ print X
  [ 0.08562266  0.67993018]
  [ 0.14558376  0.37880808]]
 ```
+
+## 実験
+
+正規分布の変数を1万個にふたし、平均値と標準偏差を確認する。
+
+```python
+import numpy as np
+
+x = np.random.randn(5000, 2)
+
+print np.average(x)
+print np.atd(x)
+```
+
+出力結果
+```shell
+0.00136866896489
+1.00003484542
+```
+
+要素数を増やせば増やすほど、平均値0、標準偏差 1に近づいていく。
+
+
 
