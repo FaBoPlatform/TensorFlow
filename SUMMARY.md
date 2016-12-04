@@ -3,8 +3,8 @@
 * 開発環境
 	* [CloudMLの設定](cloudml.md)
 * Numpy
-    * [配列から行列を作る](numpy_arrmat.md)
-    * [ゼロのはいった行列を作る](numpy003.md)
+    * [配列からTensorを作る](numpy_arrmat.md)
+    * [ゼロのはいったTensorを作る](numpy_zerotensor.md)
     * [ゼロのはいった配列を作る](numpy004.md)
     * [標準正規分布の配列を作る](numpy005.md)
     * [行列の演算](numpy006.md)

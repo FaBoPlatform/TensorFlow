@@ -1,15 +1,24 @@
 # 配列から行列を作る
 
-![](/img/np_arrmat.png)
-
 ## Sample
+
+![](/img/np_arrmat.png)
 
 ```python
 import numpy as np
-array = np.array([1,5,10,4,11,22,21,11,10,1])
-print array
+arr = np.array([1,5,10,4,11,22,21,11,10,1])
+print arr
 
-matrix = array.reshape([5,2])
+mat = arr.reshape([5,2])
 
-print matrix
+print mat
+```
+
+結果
+```shell
+[[ 1  5]
+ [10  4]
+ [11 22]
+ [21 11]
+ [10  1]]
 ```
