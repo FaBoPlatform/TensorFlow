@@ -5,7 +5,7 @@
 * Numpy
     * [配列からTensorを作る](numpy_arrmat.md)
     * [ゼロのはいったTensorを作る](numpy_zerotensor.md)
-    * [ゼロのはいった配列を作る](numpy004.md)
+    * [ゼロのはいった配列を作る](numpy_zeroarray.md)
     * [標準正規分布の配列を作る](numpy005.md)
     * [行列の演算](numpy006.md)
     * [乱数のシード](numpy007.md)
