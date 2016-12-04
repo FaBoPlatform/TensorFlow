@@ -2,6 +2,7 @@
 * [はじめに](README.md)
 * 開発環境
 	* [CloudMLの設定](cloudml.md)
+    * [iPythonの使い方](ipython.md)
 * Numpy
     * [配列からTensorを作る](numpy_arrmat.md)
     * [ゼロのはいったTensorを作る](numpy_zerotensor.md)

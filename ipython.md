@@ -1,9 +1,8 @@
 
-# iPythonのインストール
+# iPythonの実行
 
 ```shell
-$ pip install ipython
+$ ipython
 ```
-# Sample
 
 
