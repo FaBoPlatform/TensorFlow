@@ -39,9 +39,13 @@ relu = tf.nn.relu(x)
 # f1:y = -0.5x
 # f2:y = 0.25x
 # f3:y = 0.5x-5.0
+# 600x1行列
 xx = tf.placeholder(tf.float32, shape=(600, 1))
+# 1x3行列
 w = tf.constant([-0.5,0.25,0.5] , tf.float32, shape=(1,3))
+# 600x3行列
 b = tf.constant(np.array([[0.0,0.0,-5]] * 600), tf.float32, shape=(600,3))
+# 行列の積
 f = tf.matmul(xx,w)+b
 softmax = tf.nn.softmax(f)
 
@@ -55,7 +59,7 @@ with tf.Session() as sess:
     # ソフトマックス関数
     softmax_y = sess.run(softmax, feed_dict={xx:x_data.reshape(600,1)})
 
-    # プロット
+    # プロット(グラフを4分割)
     fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(nrows=2, ncols=2)
     # シグモイド関数
     ax1.set_ylim([-0.1,1.1])
@@ -75,6 +79,7 @@ with tf.Session() as sess:
     ax4.plot(x_data, softmax_y[:,1], label="softmax(f2)")
     ax4.plot(x_data, softmax_y[:,2], label="softmax(f3)")
     ax4.legend(loc="upper left", fontsize=8)
+    # グラフを表示する
     plt.show()
 ```
 
