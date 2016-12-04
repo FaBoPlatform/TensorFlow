@@ -29,6 +29,8 @@
     * [Tensorの総和・総積](tensorflow007.md)
     * [Tensorの型・次元数・ランク・サイズ](tensorflow008.md)
     * [セッションの保存・読み込み](tensorflow009.md)
+    * [基本的な数学関数](tensorflow_math_func.md)
+    * [行列関数](tensorflow_matrix_func.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
