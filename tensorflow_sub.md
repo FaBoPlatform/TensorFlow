@@ -1,5 +1,5 @@
 
-# Tensor(行列)の要素の和
+# Tensor(行列)の差
 
 ## tf.sub
 

@@ -19,8 +19,9 @@
     * [ユニバーサル関数](numpy015.md)
 * TensorFlow
     * [HelloWorld](tensorflow002.md)
-    * [Tensorの要素の和](tensorflow_add.md)
-    * [Tensorの要素の差](tensorflow_sub.md)
+    * [Tensorの和](tensorflow_add.md)
+    * [Tensorの差](tensorflow_sub.md)
+    * [Tensorの積](tensorflow_matmul.md)
     * [Tensorの要素の積](tensorflow_mul.md)
     * [行列の足し算と掛け算](tensorflow003.md)
     * [Placeholder](tensorflow004.md)
