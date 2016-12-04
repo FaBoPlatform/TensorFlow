@@ -1,6 +1,15 @@
 
 # Placeholder
 
+> tf.placeholder(dtype, shape=None, name=None)
+
+
+|引数名|概要|
+|:--|:--|
+| dtype | Tensorの型 |
+| shape | Tensorの形状, 無指定の場合は任意の形状のTensorを渡せる |
+| name | 操作の名前 |
+
 ## Sample
 
 ```python
@@ -10,9 +19,8 @@ a = tf.placeholder(tf.int16)
 b = tf.placeholder(tf.int16)
 
 add = tf.add(a, b)
-mul = tf.mul(a, b)
 
 tr = tf.Session()
-print("Add: %i" % sess.run(add, feed_dict={a: 2, b:3}))
-print("Mult: %i" % sess.run(mul, feed_dict={a: 2, b:3}))
+print("Add: %i" % sess.run(add, feed_dict={a:2, b:3}))
 ```
+
