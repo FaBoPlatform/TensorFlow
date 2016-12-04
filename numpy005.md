@@ -36,7 +36,7 @@ import numpy as np
 x = np.random.randn(5000, 2)
 
 print np.average(x)
-print np.atd(x)
+print np.std(x)
 ```
 
 出力結果

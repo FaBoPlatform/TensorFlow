@@ -25,7 +25,7 @@
     * [Tensorの差](tensorflow_sub.md)
     * [Tensorの積](tensorflow_matmul.md)
     * [Tensorの要素の積](tensorflow_mul.md)
-    * [正規分布のTensorを作る](tensorflow005.md)
+    * [正規分布のTensorを作る](tensorflow_normal.md)
     * [乱数のシード](tensorflow006.md)
     * [Tensorの総和・総積](tensorflow007.md)
     * [Tensorの型・次元数・ランク・サイズ](tensorflow008.md)
