@@ -1,6 +1,6 @@
 # 基本的な数学関数
 
-Tensorを引数にとる基本的な数学関数の例
+基本的な数学関数のサンプル
 
 他の関数は、[TensorflowドキュメントのBasic Math Functions](https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#basic-math-functions)を参考。
 
