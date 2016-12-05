@@ -21,6 +21,7 @@
     * [集合関数](numpy_set_func.md)
     * [行列関数](numpy_matrix_func.md)
     * [さまざまな乱数](numpy_random.md)
+    * [結合関数](numpy_concat.md)
 * TensorFlow
     * [HelloWorld](tensorflow002.md)
     * [Placeholder](tensorflow004.md)
