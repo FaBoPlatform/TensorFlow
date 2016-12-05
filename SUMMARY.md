@@ -17,6 +17,13 @@
     * [Numpyオブジェクトの型・次元数・サイズ](numpy013.md)
     * [平均・標準偏差](numpy014.md)
     * [ユニバーサル関数](numpy015.md)
+<<<<<<< HEAD
+=======
+    * [ソート](numpy_sort.md)
+    * [集合関数](numpy_set_func.md)
+    * [行列関数](numpy_matrix_func.md)
+    * [さまざまな乱数](numpy_random.md)
+>>>>>>> d2288384b25b8c09817ab89330c09d8f19f16870
 * TensorFlow
     * [HelloWorld](tensorflow002.md)
     * [行列の要素の和](tensorflow_add.md)
