@@ -30,7 +30,7 @@
     * [Tensorの要素の積](tensorflow_mul.md)
     * [Tensorの総和](tensorflow_sum.md)
     * [Tensorの総積](tensorflow_prod.md)
-    * [正規分布のTensorを作る](tensorflow005.md)
+    * [正規分布のTensorを作る](tensorflow_normal.md)
     * [乱数のシード](tensorflow006.md)
     * [Tensorの総和・総積](tensorflow007.md)
     * [Tensorの型・次元数・ランク・サイズ](tensorflow008.md)
