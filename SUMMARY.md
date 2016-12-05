@@ -20,6 +20,7 @@
     * [ソート](numpy_sort.md)
     * [集合関数](numpy_set_func.md)
     * [行列関数](numpy_matrix_func.md)
+    * [さまざまな乱数](numpy_random.md)
 * TensorFlow
     * [HelloWorld](tensorflow002.md)
     * [Tensorの和](tensorflow_add.md)
