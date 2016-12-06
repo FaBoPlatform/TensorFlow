@@ -36,6 +36,8 @@
     * [Tensorの総和・総積](tensorflow007.md)
     * [Tensorの型・次元数・ランク・サイズ](tensorflow008.md)
     * [セッションの保存・読み込み](tensorflow009.md)
+    * [平均二乗誤差](tensorflow_mse.md)
+    * [交差エントロピーコスト関数](tensorflow_cross_entropy.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
