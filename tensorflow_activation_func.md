@@ -25,8 +25,6 @@ import tensorflow as tf
 # -1.0から1.0まで値を0.01間隔で取得
 x_data = np.arange(-30.0, 30.0, 0.1)
 x = tf.constant(x_data , tf.float32)
-#y_data = np.arange(-100.0, 100.0, 0.1).reshape(1,2000)
-#print y_data
 
 # シグモイド関数
 sigmoid = tf.sigmoid(x)
