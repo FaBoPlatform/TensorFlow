@@ -38,6 +38,8 @@
     * [基本的な数学関数](tensorflow_math_func.md)
     * [行列関数](tensorflow_matrix_func.md)
     * [活性化関数・出力層の関数](tensorflow_activation_func.md)
+    * [平均二乗誤差](tensorflow_mse.md)
+    * [交差エントロピーコスト関数](tensorflow_cross_entropy.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
