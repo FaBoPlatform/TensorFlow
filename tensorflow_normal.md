@@ -25,7 +25,7 @@ import tensorflow as tf
 # 標準正規分布による乱数を値に持つ3x3行列
 x = tf.random_normal(shape=(3,3))
 
-sess = tf.Session() as sess:
+sess = tf.Session()
 y = sess.run(x)
 print y
 ```
@@ -49,7 +49,7 @@ import numpy as np
 # 標準正規分布による乱数を値に持つ3x3行列
 x = tf.random_normal(shape=(5000,2))
 
-sess = tf.Session() as sess:
+sess = tf.Session()
 y = sess.run(x)
 
 print np.average(y)
@@ -75,7 +75,7 @@ import numpy as np
 # 標準正規分布による乱数を値に持つ3x3行列
 x = tf.random_normal(shape=(5000,2), mean=1, stddev=10)
 
-sess = tf.Session() as sess:
+sess = tf.Session()
 y = sess.run(x)
 
 print np.average(y)
