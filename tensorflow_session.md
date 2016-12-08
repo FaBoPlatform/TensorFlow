@@ -23,7 +23,7 @@ saver = tf.train.Saver()
 # rand_opの実行ごとにxノードには違う乱数が格納される
 # そのときのセッションが保存される
 sess1 = tf.Session()
-sess1.run(tf.global_variables_initializer())
+sess1.run(tf.initialize_all_variables())
 for i in range(0, 3):
     # rand_opを実行して、3x3行列を生成し、xに割り当てる
     sess1.run(update_x)
@@ -34,7 +34,7 @@ for i in range(0, 3):
 
 # セッションの読み込み
 sess2 = tf.Session()
-sess2.run(tf.global_variables_initializer())
+sess2.run(tf.initialize_all_variables())
 # 最後のセッションを読み込む
 saver.restore(sess2, "./rand-2")
 print sess2.run(x)
