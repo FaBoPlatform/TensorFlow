@@ -20,7 +20,7 @@ b = tf.placeholder(tf.int16)
 
 add = tf.add(a, b)
 
-tr = tf.Session()
+sess = tf.Session()
 print("Add: %i" % sess.run(add, feed_dict={a:2, b:3}))
 ```
 
