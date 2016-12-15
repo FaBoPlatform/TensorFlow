@@ -22,6 +22,9 @@
     * [行列関数](numpy_matrix_func.md)
     * [さまざまな乱数](numpy_random.md)
     * [結合関数](numpy_concat.md)
+    * [平坦化](numpy_flatten.md)
+    * [配列の繰り返し](numpy_repeat.md)
+    * [次元数の増加](numpy_newaxis.md)
 * TensorFlow
     * [HelloWorld](tensorflow_hello.md)
     * [Version](tensorflow_version.md)
@@ -38,6 +41,10 @@
     * [セッションの保存・読み込み](tensorflow_session.md)
     * [平均二乗誤差](tensorflow_mse.md)
     * [交差エントロピーコスト関数](tensorflow_cross_entropy.md)
+    * [MNISTデータセットのダウンロード](tensorflow_mnist_download.md)
+    * [MNISTデータセットの読み込み](tensorflow_mnist_load.md)
+    * [MNISTデータセットのバッチ読み込み](tensorflow_mnist_batch.md)
+    * [MNISTデータセットの情報](tensorflow_mnist_info.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
