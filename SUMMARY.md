@@ -41,6 +41,10 @@
     * [セッションの保存・読み込み](tensorflow009.md)
     * [平均二乗誤差](tensorflow_mse.md)
     * [交差エントロピーコスト関数](tensorflow_cross_entropy.md)
+    * [MNISTデータセットのダウンロード](tensorflow_mnist_download.md)
+    * [MNISTデータセットの読み込み](tensorflow_mnist_load.md)
+    * [MNISTデータセットのバッチ読み込み](tensorflow_mnist_batch.md)
+    * [MNISTデータセットの情報](tensorflow_mnist_info.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
