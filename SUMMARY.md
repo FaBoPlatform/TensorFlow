@@ -22,6 +22,9 @@
     * [行列関数](numpy_matrix_func.md)
     * [さまざまな乱数](numpy_random.md)
     * [結合関数](numpy_concat.md)
+    * [平坦化](numpy_flatten.md)
+    * [配列の繰り返し](numpy_repeat.md)
+    * [次元数の増加](numpy_newaxis.md)
 * TensorFlow
     * [HelloWorld](tensorflow002.md)
     * [Placeholder](tensorflow004.md)
