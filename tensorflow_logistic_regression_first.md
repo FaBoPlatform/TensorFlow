@@ -1,4 +1,4 @@
-# ロジスティック回帰の準備
+# ロジスティック回帰 準備編
 
 breast-cancer-wisconsinデータセットを使い、TensorFlowによるロジスティック回帰を行う。breast-cancer-wisconsinデータセットはがん細胞の情報とがんの悪性か良性かをまとめたデータセットである。
 
