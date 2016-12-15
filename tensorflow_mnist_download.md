@@ -3,6 +3,7 @@
 MNIST(手書き数字)データセットをダウンロードする
 
 ```python
+# coding:utf-8
 from tensorflow.examples.tutorials.mnist import input_data
 
 # MNISTデータセットの読み込み
