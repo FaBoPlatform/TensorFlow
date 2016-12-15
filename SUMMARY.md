@@ -45,6 +45,8 @@
     * [MNISTデータセットの読み込み](tensorflow_mnist_load.md)
     * [MNISTデータセットのバッチ読み込み](tensorflow_mnist_batch.md)
     * [MNISTデータセットの情報](tensorflow_mnist_info.md)
+    * [ロジスティック回帰 準備編](tensorflow_logistic_regression_first.md)
+    * [ロジスティック回帰](tensorflow_logistic_regression_last.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
