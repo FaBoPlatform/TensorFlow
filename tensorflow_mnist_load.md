@@ -15,19 +15,19 @@ mnist = input_data.read_data_sets("./MNIST_data/", one_hot=True)
 # 画像データ
 # mnist.train.images
 # 訓練用データセット数
-print len(mnist.train.labels)
+print mnist.train.num_examples
 
 # 評価用データセット
 # mnist.validation.labels
 # mnist.validation.images
 # 評価用データセット数
-print len(mnist.validation.labels)
+print mnist.validation.num_examples
 
 # テスト用データセット
 # mnist.test.labels
 # mnist.test.images
 # テスト用データセット数
-print len(mnist.test.labels)
+print mnist.test.num_examples
 ```
 
 実行結果
