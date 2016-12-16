@@ -18,7 +18,7 @@ import tensorflow as tf
 # 2x2行列(Tensor)
 # [[1, 2],
 #  [3, 4]])
-x_data = np.arange(1, 5).reshape((2,2))
+x_data = np.arange(1, 5).reshape(2,2)
 
 # 2x2行列のPlaceholder
 x = tf.placeholder(tf.float32, shape=(2,2))
