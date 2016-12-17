@@ -47,6 +47,10 @@
     * [MNISTデータセットの情報](tensorflow_mnist_info.md)
     * [ロジスティック回帰 準備編](tensorflow_logistic_regression_first.md)
     * [ロジスティック回帰](tensorflow_logistic_regression_last.md)
+    * [Tensorのクリッピング](tensorflow_clip_by_value.md)
+    * [コマンドライン引数の処理](tensorflow_flags.md)
+    * [3クラス分類 準備編](tensorflow_three_classification_first.md)
+    * [3クラス分類](tensorflow_three_classification_last.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
