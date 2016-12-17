@@ -43,6 +43,8 @@
     * [セッションの保存・読み込み](tensorflow_session.md)
     * [平均二乗誤差](tensorflow_mse.md)
     * [交差エントロピーコスト関数](tensorflow_cross_entropy.md)
+    * [Tensorのクリッピング](tensorflow_clip_by_value.md)
+    * [コマンドライン引数の処理](tensorflow_flags.md)
 * DeepLearning
     * [MNISTデータセットのダウンロード](tensorflow_mnist_download.md)
     * [MNISTデータセットの読み込み](tensorflow_mnist_load.md)
@@ -51,8 +53,6 @@
     * [ロジスティック回帰 準備編](tensorflow_logistic_regression_first.md)
     * [ロジスティック回帰](tensorflow_logistic_regression_last.md)
     * [ロジスティック回帰2](tensorflow_logistic_regression_last2.md)
-    * [Tensorのクリッピング](tensorflow_clip_by_value.md)
-    * [コマンドライン引数の処理](tensorflow_flags.md)
     * [3クラス分類 準備編](tensorflow_three_classification_first.md)
     * [3クラス分類](tensorflow_three_classification_last.md)
     * [3クラス分類 Tensorboard編](tensorflow_three_classification_tensorboard.md)
