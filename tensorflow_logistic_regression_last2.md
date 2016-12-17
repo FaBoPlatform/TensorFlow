@@ -18,40 +18,34 @@ Y = np.array([0]*500 + [1]*500)
 N = len(Y)
 T = np.zeros((N,2))
 for i in xrange(N):
-    T[i, Y[i]] = 1
+	T[i, Y[i]] = 1
 
 tfX = tf.placeholder(tf.float32, [None, 2])
 tfY = tf.placeholder(tf.float32, [None, 2])
 
-W1 = tf.Variable(tf.random_normal([2,2], stddev=0.01))
-b1 = tf.Variable(tf.random_normal([2], stddev=0.01))
-Z = tf.nn.sigmoid(tf.matmul(tfX,W1) + b1)
+W = tf.Variable(tf.random_normal([2,2], stddev=0.01), name="weight")
+b = tf.Variable(tf.random_normal([2], stddev=0.01), name="bias")
+
+learning_rate = 0.01
+activation = tf.nn.softmax(tf.matmul(tfX, W) + b)
 
 init_op = tf.initialize_all_variables()
 
-cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(Z, T))
-train_op = tf.train.GradientDescentOptimizer(0.01).minimize(cost)
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(activation, T))
+train_op = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost)
 
-cp = tf.clip_by_value(Z,1e-10,1.0)
-cnp = tf.clip_by_value(1-Z, 1e-10,1.0)
-cost_f = T*tf.log(cp)+(1-T)*tf.log(cnp)
-cost_op = -tf.reduce_sum(cost_f)
-
-correct_prediction = tf.equal(tf.argmax(Z,1), tf.argmax(T,1))
+correct_prediction = tf.equal(tf.argmax(activation,1), tf.argmax(T,1))
 accuracy_op = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-predict_op = tf.argmax(Z, 1)
-
 with tf.Session() as sess:
-    sess.run(init_op)
+	sess.run(init_op)
 
-    for i in xrange(1000):
-        sess.run(train_op, feed_dict={tfX: X, tfY: T})
-        p = np.mean(Y == sess.run(predict_op, feed_dict={tfX: X, tfY: T}))
-        a = sess.run(accuracy_op, feed_dict={tfX: X, tfY: T})
-        c = sess.run(cost_op, feed_dict={tfX:X, tfY: T})
-        if i % 100 == 0:
-            print "step %d, cost %f, predict %f, accuracy %f" % (i,c,p,a)
+	for i in xrange(1000):
+		sess.run(train_op, feed_dict={tfX: X, tfY: T})
+		a = sess.run(accuracy_op, feed_dict={tfX: X, tfY: T})
+		c = sess.run(cost, feed_dict={tfX:X, tfY: T})
+		if i % 100 == 0:
+			print "step %d, cost %f, accuracy %f" % (i,c,a)
 ```
 
 実行結果
