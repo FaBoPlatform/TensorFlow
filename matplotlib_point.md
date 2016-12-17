@@ -17,5 +17,5 @@ plt.show()
 ```
 
 結果
-![](/img/matplotlib_point.md)
+![](/img/matplotlib_point.png)
 
