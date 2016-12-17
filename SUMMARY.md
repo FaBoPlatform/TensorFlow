@@ -43,6 +43,7 @@
     * [セッションの保存・読み込み](tensorflow_session.md)
     * [平均二乗誤差](tensorflow_mse.md)
     * [交差エントロピーコスト関数](tensorflow_cross_entropy.md)
+* DeepLearning
     * [MNISTデータセットのダウンロード](tensorflow_mnist_download.md)
     * [MNISTデータセットの読み込み](tensorflow_mnist_load.md)
     * [MNISTデータセットのバッチ読み込み](tensorflow_mnist_batch.md)
