@@ -63,7 +63,7 @@
 * Matplotlib
     * [Matplotlibのインストール](matplotlib.md)
     * [点をうつ](matplotlib_point.md)
-    * 
+    * [線を引く](matplotlib_line.md)
 * iPython
     * [iPythonのインストール](ipython.md)
 * Etc
