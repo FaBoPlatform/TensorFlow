@@ -21,9 +21,9 @@ tf.set_random_seed(20200724)
 # 標準正規分布による乱数を値に持つ4x4行列
 x = tf.random_normal(shape=(4,4))
 
-with tf.Session() as sess:
-    y = sess.run(x)
-    print y
+sess = tf.Session()
+y = sess.run(x)
+print y
 ```
 
 計算結果

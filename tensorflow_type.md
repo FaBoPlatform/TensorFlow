@@ -12,16 +12,16 @@ x_data = np.random.randn(3, 3)
 # 3x3のTensor
 x = tf.constant(x_data, shape=(3,3))
 
-with tf.Session() as sess:
-    print sess.run(x)
-    # 型
-    print x.dtype
-    # 次元数
-    print sess.run(tf.shape(x))
-    # ランク
-    print sess.run(tf.rank(x))
-    # サイズ
-    print sess.run(tf.size(x))
+sess = tf.Session()
+print sess.run(x)
+# 型
+print x.dtype
+# 次元数
+print sess.run(tf.shape(x))
+# ランク
+print sess.run(tf.rank(x))
+# サイズ
+print sess.run(tf.size(x))
 ```
 
 出力結果
