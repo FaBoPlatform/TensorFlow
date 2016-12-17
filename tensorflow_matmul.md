@@ -15,7 +15,7 @@
 
 > mat1 x mat2 = result_mat
 
-![](/img/tf_mul.png)
+![](/img/tf_matmul.png)
 
 ```python
 # coding:utf-8
