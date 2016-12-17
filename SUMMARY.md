@@ -53,6 +53,9 @@
     * [コマンドライン引数の処理](tensorflow_flags.md)
     * [3クラス分類 準備編](tensorflow_three_classification_first.md)
     * [3クラス分類](tensorflow_three_classification_last.md)
+    * [3クラス分類 Tensorboard編](tensorflow_three_classification_tensorboard.md)
+    * [モーメンタム](tensorflow_iris_momentum.md)
+    * [Adam](tensorflow_iris_adam.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
