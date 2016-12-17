@@ -29,6 +29,8 @@
     * [HelloWorld](tensorflow_hello.md)
     * [Version](tensorflow_version.md)
     * [Placeholder](tensorflow_placeholder.md)
+    * [Constant](tensorflow_constant.md)
+    * [Variable](tensorflow_variable.md)
     * [Tensorの和](tensorflow_add.md)
     * [Tensorの差](tensorflow_sub.md)
     * [Tensorの積](tensorflow_matmul.md)
