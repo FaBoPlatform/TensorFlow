@@ -62,6 +62,8 @@
     * [TensorBoard](tensorboard.md)
 * Matplotlib
     * [Matplotlibのインストール](matplotlib.md)
+    * [点をうつ](matplotlib_point.md)
+    * 
 * iPython
     * [iPythonのインストール](ipython.md)
 * Etc
