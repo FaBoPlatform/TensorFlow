@@ -45,6 +45,9 @@
     * [交差エントロピーコスト関数](tensorflow_cross_entropy.md)
     * [Tensorのクリッピング](tensorflow_clip_by_value.md)
     * [コマンドライン引数の処理](tensorflow_flags.md)
+    * [Tensorの最小値・最大値](tensorflow_argmin.md)
+    * [Boolean tensor](tensorflow_boolean.md)
+    * [切断正規分布](tensorflow_truncated_normal.md)
 * DeepLearning
     * [MNISTデータセットのダウンロード](tensorflow_mnist_download.md)
     * [MNISTデータセットの読み込み](tensorflow_mnist_load.md)
@@ -58,6 +61,7 @@
     * [3クラス分類 Tensorboard編](tensorflow_three_classification_tensorboard.md)
     * [モーメンタム](tensorflow_iris_momentum.md)
     * [Adam](tensorflow_iris_adam.md)
+    * [多項式フィッティング](tensorflow_fitting.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
