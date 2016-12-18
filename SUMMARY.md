@@ -62,6 +62,7 @@
     * [モーメンタム](tensorflow_iris_momentum.md)
     * [Adam](tensorflow_iris_adam.md)
     * [多項式フィッティング](tensorflow_fitting.md)
+    * [パーセプトロンによるフィッティング](tensorflow_perceptron_fitting.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
