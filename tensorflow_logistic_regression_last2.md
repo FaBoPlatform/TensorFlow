@@ -42,9 +42,9 @@ with tf.Session() as sess:
 
 	for i in xrange(1000):
 		sess.run(train_op, feed_dict={tfX: X, tfY: T})
-		a = sess.run(accuracy_op, feed_dict={tfX: X, tfY: T})
-		c = sess.run(cost, feed_dict={tfX:X, tfY: T})
+		
 		if i % 100 == 0:
+			a,c = sess.run([accuracy_op,cost], feed_dict={tfX: X, tfY: T})
 			print "step %d, cost %f, accuracy %f" % (i,c,a)
 ```
 
