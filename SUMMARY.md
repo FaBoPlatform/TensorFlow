@@ -48,6 +48,9 @@
     * [Tensorの最小値・最大値](tensorflow_argmin.md)
     * [Boolean tensor](tensorflow_boolean.md)
     * [切断正規分布](tensorflow_truncated_normal.md)
+    * [キャスト](tensorflow_cast.md)
+    * [Tensorの比較](tensorflow_comparison.md)
+    * [Tensorの集約](tensorflow_pack.md)
 * DeepLearning
     * [MNISTデータセットのダウンロード](tensorflow_mnist_download.md)
     * [MNISTデータセットの読み込み](tensorflow_mnist_load.md)
@@ -63,6 +66,8 @@
     * [Adam](tensorflow_iris_adam.md)
     * [多項式フィッティング](tensorflow_fitting.md)
     * [パーセプトロンによるフィッティング](tensorflow_perceptron_fitting.md)
+    * [MNIST 畳込みニューラルネットワーク 準備編](tensorflow_cnn_mnist_01.md)
+    * [MNIST 畳込みニューラルネットワーク](tensorflow_cnn_mnist_02.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
