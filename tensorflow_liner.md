@@ -86,4 +86,4 @@ Step 80, cost 0.008017, weight 0.668663, bias -0.972031
 Step 90, cost 0.008017, weight 0.668670, bias -0.972035
 ```
 
-![](tensorflow_linear.png)
+![](/img/tensorflow_linear.png)
