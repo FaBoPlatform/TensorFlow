@@ -71,6 +71,7 @@
     * [MNIST 畳込みニューラルネットワーク 準備編](tensorflow_cnn_mnist_01.md)
     * [MNIST 畳込みニューラルネットワーク](tensorflow_cnn_mnist_02.md)
     * [MNIST 畳込みニューラルネットワーク 重み減衰](tensorflow_cnn_mnist_03.md)
+    * [MNIST 畳込みニューラルネットワーク TensorBoard編](tensorflow_cnn_mnist_04.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
