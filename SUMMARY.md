@@ -51,6 +51,7 @@
     * [キャスト](tensorflow_cast.md)
     * [Tensorの比較](tensorflow_comparison.md)
     * [Tensorの集約](tensorflow_pack.md)
+    * [L2正則化](tensorflow_l2_norm.md)
 * ニューラルネットワーク
     * [線形回帰](tensorflow_liner.md))
     * [ロジスティック回帰1](tensorflow_logistic_regression_last2.md)
@@ -69,6 +70,7 @@
     * [パーセプトロンによるフィッティング](tensorflow_perceptron_fitting.md)
     * [MNIST 畳込みニューラルネットワーク 準備編](tensorflow_cnn_mnist_01.md)
     * [MNIST 畳込みニューラルネットワーク](tensorflow_cnn_mnist_02.md)
+    * [MNIST 畳込みニューラルネットワーク 重み減衰](tensorflow_cnn_mnist_03.md)
 * TensorBoard
     * [TensorBoard](tensorboard.md)
 * Matplotlib
