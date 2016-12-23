@@ -213,7 +213,7 @@ $ wget https://github.com/FaBoPlatform/TensorFlow/raw/master/img/scenery.jpgg
 
 元画像
 
-![](/img/okukinu_scenery.jpg)
+![](/img/scenery.jpg)
 
 Deepdreamを適用した画像
 
