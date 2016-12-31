@@ -15,18 +15,33 @@ y_train = train_X * train_W + train_b
 
 ![](/img/linear001.png)
 
-```python
-#coding:utf-8                                                                                                                 
-import tensorflow as tf
-import numpy as np
+# 教師データ
 
-b_train = 0.7
-W_train = -0.1
-X_train = np.randmon.random((1,100))
-y_train = train_X * train_W + train_b
+教師データの分布を確認するために、matplotlibでグラフを表示してみる。
+
+```python
+# coding:utf-8
+import numpy as np
+import matplotlib.pyplot as plt
+
+b_train = -1
+W_train = 0.7
+X_train = np.linspace(0, 1.0, 100)
+y_train = X_train * W_train + b_train
+
+plt.figure(1)
+plt.plot(X_train, y_train, 'ro', label='Data')
+plt.plot(X_train, y_train, 'k-', label='Line')
+plt.show()
 ```
 
-## Sample
+![](/img/linear002.png)
+
+
+# Coding
+
+それでは、下記のコードで、収束を確認していく。
+
 
 ```python
 #coding:utf-8
@@ -64,7 +79,7 @@ init_op = tf.global_variables_initializer()
 sess.run(init_op)
 
 # トレーニング回数
-training_step = 7000
+training_step = 1000
 validation_step = 100
 
 # トレーニング
