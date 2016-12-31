@@ -2,6 +2,7 @@
 * [はじめに](README.md)
 * 開発環境
 	* [CloudMLの設定](cloudml.md)
+    * [Emacsの操作](emacs.md)
 * Numpy
     * [配列から行列を作る](numpy_arrmat.md)
     * [ゼロのはいった行列を作る](numpy_zerotensor.md)
@@ -53,7 +54,8 @@
     * [Tensorの集約](tensorflow_pack.md)
     * [L2正則化](tensorflow_l2_norm.md)
 * ニューラルネットワーク
-    * [線形回帰](tensorflow_liner.md))
+    * [線形回帰](tensorflow_liner01.md))
+    * [線形回帰 TensorBoard](tensorflow_liner02.md))
     * [ロジスティック回帰1](tensorflow_logistic_regression_last2.md)
     * [ロジスティック回帰2 準備編](tensorflow_logistic_regression_first.md)
     * [ロジスティック回帰2](tensorflow_logistic_regression_last.md)
