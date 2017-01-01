@@ -17,7 +17,7 @@ plt.plot(X_train, y_train, 'ro', label='Data')
 plt.show()
 ```
 
-![](/img/linear_kadai01.png)
+![](/img/linear_kadai001.png)
 
 正規分布で散らばった値の線形回帰のb,Wを求めるプログラムをTensorFlowで作成せよ　
 
@@ -37,6 +37,6 @@ plt.plot(X_train, y_train, 'k-', label='Line')
 plt.show()
 ```
 
-![](/img/linear_kadai02.png)
+![](/img/linear_kadai002.png)
 
 非線形に散らばった値の線形回帰のb,Wを求めるプログラムをTensorFlowで作成せよ　
