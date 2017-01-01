@@ -16,3 +16,20 @@
 ```
 
 ![](/img/linear_test_W001.png) ![](/img/linear_test_b001.png) ![](/img/linear_test_loss001.png)
+
+## AdamOptimizer
+
+```python
+
+	# Optimizer
+	train_op = tf.train.AdamOptimizer().minimize(loss)
+    ...
+
+    # トレーニング回数
+    training_step = 10000
+    validation_step = 10
+```
+
+![](/img/linear_test_W002.png) ![](/img/linear_test_b002.png) ![](/img/linear_test_loss002.png)
+
+
