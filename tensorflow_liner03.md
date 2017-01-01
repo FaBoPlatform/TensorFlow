@@ -17,7 +17,7 @@ with tf.Graph().as_default():
 
 	...
 
-	# TensorBoardのヒストグラム
+	# TensorBoardへの反映
 	W_graph = tf.summary.scalar("W_graph", W)
     b_graph = tf.summary.scalar("b_graph", b)
     y_graph = tf.summary.histogram("y_graph", y)
@@ -144,3 +144,31 @@ tensorboard --logdir=data/ --port=8080
 ![](/img/linear011.png)
 
 ![](/img/linear012.png)
+
+## 計測タイミングの調整
+
+グラフが直角になっているので、
+
+```python
+	# トレーニング回数
+	training_step = 1000
+	validation_step = 100
+```
+
+の設定を、validation_stepを10に変更し、10回に1回のペースで反映するようにする。
+
+```python
+	# トレーニング回数
+	training_step = 1000
+	validation_step = 10
+```
+
+dataフォルダに過去のデータが残るので
+
+```shell
+rm -rf data
+```
+
+でデータを削除後、実行し、起動中のTensorBoardをCtrl+Cで停止し、再度TensorBoardを実行して表示する。
+
+![](/img/linear013.png)
