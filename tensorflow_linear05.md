@@ -28,12 +28,11 @@ plt.show()
 import numpy as np
 import matplotlib.pyplot as plt
 
-X_train = np.linspace(0, 1.0, 100)
-y_train = X_train + 10 * np.sin(X_train)
+X_train = np.linspace(0, 100, 100)
+y_train = X_train + 10 * np.sin(X_train/10)
 
 plt.figure(1)
 plt.plot(X_train, y_train, 'ro', label='Data')
-plt.plot(X_train, y_train, 'k-', label='Line')
 plt.show()
 ```
 
