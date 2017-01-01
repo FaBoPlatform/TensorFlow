@@ -2,7 +2,7 @@
 
 ## 課題1
 
-```
+```python
 # coding:utf-8
 import numpy as np
 import matplotlib.pyplot as plt
@@ -23,7 +23,7 @@ plt.show()
 
 ## 課題2
 
-```
+```python
 # coding:utf-8
 import numpy as np
 import matplotlib.pyplot as plt
