@@ -1,14 +1,14 @@
-# 線形回帰 その1
+# 線形回帰
 
 線形な値の教師データから、TensorFlowのW(ウェイト)とb(バイアス)の収束を観察する。
 
 まず、教師データは、(x,y)座標は、`y = x * W + b`で定義する。
 
 ```
-b_train = 0.7
-W_train = -0.1
-X_train = np.randmon.random((1,100))
-y_train = train_X * train_W + train_b
+b_train = -1
+W_train = 0.7
+X_train = np.linspace(0, 1.0, 100)
+y_train = X_train * W_train + b_train
 ```
 
 この線形な値の教師データを用いて、同様のWとbにTensorFlowで収束する結果を観察する。つまりTensorFlowを用いて、Wとbを導き出す。

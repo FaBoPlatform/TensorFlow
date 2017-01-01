@@ -55,7 +55,8 @@
     * [L2正則化](tensorflow_l2_norm.md)
 * ニューラルネットワーク
     * [線形回帰](tensorflow_liner01.md))
-    * [線形回帰 TensorBoard](tensorflow_liner02.md))
+    * [線形回帰 TensorBoard1](tensorflow_liner02.md))
+    * [線形回帰 TensorBoard2](tensorflow_liner03.md))
     * [ロジスティック回帰1](tensorflow_logistic_regression_last2.md)
     * [ロジスティック回帰2 準備編](tensorflow_logistic_regression_first.md)
     * [ロジスティック回帰2](tensorflow_logistic_regression_last.md)
