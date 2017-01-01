@@ -15,7 +15,7 @@
     validation_step = 10
 ```
 
-![](/img/linear_test_W001.png) ![](/img/linear_test_b001.png) ![](/img/linear_test_loss001.png)
+![](/img/linear_test_w001.png) ![](/img/linear_test_b001.png) ![](/img/linear_test_loss001.png)
 
 ## AdamOptimizer
 
@@ -30,6 +30,6 @@
     validation_step = 10
 ```
 
-![](/img/linear_test_W002.png) ![](/img/linear_test_b002.png) ![](/img/linear_test_loss002.png)
+![](/img/linear_test_w002.png) ![](/img/linear_test_b002.png) ![](/img/linear_test_loss002.png)
 
 
