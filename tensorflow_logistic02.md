@@ -160,6 +160,8 @@ with tf.Graph().as_default():
 
 ```
 
+(注意)まだうまくいかない
+
 ## Coding
 
 ```python
@@ -277,15 +279,16 @@ with tf.Graph().as_default():
     _b = b.eval(sess)
     sess.close()
 
-with tf.Graph().as_default():
+g2 = tf.Graph()
+with g2.as_default():
     with tf.name_scope('input'):
         X_result = tf.placeholder("float", [None, 2], name="input")
     with tf.name_scope('output'):
         y_pred_result =  tf.nn.softmax(tf.matmul(X_result, _W) + _b)
-    
-        sess = tf.Session()
-        init = tf.global_variables_initializer()
-        sess.run(init)
-        tf.train.write_graph(tf.Graph().as_graph_def(), './', 'trained_graph.pb', as_text=False)
+    sess2 = tf.Session()
+    init_op2 = tf.global_variables_initializer()
+    sess2.run(init_op2)
+    tf.train.write_graph(g2.as_graph_def(), './', 'trained_graph.pb', as_text=False)
+    sess2.close()
 
 ```
