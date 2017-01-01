@@ -113,15 +113,15 @@ with tf.Graph().as_default():
         y_pred =  tf.nn.softmax(tf.matmul(X, W) + b)
 
     # 損失関数
-    with tf.name_scope('loss'):
-        loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(y_pred, STATE))
+    with tf.name_scope('cost'):
+        cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(y_pred, STATE))
 
     # トレーニング
     learning_rate = 0.01
-    train_op = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss)
+    train_op = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost)
 
     # 精度の計算
-    with tf.name_scope('correct_pred'):
+    with tf.name_scope('accuracy'):
         correct_pred = tf.equal(tf.argmax(y_pred,1), tf.argmax(STATE,1))
         accuracy_op = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
@@ -132,7 +132,7 @@ with tf.Graph().as_default():
     W_graph = tf.summary.histogram("W_graph", W)
     b_graph = tf.summary.histogram("b_graph", b)
     y_graph = tf.summary.histogram("y_graph", y)
-    loss_graph = tf.summary.scalar("loss_graph", loss)
+    cost_graph = tf.summary.scalar("cost_graph", cost)
     
     # Summary                    
     summary_writer = tf.summary.FileWriter(LOGDIR, sess.graph)
@@ -151,8 +151,8 @@ with tf.Graph().as_default():
         sess.run(train_op, feed_dict={X: VIRUS, y: STATE})
 
         if step % validation_step == 0:
-            accuracy_output,loss_output = sess.run([accuracy_op,loss], feed_dict={X: VIRUS, y: STATE})
-            print "step %d, loss %f, accuracy %f" % (step,loss_output,accuracy_output)
+            accuracy_output,cost_output = sess.run([accuracy_op,cost], feed_dict={X: VIRUS, y: STATE})
+            print "step %d, cost %f, accuracy %f" % (step,cost_output,accuracy_output)
 
             # TensorBoardにも反映
             summary_str = sess.run(summary_op, feed_dict={X: VIRUS, y: STATE})
