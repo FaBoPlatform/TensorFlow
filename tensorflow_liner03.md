@@ -1,8 +1,7 @@
-# 線形回帰 TensorBoard1
+# 線形回帰 TensorBoard2
 
-## ニューラルネットワークのグラフ化
+## 経過数値のグラフ化
 
-まず最初に、ニューラルネットワークのグラフ化をTensorBoardを用いておこないます。ニューラルネットワークのグラフ化には、`tf.Graph()`を用います。Dataの保存先と、グラフ化した箇所を`with tf.Graph().as_default():`で囲い、`tf.summary.FileWriter()`で保存先フォルダを指定し、最後に`summary_writer.flush()`で書き込みます。
 
 ```pyhton
 
@@ -18,15 +17,33 @@ with tf.Graph().as_default():
 
 	...
 
-	# セッション
-	sess = tf.Session()
-
-	# Summary
-	summary_writer = tf.summary.FileWriter(LOGDIR, sess.graph)
+	# TensorBoardのヒストグラム
+	W_graph = tf.summary.scalar("W_graph", W)
+    b_graph = tf.summary.scalar("b_graph", b)
+    y_graph = tf.summary.histogram("y_graph", y)
+	loss_graph = tf.summary.scalar("loss_graph", loss)
 
 	...
 
-	summary_writer.flush()	
+	# Summary
+	summary_writer = tf.summary.FileWriter(LOGDIR, sess.graph)
+	summary_op = tf.summary.merge_all() 
+
+	...
+
+	# トレーニング
+	for step in range(training_step):
+    	
+    	...
+
+    	# 途中経過表示
+    	if step % validation_step == 0:
+        	
+        	...
+
+        	# TensorBoardにも反映
+        	summary_str = sess.run(summary_op, feed_dict={X:X_train, y:y_train})                         
+            summary_writer.add_summary(summary_str, step)
 
 ```
 
@@ -59,10 +76,18 @@ with tf.Graph().as_default():
 	b = tf.Variable(np.random.randn(), name = "bias")
 
 	# 線形回帰のモデル
-	y_pred = tf.add(tf.mul(X, W), b)
+	with tf.name_scope('foward'):
+		y_pred = tf.add(tf.mul(X, W), b)
 
 	# 損失関数
-	loss = tf.reduce_mean(tf.pow(y_pred - y, 2))
+	with tf.name_scope('loss'):
+		loss = tf.reduce_mean(tf.pow(y_pred - y, 2))
+
+	# TensorBoardへ反映する手続き
+	W_graph = tf.summary.scalar("W_graph", W)
+    b_graph = tf.summary.scalar("b_graph", b)
+    y_graph = tf.summary.histogram("y_graph", y)
+	loss_graph = tf.summary.scalar("loss_graph", loss)
 
 	# Optimizer
 	# 勾配降下法
@@ -74,6 +99,7 @@ with tf.Graph().as_default():
 
 	# Summary
 	summary_writer = tf.summary.FileWriter(LOGDIR, sess.graph)
+	summary_op = tf.summary.merge_all() 
 
 	# 変数の初期化
 	init_op = tf.global_variables_initializer()
@@ -94,50 +120,14 @@ with tf.Graph().as_default():
         	b_output = sess.run(b)
         	print "Step %i, cost %f, weight %f, bias %f" % (step, loss_output, W_output, b_output)
 
+        	# TensorBoardにも反映
+        	summary_str = sess.run(summary_op, feed_dict={X:X_train, y:y_train})                         
+            summary_writer.add_summary(summary_str, step)    
+        	
     summary_writer.flush()
 ```
 
 ## TensorBoardの起動
-
-Cloud Shellのタブ新規に立ち上げます。
-
-![](/img/linear003.png)
-
-作業フォルダに移動し、dataフォルダが存在しているのを確認した上で
-
-```
-tensorboard --logdir=data/ --port=8080 
-```
-
-を実行します。
-
-![](/img/linear004.png)
-
-ウェブでプレビュー>ボード上でプレビューを選択し、ブラウザを起動します。
-
-![](/img/linear005.png)
-
-ブラウザのGraphを選択します。
-
-![](/img/linear006.png)
-
-アルゴリズムが表示されます。
-
-![](/img/linear007.png)
-
-## グラフを見やすくする
-
-活性化関数と損失関数の箇所を`with tf.name_scope('名前'):`で囲います。こうする事で、Graphの箇所が囲われて見やすくなります。
-
-```python
-	#活性化関数
-	with tf.name_scope('forward'):
-        y_pred = tf.add(tf.mul(X, W), b)
-    
-    # 損失関数
-    with tf.name_scope('loss'):
-        loss = tf.reduce_mean(tf.pow(y_pred - y, 2))
-```
 
 TensorBoardに反映させるには、本サンプルを実行し、dataフォルダのデータが更新されたのちに、Ctrl+CでTensorBoardのプロセスを終了し、再度
 
@@ -149,13 +139,8 @@ tensorboard --logdir=data/ --port=8080
 
 ![](/img/linear005.png)
 
-ブラウザのGraphを選択します。
+ブラウザのSCALARとHISTGRAMSを選択します。
 
-![](/img/linear006.png)
+![](/img/linear011.png)
 
-
-![](/img/linear008.png)
-
-![](/img/linear009.png)
-
-![](/img/linear010.png)
+![](/img/linear012.png)
