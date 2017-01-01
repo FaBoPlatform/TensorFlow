@@ -59,7 +59,7 @@
     * [線形回帰 TensorBoard2](tensorflow_linear03.md))
     * [線形回帰 解析](tensorflow_linear04.md))
     * [線形回帰 課題](tensorflow_linear05.md))
-    * [ロジスティック回帰1](tensorflow_logistic_regression_last2.md)
+    * [ロジスティック回帰1](tensorflow_logistic01.md)
     * [ロジスティック回帰2 準備編](tensorflow_logistic_regression_first.md)
     * [ロジスティック回帰2](tensorflow_logistic_regression_last.md)
     * [3クラス分類 準備編](tensorflow_three_classification_first.md)
