@@ -5,18 +5,18 @@
 ウィルスの感染分布を作成します。赤が感染済み、青が非感染で正規部分布をx,y座標ともに2づつずらして分布を分散させます。
 
 ```python
-import tensorflow as tf¬
-import numpy as np¬
-import matplotlib.pyplot as plt¬
-¬
-x_positive = np.random.randn(500,1) + 2¬
-y_positive = np.random.randn(500,1) + 2¬
-x_negative = np.random.randn(500,1) - 2¬
-y_negative = np.random.randn(500,1) - 2¬
-¬
-plt.figure(1)¬
-plt.plot(x_positive, y_positive, 'ro', label='Data')¬
-plt.plot(x_negative, y_negative, 'bo', label='Data')¬
+import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
+
+x_positive = np.random.randn(500,1) + 2
+y_positive = np.random.randn(500,1) + 2
+x_negative = np.random.randn(500,1) - 2
+y_negative = np.random.randn(500,1) - 2
+
+plt.figure(1)
+plt.plot(x_positive, y_positive, 'ro', label='Data')
+plt.plot(x_negative, y_negative, 'bo', label='Data')
 plt.show()
 ```
 
