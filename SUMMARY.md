@@ -55,16 +55,17 @@
     * [Tensorの比較](tensorflow_comparison.md)
     * [Tensorの集約](tensorflow_pack.md)
     * [L2正則化](tensorflow_l2_norm.md)
-* ニューラルネットワーク
+* 線形回帰
     * [線形回帰](tensorflow_linear01.md))
     * [線形回帰 TensorBoard1](tensorflow_linear02.md))
     * [線形回帰 TensorBoard2](tensorflow_linear03.md))
     * [線形回帰 解析](tensorflow_linear04.md))
     * [線形回帰 課題](tensorflow_linear05.md))
-    * [ロジスティック回帰 ウィルス分布](tensorflow_logistic01.md)
-    * [ロジスティック回帰 学習済みデータ](tensorflow_logistic02.md)
-    * [ロジスティック回帰 ガン評価 準備編](tensorflow_logistic_regression_first.md)
-    * [ロジスティック回帰 ガン評価](tensorflow_logistic_regression_last.md)
+* ロジスティック回帰
+    * [ウィルス分布](tensorflow_logistic01.md)
+    * [学習済みデータ](tensorflow_logistic02.md)
+    * [ガン評価 準備編](tensorflow_logistic_regression_first.md)
+    * [ガン評価](tensorflow_logistic_regression_last.md)
     * [3クラス分類 準備編](tensorflow_three_classification_first.md)
     * [3クラス分類](tensorflow_three_classification_last.md)
     * [3クラス分類 Tensorboard編](tensorflow_three_classification_tensorboard.md)
