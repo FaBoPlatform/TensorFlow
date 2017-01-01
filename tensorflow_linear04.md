@@ -1,4 +1,4 @@
-# 線形回帰 課題
+# 線形回帰 解析
 
 ## GradientDescentOptimizerのlearning_rateを変えてみる
 
