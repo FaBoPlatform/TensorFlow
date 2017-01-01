@@ -62,7 +62,7 @@
 
 ![](/img/linear_test_w004.png) ![](/img/linear_test_b004.png) ![](/img/linear_test_loss004.png)
 
-## AdagradOptimizer
+## MomentumOptimizer
 
 ```python
 
