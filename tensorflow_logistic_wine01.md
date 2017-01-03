@@ -11,6 +11,9 @@ sv > wine.cvs
 
 ![](/img/wine02.png)
 
+Labelの1-10の評価は下記のようにベクトル化する
+
+![](/img/wine03.png)
 
 ```python
 # coding:utf-8                                                                                                                
