@@ -1,7 +1,6 @@
 # ワイン評価
 
-> curl http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.c
-sv > wine.cvs
+> curl http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv > wine.cvs
 
 データ・セットのフォーマットは、下記の通り。
 
