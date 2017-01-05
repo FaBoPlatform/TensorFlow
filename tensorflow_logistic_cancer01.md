@@ -1,4 +1,4 @@
-# ロジスティック回帰 準備編
+# ガン評価 準備
 
 breast-cancer-wisconsinデータセットを使い、TensorFlowによるロジスティック回帰を行う。breast-cancer-wisconsinデータセットはがん細胞の情報とがんの悪性か良性かをまとめたデータセットである。
 
@@ -7,6 +7,10 @@ breast-cancer-wisconsinデータセットを使い、TensorFlowによるロジ�
 ```
 $ curl -O https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/breast-cancer-wisconsin.data
 ```
+
+![](/img/cancer01.png)
+
+![](/img/canger02.png)
 
 Sample
 

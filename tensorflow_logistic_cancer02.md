@@ -1,4 +1,4 @@
-# ロジスティック回帰
+# ガン評価 学習
 
 breast-cancer-wisconsinデータセットを使い、TensorFlowによるロジスティック回帰を行う。
 

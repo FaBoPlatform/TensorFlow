@@ -64,8 +64,8 @@
 * ロジスティック回帰
     * [ウィルス分布](tensorflow_logistic01.md)
     * [学習済みデータ](tensorflow_logistic02.md)
-    * [ガン評価 準備編](tensorflow_logistic_regression_first.md)
-    * [ガン評価 学習](tensorflow_logistic_regression_last.md)
+    * [ガン評価 準備編](tensorflow_logistic_cancer01.md)
+    * [ガン評価 学習](tensorflow_logistic_cancer02.md)
     * [ワイン評価 準備編](tensorflow_logistic_wine01.md)
     * [ワイン評価 学習](tensorflow_logistic_wine02.md)
     * [3クラス分類 準備編](tensorflow_three_classification_first.md)
