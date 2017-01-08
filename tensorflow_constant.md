@@ -29,7 +29,8 @@ print result_a
 結果
 ```shell
 Tensor("Const_2:0", shape=(2, 3), dtype=float32)
-[1 2 3 4 5 6]
+[[1 2 3],
+[4 5 6]]
 ```
 
 ## Sample2
