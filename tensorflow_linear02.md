@@ -76,7 +76,7 @@ with tf.Graph().as_default():
 	summary_writer = tf.summary.FileWriter(LOGDIR, sess.graph)
 
 	# 変数の初期化
-	init_op = tf.global_variables_initializer()
+	init_op = tf.initialize_all_variables()
 	sess.run(init_op)
 
 	# トレーニング回数

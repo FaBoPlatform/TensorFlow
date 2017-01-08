@@ -75,7 +75,7 @@ train_op = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss)
 sess = tf.Session()
 
 # 変数の初期化
-init_op = tf.global_variables_initializer()
+init_op = tf.initialize_all_variables()
 sess.run(init_op)
 
 # トレーニング回数
@@ -156,7 +156,7 @@ sess = tf.Session()
 
 ```python
 # 変数の初期化
-init_op = tf.global_variables_initializer()
+init_op = tf.initialize_all_variables()
 sess.run(init_op)
 ```
 

@@ -102,7 +102,7 @@ with tf.Graph().as_default():
 	summary_op = tf.summary.merge_all() 
 
 	# 変数の初期化
-	init_op = tf.global_variables_initializer()
+	init_op = tf.initialize_all_variables()
 	sess.run(init_op)
 
 	# トレーニング回数
