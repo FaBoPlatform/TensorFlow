@@ -26,7 +26,9 @@ np.savetxt('foo.csv', x, delimiter=',')
 1.3,0.83,8.8
 ```
 
-`piyo.tsv` :
+tsvのサンプルはコピーだと、Tabが無効になるので、Tabを自分でうつようにする
+
+`piyo.tsv` : 
 
 ```
 0.2	3.398	592

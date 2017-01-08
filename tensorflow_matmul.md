@@ -34,7 +34,7 @@ mat1 = np.arange(1,5).reshape(2,2)
 mat2 = np.arange(11,15).reshape(2,2)
 
 # 積のオペレーション
-mul_op1 = tf.mul(x, y, name="mul_op1")
+mul_op1 = tf.matmul(x, y, name="mul_op1")
 
 # セッション
 sess = tf.Session()
