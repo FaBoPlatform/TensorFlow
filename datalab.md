@@ -18,6 +18,7 @@ $ mkdir -p ./datalab
 $ docker run -it -p "127.0.0.1:8081:8080" -v "${HOME}/datalab:/content" \
  -e "PROJECT_ID=プロジェクトID"  \
 gcr.io/cloud-datalab/datalab:local
+```
 
 Browserで、localhost:8081に接続します。
 
