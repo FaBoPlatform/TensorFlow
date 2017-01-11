@@ -32,3 +32,15 @@ Browserで、localhost:8081に接続します。
 ![](/img/datalab005.png)
 
 ![](/img/datalab006.png)
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+%matplotlib inline
+
+x = np.arange(0, 10, 0.1)
+y = np.sin(x)
+
+plt.plot(x,y)
+plt.show()
+```
