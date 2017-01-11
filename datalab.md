@@ -29,3 +29,6 @@ Browserで、localhost:8081に接続します。
 
 ![](/img/datalab004.png)
 
+![](/img/datalab005.png)
+
+![](/img/datalab006.png)
