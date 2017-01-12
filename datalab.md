@@ -6,6 +6,7 @@ Google Cloud DataLabは、データを探索、視覚化、分析、変換する
 
 Cloud MLでProject IDを取得します。
 
+[CloudMLで実行]
 ```shell
 $ gcloud projects list
 ```
@@ -13,6 +14,7 @@ $ gcloud projects list
 取得したプロジェクト名と対応付されたDataLabをLocalマシン上に起動します。
 下記はOS X用。Windows用のDocker設定は、[https://cloud.google.com/datalab/docs/quickstarts/quickstart-local](https://cloud.google.com/datalab/docs/quickstarts/quickstart-local)を参照。
 
+[OS Xで実行]
 ```shell
 $ cd ~
 $ mkdir -p ./datalab
