@@ -10,7 +10,8 @@ Cloud MLでProject IDを取得します。
 $ gcloud projects list
 ```
 
-取得したプロジェクト名と対応付されたDataLabを起動します。
+取得したプロジェクト名と対応付されたDataLabをLocalマシン上に起動します。
+下記はOS X用。Windows用のDocker設定は、[https://cloud.google.com/datalab/docs/quickstarts/quickstart-local](https://cloud.google.com/datalab/docs/quickstarts/quickstart-local)を参照。
 
 ```shell
 $ cd ~
