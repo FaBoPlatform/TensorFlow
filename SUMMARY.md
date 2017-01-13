@@ -6,6 +6,7 @@
     * [CloudMLのEmacsの操作](emacs.md)
     * [Local環境の整備](local.md)
     * [Datalabの環境整備](datalab.md)
+    * [DatalabのTensorFlowをUpdate](datalab_update.md)
 * Numpy
     * [配列から行列を作る](numpy_arrmat.md)
     * [ゼロのはいった行列を作る](numpy_zerotensor.md)
