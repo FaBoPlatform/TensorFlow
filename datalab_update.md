@@ -26,7 +26,7 @@ $ pip install --ignore-installed tensorflow
 $ pip list
 ```
 でtensorflowのバージョンを確認し、`tensorflow (0.12.1)`　が見つかれば、
-そのshell上で`exit`ではなく、Ctrl+P Ctrl+Pでdetach（動かしたまま抜ける）する  
+そのshell上で`exit`ではなく、Ctrl+Q Ctrl+Pでdetach（動かしたまま抜ける）する  
 
 ```shell
 $ docker ps
@@ -45,7 +45,7 @@ $ docker images
 ```
 で好きな名前をつけたimageが作成されていることを確認する
 
-Ctrl+P Ctrl+Pでdetachしたままのコンテナを終了して、(`$ docker stop CONTAINER_ID`で終了できる)
+Ctrl+Q Ctrl+Pでdetachしたままのコンテナを終了して、(`$ docker stop CONTAINER_ID`で終了できる)
 ```shell
 $ docker run -it -p "127.0.0.1:8081:8080" -v "${HOME}/datalab:/content" testimage
 ```
