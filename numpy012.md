@@ -19,6 +19,8 @@ print y
 np.savetxt('foo.csv', x, delimiter=',')
 ```
 
+Datalabでは、現在、Hello World.ipynbを編集中なら、~/datalab/datalab/docsの中に作成する。
+
 `hoge.csv` : 
 
 ```

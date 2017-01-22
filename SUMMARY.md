@@ -47,8 +47,6 @@
     * [乱数のシード](tensorflow_random.md)
     * [Tensorの型・次元数・ランク・サイズ](tensorflow_type.md)
     * [セッションの保存・読み込み](tensorflow_session.md)
-    * [平均二乗誤差](tensorflow_mse.md)
-    * [交差エントロピーコスト関数](tensorflow_cross_entropy.md)
     * [Tensorのクリッピング](tensorflow_clip_by_value.md)
     * [コマンドライン引数の処理](tensorflow_flags.md)
     * [Tensorの最小値・最大値](tensorflow_argmin.md)
@@ -59,12 +57,14 @@
     * [Tensorの集約](tensorflow_pack.md)
     * [L2正則化](tensorflow_l2_norm.md)
 * 線形回帰
+    * [平均二乗誤差](tensorflow_mse.md)
     * [線形回帰](tensorflow_linear01.md))
     * [線形回帰 TensorBoard1](tensorflow_linear02.md))
     * [線形回帰 TensorBoard2](tensorflow_linear03.md))
     * [線形回帰 解析](tensorflow_linear04.md))
     * [線形回帰 課題](tensorflow_linear05.md))
 * ロジスティック回帰
+    * [交差エントロピーコスト関数](tensorflow_cross_entropy.md)
     * [ウィルス分布](tensorflow_logistic01.md)
     * [学習済みデータ](tensorflow_logistic02.md)
     * [ガン評価 準備編](tensorflow_logistic_cancer01.md)
