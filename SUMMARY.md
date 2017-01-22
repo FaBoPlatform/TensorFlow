@@ -76,6 +76,7 @@
     * [3クラス分類 Tensorboard編](tensorflow_three_classification_tensorboard.md)
     * [モーメンタム](tensorflow_iris_momentum.md)
     * [Adam](tensorflow_iris_adam.md)
+* MNIST
     * [MNISTデータセットのダウンロード](tensorflow_mnist_download.md)
     * [MNISTデータセットの読み込み](tensorflow_mnist_load.md)
     * [MNISTデータセットのバッチ読み込み](tensorflow_mnist_batch.md)
