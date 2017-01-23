@@ -16,7 +16,7 @@ z = tf.constant(z_data, dtype=tf.float32)
 
 # 比較オペレーション
 equal_op = tf.equal(x, y)
-not_equal_op = tf.equal(x, y)
+not_equal_op = tf.not_equal(x, y)
 less_op = tf.less(x, z)
 greater_op = tf.greater(x, z)
 

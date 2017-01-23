@@ -15,9 +15,9 @@ z_data = np.eye(2)
 z = tf.constant(z_data)
 
 # 縦方向にTensorをまとめる
-pack_op = tf.pack([x,y,z])
+stack_op = tf.stack([x,y,z])
 # 横方向にTensorをまとめる
-pack_op2 = tf.pack([x,y,z], axis=1)
+stack_op2 = tf.stack([x,y,z], axis=1)
 
 with tf.Session() as sess:
     rx, ry, rz = sess.run([x,y,z])
@@ -25,10 +25,10 @@ with tf.Session() as sess:
     print ry
     print rz
 
-    p, ps = sess.run([pack_op, tf.shape(pack_op)])
+    p, ps = sess.run([stack_op, tf.shape(stack_op)])
     print p
     print ps
-    p, ps = sess.run([pack_op2, tf.shape(pack_op2)])
+    p, ps = sess.run([stack_op2, tf.shape(stack_op2)])
     print p
     print ps
 ```
