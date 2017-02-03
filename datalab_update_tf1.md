@@ -91,7 +91,7 @@ $ docker stop 19627749df78
 ```shell
 $ cd ~
 $ mkdir -p ./datalab
-$ docker run -it -p 127.0.0.1:8081:8080 -p 6001:6001 -v "${HOME}/datalab:/content" \
+$ docker run -it -p 127.0.0.1:8081:8080 -p 6006:6006 -v "${HOME}/datalab:/content" \
  -e "PROJECT_ID=プロジェクトID"  \
 datalab_tf1
 ```
@@ -100,7 +100,7 @@ datalab_tf1
 ```shell
 $ cd ~
 $ mkdir -p ./datalab
-$ docker run -it -p 127.0.0.1:8081:8080 -p 6001:6001 -v "${HOME}/datalab:/content" \
+$ docker run -it -p 127.0.0.1:8081:8080 -p 6006:6006 -v "${HOME}/datalab:/content" \
 datalab_tf1
 ```
 ## Consoleへログイン

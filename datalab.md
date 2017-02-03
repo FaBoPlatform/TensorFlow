@@ -19,7 +19,7 @@ $ gcloud projects list
 ```shell
 $ cd ~
 $ mkdir -p ./datalab
-$ docker run -it -p 127.0.0.1:8081:8080 -p 6001:6001 -v "${HOME}/datalab:/content" \
+$ docker run -it -p 127.0.0.1:8081:8080 -p 6006:6006 -v "${HOME}/datalab:/content" \
  -e "PROJECT_ID=プロジェクトID"  \
 gcr.io/cloud-datalab/datalab:local
 ```
@@ -28,9 +28,15 @@ gcr.io/cloud-datalab/datalab:local
 ```shell
 $ cd ~
 $ mkdir -p ./datalab
-$ docker run -it -p 127.0.0.1:8081:8080 -p 6001:6001 -v "${HOME}/datalab:/content" \
+$ docker run -it -p 127.0.0.1:8081:8080 -p 6006:6006 -v "${HOME}/datalab:/content" \
 gcr.io/cloud-datalab/datalab:local
 ```
+
+|引数|意味|
+|:--|:--|
+|-p 127.0.0.1:8081:8080 | Datalabに8081ポートでアクセスできるようにする|
+|-p 6006:600-v "${HOME}/datalab:/content"|OSX上の${HOME}/datalabフォルダとDocker内の/contantを連携する|
+|gcr.io/cloud-datalab/datalab:local|起動するDocker Image|
 
 ## Datalabにアクセス
 
