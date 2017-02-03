@@ -73,7 +73,7 @@ https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#matmul
 
 # Tensor(行列)の要素の積
 
-## tf.mul
+## tf.multiply
 
 > tf.multiply(mat_a, mat_b, name=None)
 
