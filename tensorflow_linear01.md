@@ -117,3 +117,6 @@ with tf.Session() as sess:
 
 ![](/img/linear03.png)
 
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/linear_regression.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/linear_regression.ipynb)
