@@ -56,6 +56,27 @@ stddevに10指定し、平均値が10に近づく事を確認
 
 * [切断正規分布の解説](https://ja.wikipedia.org/wiki/%E5%88%87%E6%96%AD%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83)
 
+# 乱数のシード
+
+学習結果および計算結果に再現性を持たせるために使う。
+
+`tf.random_normal(shape, mean=0.0, stddev=1.0, dtype=tf.float32, seed=None, name=None)`
+
+* `shape` Tensorのサイズ
+* `mean` 平均
+* `stddev` 標準偏差
+* `dtype` 値の型
+
+デフォルトでは`mean=0.0, stddev=1.0`となっており、標準正規分布になっている。
+
+## Sample
+
+![](/img/normal05.png)
+
+## 参考
+
+* https://www.tensorflow.org/versions/r1.0/api_docs/python/constant_op.html#random_normal
+
 ## Notebook
 
 [https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/normal.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/normal.ipynb)
