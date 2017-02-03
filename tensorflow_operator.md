@@ -43,7 +43,7 @@ https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#add
 
 ![](/img/op02.png)
 
-# 参考
+## 参考
 
 https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#sub
 
@@ -67,7 +67,7 @@ https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#sub
 
 ![](/img/op03.png)
 
-# 参考
+## 参考
 
 https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#matmul
 
@@ -91,8 +91,11 @@ https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#matmul
 
 ![](/img/op04.png)
 
-# 参考
+## 参考
 
 https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#mul
 
+## Notebooks
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/operator.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/operator.ipynb)
 
