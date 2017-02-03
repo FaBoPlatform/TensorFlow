@@ -35,3 +35,6 @@
 
 * [TensorFlow API](https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#reduce_prod)
 
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/sumprod.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/sumprod.ipynb)
