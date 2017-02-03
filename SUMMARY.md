@@ -34,10 +34,7 @@
 * TensorFlow
     * [HelloWorld](tensorflow_hello.md)
     * [定数/変数/プレースフォルダ](tensorflow_placeholder.md)
-    * [Tensorの和](tensorflow_add.md)
-    * [Tensorの差](tensorflow_sub.md)
-    * [Tensorの積](tensorflow_matmul.md)
-    * [Tensorの要素の積](tensorflow_mul.md)
+    * [演算子](tensorflow_operator.md)
     * [Tensorの総和](tensorflow_sum.md)
     * [Tensorの総積](tensorflow_prod.md)
     * [正規分布のTensorを作る](tensorflow_normal.md)
