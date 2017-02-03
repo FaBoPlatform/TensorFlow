@@ -4,39 +4,14 @@
 
 Trueとなっているインデックスを返す
 
-サンプルコード :
+## Sample
 
-```python
-# coding:utf-8
-from random import choice
-import numpy as np
-import tensorflow as tf
+![](/img/bool01.png)
 
-# TrueかFalseを持つ4x4行列
-input_data = np.array([choice([True,False]) for _ in range(16)]).reshape(4, 4)
-where_op = tf.where(input_data)
+## 参考
 
-with tf.Session() as sess:
-    print input_data
-    # TrueとなっているTensorのインデックスを返す
-    w = sess.run(where_op)
-    print w
-```
+* https://www.tensorflow.org/versions/r1.0/api_docs/python/math_ops/sequence_comparison_and_indexing#where
 
-実行結果 :
+## Notebook
 
-```
-[[ True  True False False]
- [ True False  True False]
- [ True  True  True False]
- [False  True False  True]]
-[[0 0]
- [0 1]
- [1 0]
- [1 2]
- [2 0]
- [2 1]
- [2 2]
- [3 1]
- [3 3]]
-```
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/bool.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/bool.ipynb)

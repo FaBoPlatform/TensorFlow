@@ -52,8 +52,11 @@ stddevに10指定し、平均値が10に近づく事を確認
 
 ![](/img/normal04.png)
 
-
-
 ## 参考
 
 * [切断正規分布の解説](https://ja.wikipedia.org/wiki/%E5%88%87%E6%96%AD%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83)
+
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/normal.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/normal.ipynb)
+
