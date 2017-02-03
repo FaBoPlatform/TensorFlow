@@ -33,13 +33,14 @@
     * [次元数の増加](numpy_newaxis.md)
 * TensorFlow
     * [HelloWorld](tensorflow_hello.md)
-    * [定数/変数/プレースフォルダ](tensorflow_placeholder.md)
+    * [定数・変数・プレースフォルダ](tensorflow_placeholder.md)
+    * [型・次元数・ランク・サイズ](tensorflow_type.md)
     * [演算子](tensorflow_operator.md)
-    * [総和/総積](tensorflow_sum.md)
+    * [総和・総積](tensorflow_sum.md)
     * [最小値・最大値](tensorflow_argmin.md)
+    
     * [正規分布のTensorを作る](tensorflow_normal.md)
     * [乱数のシード](tensorflow_random.md)
-    * [Tensorの型・次元数・ランク・サイズ](tensorflow_type.md)
     * [セッションの保存・読み込み](tensorflow_session.md)
     * [Tensorのクリッピング](tensorflow_clip_by_value.md)
     * [コマンドライン引数の処理](tensorflow_flags.md)

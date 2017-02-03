@@ -21,7 +21,7 @@
 
 ## 参考
 
-https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#add
+https://www.tensorflow.org/versions/r1.0/api_docs/python/math_ops.html#add
 
 # Tensor(行列)の差
 
@@ -45,7 +45,7 @@ https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#add
 
 ## 参考
 
-https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#sub
+https://www.tensorflow.org/versions/r1.0/api_docs/python/math_ops.html#sub
 
 # Tensor(行列)の積
 
@@ -69,7 +69,7 @@ https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#sub
 
 ## 参考
 
-https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#matmul
+https://www.tensorflow.org/versions/r1.0/api_docs/python/math_ops.html#matmul
 
 # Tensor(行列)の要素の積
 
@@ -93,7 +93,7 @@ https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#matmul
 
 ## 参考
 
-https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#mul
+https://www.tensorflow.org/versions/r1.0/api_docs/python/math_ops/arithmetic_operators#multiply
 
 ## Notebooks
 

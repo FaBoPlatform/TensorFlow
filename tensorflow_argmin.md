@@ -22,7 +22,8 @@
 
 ## 参考
 
-* [TensorFlow API]()
+* https://www.tensorflow.org/versions/r1.0/api_docs/python/math_ops/sequence_comparison_and_indexing#argmin
+* https://www.tensorflow.org/versions/r1.0/api_docs/python/math_ops/sequence_comparison_and_indexing#argmax
 
 ## Notebook
 
