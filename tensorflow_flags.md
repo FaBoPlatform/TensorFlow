@@ -2,7 +2,7 @@
 
 `tf.app.flags`はコマンドライン引数を処理するための**Google commandline flags**のラッパーモジュールで、データセットのパス指定やデバッグ等のユーティリティに用いられる。
 
-サンプルコード :
+## Sample
 
 ```python
 # coding:utf-8

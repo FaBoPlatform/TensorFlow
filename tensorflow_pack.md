@@ -8,7 +8,7 @@
 
 ## 参考
 
-* [TensorFlow API](https://www.tensorflow.org/api_docs/python/array_ops/slicing_and_joining)
+* https://www.tensorflow.org/api_docs/python/array_ops/slicing_and_joining
 
 ## Notebook
 
