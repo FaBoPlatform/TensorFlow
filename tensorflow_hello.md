@@ -1,12 +1,16 @@
 
 # HelloWorld
 
-## Sample
+## Hello World
 
-```python
-import tensorflow as tf
+Hello World
 
-hello = tf.constant('Hello')
-sess = tf.Session()
-print sess.run(hello)
-```
+![](/img/hello01.png)
+
+Versionを表示する
+
+![](/img/hello02.png)
+
+## Notebook
+
+[/notebooks/HelloWorld.ipynb](Notebook)
