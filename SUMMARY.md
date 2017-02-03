@@ -5,9 +5,9 @@
     * [TensorFlowのVersion up](versionup.md)
     * [CloudMLのEmacsの操作](emacs.md)
     * [Local環境の整備](local.md)
+* 開発環境(Datalab編)
     * [Datalabの環境整備](datalab.md)
-    * [DatalabのTensorFlowをUpdate](datalab_update.md)
-    * [DatalabのTFを1.0.0aにUpdate](datalab_update_tf1.md)
+    * [DatalabのTFを1.0.0にUpdate](datalab_update_tf1.md)
 * Numpy
     * [配列から行列を作る](numpy_arrmat.md)
     * [ゼロのはいった行列を作る](numpy_zerotensor.md)

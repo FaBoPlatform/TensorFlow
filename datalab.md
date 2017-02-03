@@ -1,31 +1,44 @@
 # Google Cloud DataLab
 
-Google Cloud DataLabは、データを探索、視覚化、分析、変換するための、生産性の高いインタラクティブな統合ツールです。
+Google Cloud DataLabは、データを探索、視覚化、分析、変換するための、生産性の高いインタラクティブな統合ツールです。Google Cloud Datalabは、Dockerで起動、GCPのインスタンスで起動が可能である。今回は、ローカル環境でDockerで起動していく。
 
-本チュートリアルでは、Google Cloud DataLabを使って説明していきます。
+## Cloud SDKを経由してGCPのプロジェクトと連携
 
-Cloud MLでProject IDを取得します。
+Datalabは、Cloud SDKを経由して、GCPのプロジェクトと連携が可能になる。もちろん、連携しないで起動する事も可能である。GCPの設定時に、プロジェクトを作成した場合は、そのプロジェクトと連携できるので、GCPのプロジェクトIDを、Cloud Shellを起動し、コマンドで取得する。
 
 [CloudMLで実行]
 ```shell
 $ gcloud projects list
 ```
 
-取得したプロジェクト名と対応付されたDataLabをLocalマシン上に起動します。
+## Datalabの起動
+
 下記はOS X用。Windows用のDocker設定は、[https://cloud.google.com/datalab/docs/quickstarts/quickstart-local](https://cloud.google.com/datalab/docs/quickstarts/quickstart-local)を参照。
 
-[OS Xで実行]
+[OS Xで実行:プロジェクトIDを指定]
 ```shell
 $ cd ~
 $ mkdir -p ./datalab
-$ docker run -it -p "127.0.0.1:8081:8080" -v "${HOME}/datalab:/content" \
+$ docker run -it -p 127.0.0.1:8081:8080 -p 6001:6001 -v "${HOME}/datalab:/content" \
  -e "PROJECT_ID=プロジェクトID"  \
 gcr.io/cloud-datalab/datalab:local
 ```
 
+[OS Xで実行:プロジェクトIDを未指定]
+```shell
+$ cd ~
+$ mkdir -p ./datalab
+$ docker run -it -p 127.0.0.1:8081:8080 -p 6001:6001 -v "${HOME}/datalab:/content" \
+gcr.io/cloud-datalab/datalab:local
+```
+
+## Datalabにアクセス
+
 Browserで、localhost:8081に接続します。
 
 ![](/img/datalab001.png)
+
+## Hello World
 
 ![](/img/datalab002.png)
 
