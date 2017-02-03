@@ -13,4 +13,4 @@ Versionを表示する
 
 ## Notebook
 
-[/notebooks/HelloWorld.ipynb](Notebook)
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/HelloWorld.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/HelloWorld.ipynb)
