@@ -34,8 +34,6 @@
 * TensorFlow
     * [HelloWorld](tensorflow_hello.md)
     * [定数/変数/プレースフォルダ](tensorflow_placeholder.md)
-    * [Constant](tensorflow_constant.md)
-    * [Variable](tensorflow_variable.md)
     * [Tensorの和](tensorflow_add.md)
     * [Tensorの差](tensorflow_sub.md)
     * [Tensorの積](tensorflow_matmul.md)
