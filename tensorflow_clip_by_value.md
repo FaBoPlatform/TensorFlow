@@ -18,3 +18,6 @@ Tensorを指定した範囲に収まるようにする
 
 * https://www.tensorflow.org/api_docs/python/train/gradient_clipping#clip_by_value
 
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/clip.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/clip.ipynb)

@@ -41,11 +41,11 @@
     * [クリッピング](tensorflow_clip_by_value.md)
     * [正規分布・切断正規分布](tensorflow_normal.md)
     * [Boolean](tensorflow_boolean.md)
-    * [セッションの保存・読み込み](tensorflow_session.md)
-    * [コマンドライン引数の処理](tensorflow_flags.md)
     * [キャスト](tensorflow_cast.md)
     * [Tensorの比較](tensorflow_comparison.md)
     * [Tensorの集約](tensorflow_pack.md)
+    * [コマンドライン引数の処理](tensorflow_flags.md)
+    * [セッションの保存・読み込み](tensorflow_session.md)
     * [L2正則化](tensorflow_l2_norm.md)
 * 線形回帰
     * [平均二乗誤差](tensorflow_mse.md)
