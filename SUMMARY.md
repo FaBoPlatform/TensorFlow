@@ -33,7 +33,6 @@
     * [次元数の増加](numpy_newaxis.md)
 * TensorFlow
     * [HelloWorld](tensorflow_hello.md)
-    * [Version](tensorflow_version.md)
     * [Placeholder](tensorflow_placeholder.md)
     * [Constant](tensorflow_constant.md)
     * [Variable](tensorflow_variable.md)
