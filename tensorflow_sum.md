@@ -14,7 +14,7 @@
 
 ## 参考
 
-* [TensorFlow API](https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#reduce_sum)
+https://www.tensorflow.org/versions/r1.0/api_docs/python/math_ops.html#reduce_sum
 
 # Tensorの総積
 
@@ -33,7 +33,7 @@
 
 ## 参考
 
-* [TensorFlow API](https://www.tensorflow.org/versions/master/api_docs/python/math_ops.html#reduce_prod)
+https://www.tensorflow.org/versions/r1.0/api_docs/python/math_ops.html#reduce_prod
 
 ## Notebook
 
