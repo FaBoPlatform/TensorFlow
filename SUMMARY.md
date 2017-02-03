@@ -40,7 +40,6 @@
     * [最小値・最大値](tensorflow_argmin.md)
     * [正規分布・切断正規分布](tensorflow_normal.md)
     * [Boolean](tensorflow_boolean.md)
-    * [乱数のシード](tensorflow_random.md)
     * [セッションの保存・読み込み](tensorflow_session.md)
     * [Tensorのクリッピング](tensorflow_clip_by_value.md)
     * [コマンドライン引数の処理](tensorflow_flags.md)
