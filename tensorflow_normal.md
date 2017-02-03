@@ -16,80 +16,44 @@
 
 デフォルトでは`mean=0.0, stddev=1.0`となっており、標準正規分布になっている。
 
-# Sample
+## Sample
 
-```python
-# coding:utf-8
-import tensorflow as tf
+正規分布
 
-# 標準正規分布による乱数を値に持つ3x3行列
-x = tf.random_normal(shape=(3,3))
+![](/img/normal01.png)
 
-sess = tf.Session()
-y = sess.run(x)
-print y
-```
+1万件に増やし、正規分布が1.0に近づくかを確認　
 
-計算結果
+![](/img/normal02.png)
 
-```shell
-[[ 1.09942019  0.08562929  0.03443986]
- [-0.73919928 -0.21810924  0.91688985]
- [ 0.50970089  0.08562437  0.54271621]]
-```
+stddevに10指定し、平均値が10に近づく事を確認
 
-# 実験1
-正規分布の要素を1万個に増やし、平均値と標準偏差を確認する。
+![](/img/normal03.png)
 
-```python
-# coding:utf-8
-import tensorflow as tf
-import numpy as np
+## 参考
 
-# 標準正規分布による乱数を値に持つ3x3行列
-x = tf.random_normal(shape=(5000,2))
+* [切断正規分布の解説](https://ja.wikipedia.org/wiki/%E5%88%87%E6%96%AD%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83)
+* https://www.tensorflow.org/versions/r1.0/api_docs/python/constant_op.html#random_normal
 
-sess = tf.Session()
-y = sess.run(x)
+# 切断正規分布
 
-print np.average(y)
-print np.std(y)
-```
+標準偏差の2倍の間に収まるような乱数を生成する
 
-出力結果
-```shell
-0.0047531
-1.00467
-```
+`tf.truncated_normal(shape, mean=0.0, stddev=1.0, dtype=tf.float32, seed=None, name=None)`
 
-要素数を増やせば増やすほど、平均値0、標準偏差 1に近づいていく。
+* `shape`: Tensorの形式
+* `mean`: 正規分布の平均。デフォルト 0.0
+* `stddev`: 正規分布の標準偏差。デフォルト 1.0
+* `dtype`: 値の型
 
-# 実験2
-平均値と標準偏差を指定して正規分布を作成する。
+## Sample
 
-```python
-# coding:utf-8
-import tensorflow as tf
-import numpy as np
+切断正規分布
 
-# 標準正規分布による乱数を値に持つ3x3行列
-x = tf.random_normal(shape=(5000,2), mean=1, stddev=10)
+![](/img/normal04.png)
 
-sess = tf.Session()
-y = sess.run(x)
 
-print np.average(y)
-print np.std(y)
-```
 
-出力結果
-```shell
-0.977841
-10.0514
-```
+## 参考
 
-要素数を増やせば増やすほど、指定した平均値と標準偏差に近づいていく。
-
-# 参考
-
-* [TensorFlow API](https://www.tensorflow.org/versions/master/api_docs/python/constant_op.html#random_normal)
+* [切断正規分布の解説](https://ja.wikipedia.org/wiki/%E5%88%87%E6%96%AD%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83)

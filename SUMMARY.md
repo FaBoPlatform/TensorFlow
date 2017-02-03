@@ -38,14 +38,13 @@
     * [演算子](tensorflow_operator.md)
     * [総和・総積](tensorflow_sum.md)
     * [最小値・最大値](tensorflow_argmin.md)
-    
-    * [正規分布のTensorを作る](tensorflow_normal.md)
+    * [正規分布・切断正規分布](tensorflow_normal.md)
+ 
     * [乱数のシード](tensorflow_random.md)
     * [セッションの保存・読み込み](tensorflow_session.md)
     * [Tensorのクリッピング](tensorflow_clip_by_value.md)
     * [コマンドライン引数の処理](tensorflow_flags.md)
     * [Boolean tensor](tensorflow_boolean.md)
-    * [切断正規分布](tensorflow_truncated_normal.md)
     * [キャスト](tensorflow_cast.md)
     * [Tensorの比較](tensorflow_comparison.md)
     * [Tensorの集約](tensorflow_pack.md)
