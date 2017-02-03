@@ -1,3 +1,45 @@
+# Constant
+
+Constantは、定数である。
+
+> tf.constant(value, dtype=None, shape=None, name='Const', verify_shape=False)
+
+
+|引数名|概要|
+|:--|:--|
+| value | dtypeで指定したOutputの定数の値 |
+| dtype | Tensorの型 |
+| shape | Tensorの形状, 無指定の場合は任意の形状のTensorを渡せる |
+| name | 名前(Const) |
+| verify_shape | 値の形状のVarification(検証)をするか |
+
+## Sample
+
+![](/img/placeholder01.png)
+
+
+# Variable
+Variableは、変数である。
+
+> tf.Variable.__init__(initial_value=None, trainable=True, collections=None, validate_shape=True, caching_device=None, name=None, variable_def=None, dtype=None, expected_shape=None, import_scope=None)
+
+|引数名|概要|
+|:--|:--|
+| initial_value | 初期値 |
+| trainable| |
+| collections| |
+| validate_shape| |
+| caching_device| |
+| name | 名前(Const) |
+| variable_def| |
+| dtype | Tensorの型 |
+| expected_shape |  |
+| import_scope| | 
+
+## Sample
+
+![](/img/placeholder02.png)
+
 
 # Placeholder
 
@@ -10,40 +52,15 @@
 | shape | Tensorの形状, 無指定の場合は任意の形状のTensorを渡せる |
 | name | 操作の名前 |
 
-## Sample1
+## Sample
 
-```python
-import tensorflow as tf
+![](/img/placeholder03.png)
 
-a = tf.placeholder(tf.int16)
-b = tf.placeholder(tf.int16)
+## Notebook
 
-add = tf.add(a, b)
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/placeholder.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/placeholder.ipynb)
 
-sess = tf.Session()
-print("Add: %i" % sess.run(add, feed_dict={a:2, b:3}))
-```
-
-## Sample2
-
-```python
-import tensorflow as tf
-
-a = tf.placeholder(tf.int16)
-b = tf.placeholder(tf.int16)
-
-# 4x4行列a
-mat_a = np.array([[2.0, 1.0], [4.0, 2.0]])
-# 4x4行列b
-mat_b = np.array([[1.0, 1.0], [6.0, 3.0]]) 
-
-add_op = tf.add(a, b)
-
-sess = tf.Session()
-print("Add: %r" % sess.run(add_op, feed_dict={a:mat_a, b:mat_b}))
-```
-
-# 参考
+## 参考
 
 [Placeholder](https://www.tensorflow.org/api_docs/python/io_ops/placeholders#placeholder)
 

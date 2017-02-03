@@ -33,7 +33,7 @@
     * [次元数の増加](numpy_newaxis.md)
 * TensorFlow
     * [HelloWorld](tensorflow_hello.md)
-    * [Placeholder](tensorflow_placeholder.md)
+    * [定数/変数/プレースフォルダ](tensorflow_placeholder.md)
     * [Constant](tensorflow_constant.md)
     * [Variable](tensorflow_variable.md)
     * [Tensorの和](tensorflow_add.md)
