@@ -59,7 +59,7 @@ with tf.Graph().as_default():
 	b = tf.Variable(np.random.randn(), name = "bias")
 
 	# 線形回帰のモデル
-	y_pred = tf.add(tf.mul(X, W), b)
+	y_pred = tf.add(tf.multiply(X, W), b)
 
 	# 損失関数
 	loss = tf.reduce_mean(tf.pow(y_pred - y, 2))
@@ -76,7 +76,7 @@ with tf.Graph().as_default():
 	summary_writer = tf.summary.FileWriter(LOGDIR, sess.graph)
 
 	# 変数の初期化
-	init_op = tf.initialize_all_variables()
+	init_op = tf.global_variables_initializer()
 	sess.run(init_op)
 
 	# トレーニング回数
