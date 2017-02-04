@@ -154,4 +154,4 @@ TensorBoardに反映させるには、本サンプルを実行し、dataフォ�
 
 ## Notebook
 
-[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/boolean.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/boolean.ipynb)
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/linear_regression02.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/linear_regression02.ipynb)

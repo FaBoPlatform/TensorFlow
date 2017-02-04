@@ -161,3 +161,6 @@ Datalab上でtensorboardを起動します。うまく起動しない場合、Re
 	training_step = 1000
 	validation_step = 10
 ```
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/linear_regression03.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/linear_regression03.ipynb)
