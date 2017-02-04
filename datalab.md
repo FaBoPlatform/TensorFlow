@@ -17,7 +17,7 @@ $ gcloud projects list
 
 [Dockerのインストール]
 
-[Docker公式サイト](https://www.docker.com/) で Get Started を選択、次にDownload Docker for Macを選択し本体をダウンロードする。ダウンロード終了後アイコンをクリックすることでDockerを立ち上げる。その後以下のどちらかでDatalabを起動する
+[Docker公式サイト](https://www.docker.com/) で Get Started を選択、次にDownload Docker for Macを選択し本体をダウンロードする。ダウンロード終了後インストールを行い、終了後に表示されるアイコンをクリックすることでDockerを立ち上げる。その後以下のどちらかでDatalabを起動する。
 
 [OS Xで実行:プロジェクトIDを指定]
 ```shell
