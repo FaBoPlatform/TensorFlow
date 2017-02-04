@@ -103,21 +103,14 @@ with tf.Session() as sess:
 
 ## TensorBoardの起動
 
-Cloud Shellのタブ新規に立ち上げます。
+![](/img/tensorboard01.png)
 
-![](/img/linear003.png)
-
-作業フォルダに移動し、dataフォルダが存在しているのを確認した上で
+![](/img/tensorboard02.png)
 
 ```
 !tensorboard --logdir=data/ 
 ```
-
-を実行します。TensorBoardがport 6006で起動します。　
-
-![](/img/tensorboard01.png)
-
-![](/img/tensorboard02.png)
+を実行します。TensorBoardがport 6006で起動します。　localhost:6006に接続するとTensorBoardが表示されます。
 
 アルゴリズムが表示されます。
 
