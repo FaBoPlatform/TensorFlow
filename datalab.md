@@ -15,6 +15,10 @@ $ gcloud projects list
 
 下記はOS X用。Windows用のDocker設定は、[https://cloud.google.com/datalab/docs/quickstarts/quickstart-local](https://cloud.google.com/datalab/docs/quickstarts/quickstart-local)を参照。
 
+[Dockerのインストール]
+
+[Docker公式サイト](https://www.docker.com/) で Get Started を選択、次にDownload Docker for Macを選択し本体をダウンロードする。ダウンロード終了後インストールを行い、終了後に表示されるアイコンをクリックすることでDockerを立ち上げる。その後以下のどちらかでDatalabを起動する。
+
 [OS Xで実行:プロジェクトIDを指定]
 ```shell
 $ cd ~

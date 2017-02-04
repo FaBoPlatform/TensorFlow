@@ -14,9 +14,9 @@
 # coding:utf-8
 import numpy as np
 
-# 4x4行列a
+# 2x2行列a
 a = np.array([[2.0, 1.0], [4.0, 2.0]])
-# 4x4行列b
+# 2x2行列b
 b = np.array([[1.0, 1.0], [6.0, 3.0]])
 # 行列の和
 print a + b

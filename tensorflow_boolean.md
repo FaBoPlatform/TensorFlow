@@ -14,4 +14,4 @@ Trueとなっているインデックスを返す
 
 ## Notebook
 
-[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/bool.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/bool.ipynb)
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/boolean.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/boolean.ipynb)
