@@ -27,12 +27,7 @@ for i in xrange(N):
     vector_labels[i][int(labels[i])] = 1.0
 
 # データを7:1で分割する
-train_data_size = len(dataset) - len(dataset) // 8
 test_data_size = len(dataset) // 8
-
-# 訓練用データ
-train_datas = datas[:train_data_size]
-train_labels = vector_labels[:train_data_size].reshape(train_data_size, 10)
 
 # テスト用データ
 test_datas = datas[train_data_size:]
@@ -101,10 +96,10 @@ with tf.Graph().as_default():
 
     # トレーニング
     for step in xrange(training_step):
-        sess.run(train_op, feed_dict={X:train_datas, y_:train_labels})
+        sess.run(train_op, feed_dict={X:test_datas, y_:test_labels})
 
         if step % validation_step == 0:
-            accuracy_output,cost_output = sess.run([accuracy_op,cost], feed_dict={X:train_datas, y_:train_labels})
+            accuracy_output,cost_output = sess.run([accuracy_op,cost], feed_dict={X:test_datas, y_:test_labels})
             print "step %d, cost %f, accuracy %f" % (step,cost_output,accuracy_output)
 
     summary_writer.flush()
