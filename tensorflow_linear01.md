@@ -1,17 +1,17 @@
 # 線形回帰
 
-線形な値の教師データから、TensorFlowのW(ウェイト)とb(バイアス)の収束を観察する。
+線形な値の教師データから、TensorFlowのw(ウェイト)とb(バイアス)の収束を観察する。
 
 まず、教師データは、(x,y)座標は、`y = x * W + b`で定義する。
 
 ```
 b_train = -1
-W_train = 0.7
+w_train = 0.7
 X_train = np.linspace(0, 1.0, 100)
-y_train = X_train * W_train + b_train
+y_train = x_train * w_train + b_train
 ```
 
-この線形な値の教師データを用いて、同様のWとbにTensorFlowで収束する結果を観察する。つまりTensorFlowを用いて、Wとbを導き出す。
+この線形な値の教師データを用いて、同様のWとbにTensorFlowで収束する結果を観察する。つまりTensorFlowを用いて、wとbを導き出す。
 
 ![](/img/linear00.png)
 
@@ -30,7 +30,7 @@ y_train = X_train * W_train + b_train
 
 ## 変数の定義
 
-TensorFlowの中で扱う変数を定義する。Xにtrain_x, yにtrain_yを代入し、W, bを導き出す。
+TensorFlowの中で扱う変数を定義する。Xにtrain_x, yにtrain_yを代入し、w, bを導き出す。
 
 ```python
 x = tf.placeholder(tf.float32, name = "input")
@@ -48,7 +48,7 @@ y_pred = tf.add(tf.mul(x, w), b)
 ```
 # 損失関数
 
-活性化関数で定義したy_predと、y(ここにはy_trainを代入)の差を2乗した平均を求めている。2乗している理由が、差が+になるか-になるか予想できないため、2乗し、すべて差を+にして、その平均値を出している。この
+活性化関数で定義したy_predと、y(ここにはy_trainを代入)の差を2乗した(tf.pow(y_pred - y, 2))平均(tf.reduce_mean)を求めている。2乗している理由が、差が+になるか-になるか予想できないため、2乗し、すべて差を+にして、その平均値を出している。この
 
 ```python
 loss = tf.reduce_mean(tf.pow(y_pred - y, 2))
