@@ -22,7 +22,7 @@ import pandas as pd
 
 # データセットを読み込む
 # なお欠損値は0とした 
-dataset = np.genfromtxt("./wine.csv", delimiter=';', dtype=np.float32, filling_values=(0),skip_header=1))
+dataset = np.genfromtxt("./wine.csv", delimiter=';', dtype=np.float32, filling_values=(0), skip_header=1))
 
 # 重複したデータを省く
 _,index = np.unique(dataset[:,0], return_index=True)
