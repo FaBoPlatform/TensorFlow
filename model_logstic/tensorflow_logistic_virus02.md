@@ -1,12 +1,22 @@
 #　ウィルス分布　学習
 
+TensorBoardに表示するグラフをリセットし、TensorFlowの変数とプレースフォルダを定義する。
+
 ![](/img/virus201.png)
+
+ロジスティック回帰のモデルを定義する。`y = x * w + b`
 
 ![](/img/virus202.png)
 
+コストの定義をする。
+
 ![](/img/virus203.png)
 
+精度の定義をする。
+
 ![](/img/virus204.png)
+
+セッション内で初期化をし、学習を実施する。
 
 ![](/img/virus205.png)
 
@@ -52,7 +62,7 @@ for i in xrange(N*2):
 print STATE
 
 tf.reset_default_graph()
-LOGDIR = "./data"
+LOGDIR = "./data_virus"
  
 x = tf.placeholder(tf.float32, shape=(None,2), name="input")
 y = tf.placeholder(tf.float32, shape=(None,2), name="output")
@@ -73,6 +83,12 @@ with tf.name_scope('accuracy'):
   correct_pred = tf.equal(tf.argmax(y_pred,1), tf.argmax(STATE,1))
   accuracy_op = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
+# TensorBoardへの反映
+w_graph = tf.summary.histogram("W_graph", w)
+b_graph = tf.summary.histogram("b_graph", b)
+y_graph = tf.summary.histogram("y_graph", y)
+cost_graph = tf.summary.scalar("cost_graph", cost)
+
 with tf.Session() as sess:
   
   # 初期化処理
@@ -85,6 +101,7 @@ with tf.Session() as sess:
 
   # Summary
   summary_writer = tf.summary.FileWriter(LOGDIR, sess.graph)
+  summary_op = tf.summary.merge_all()
 
   with tf.Graph().as_default():
     
@@ -100,10 +117,23 @@ with tf.Session() as sess:
         accuracy_output,cost_output = sess.run([accuracy_op,cost], feed_dict={x: VIRUS, y: STATE})
         print "step %d, cost %f, accuracy %f" % (step,cost_output,accuracy_output)
 
+        # TensorBoardにも反映
+        summary_str = sess.run(summary_op, feed_dict={x: VIRUS, y: STATE})
+        summary_writer.add_summary(summary_str, step)
+
     summary_writer.flush()
 ```
 
 ## TensorBoard
+
+TensorBoardは、どんどんデータが蓄積されているくので、TensorFlowの学習前に、data_virusフォルダを削除する。
+
+> !rm -r ./data_virus
+
+TensorBoardを起動する。TensorBoardは、DatalabではTensorBoardをForegroundでしか実行できないため、停止する場合は、メニューの[Reset Session]のResetで停止する。
+
+> !tensorboard --logdir=data_virus/
+
 
 ![](/img/logistic002.png)
 
@@ -117,3 +147,6 @@ with tf.Session() as sess:
 
 ![](/img/logistic007.png)
 
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/virus02.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/virus02.ipynb)

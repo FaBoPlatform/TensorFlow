@@ -65,3 +65,7 @@ for i in xrange(N*2):
 ```
 
 
+
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/virus01.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/virus01.ipynb)
