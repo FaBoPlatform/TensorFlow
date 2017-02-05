@@ -1,5 +1,14 @@
 #　ウィルス分布　学習
 
+![](/img/virus201.png)
+
+![](/img/virus202.png)
+
+![](/img/virus203.png)
+
+![](/img/virus204.png)
+
+![](/img/virus205.png)
 
 ## Coding
 
@@ -50,21 +59,22 @@ y = tf.placeholder(tf.float32, shape=(None,2), name="output")
 w = tf.Variable(tf.random_normal([2,2], stddev=0.01), dtype=tf.float32, name="weight")
 b = tf.Variable(tf.random_normal([2], stddev=0.01), dtype=tf.float32, name="bias")
 
+# ロジスティック回帰のモデルを定義
 with tf.name_scope('forward'):
   y_pred = tf.nn.softmax(tf.matmul(x,w) + b, name="forward")
 
+# コストの計算
 with tf.name_scope('cost'):
   loss = tf.nn.softmax_cross_entropy_with_logits(labels=y,logits=y_pred)
   cost = tf.reduce_mean(loss, 0)
 
-with tf.name_scope('predict'):
-  predict_op = tf.argmax(y_pred, 1)
-
+# 精度の計算
 with tf.name_scope('accuracy'):
   correct_pred = tf.equal(tf.argmax(y_pred,1), tf.argmax(STATE,1))
   accuracy_op = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
 with tf.Session() as sess:
+  
   # 初期化処理
   init_op = tf.global_variables_initializer()
   sess.run(init_op)
@@ -77,6 +87,7 @@ with tf.Session() as sess:
   summary_writer = tf.summary.FileWriter(LOGDIR, sess.graph)
 
   with tf.Graph().as_default():
+    
     # トレーニング回数
     training_step = 1000
     validation_step = 100
@@ -90,17 +101,6 @@ with tf.Session() as sess:
         print "step %d, cost %f, accuracy %f" % (step,cost_output,accuracy_output)
 
     summary_writer.flush()
-
-    # Check answer
-    data = [[-2,-2]]
-    x_check = np.array(data)
-    ans = sess.run(predict_op, feed_dict={x: x_check, y: STATE})
-    print "[-2,-2]'s answer %d" % (ans)
-
-    data = [[2,2]]
-    x_check = np.array(data)
-    ans = sess.run(predict_op, feed_dict={x: x_check, y: STATE})
-    print "[2,2]'s answer %d" % (ans)
 ```
 
 ## TensorBoard
