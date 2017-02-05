@@ -59,8 +59,8 @@
 * ロジスティック回帰
     * [交差エントロピーコスト関数](model_logstic/tensorflow_cross_entropy.md)
     * [ウィルス分布 データ作成](model_logstic/tensorflow_logistic_virus01.md)
-    * [ウィルス分布 学習](model_logstic/tensorflow_virus02.md)
-    * [ウィルス分布 評価](model_logstic/tensorflow_virus03.md)
+    * [ウィルス分布 学習](model_logstic/tensorflow_logistic_virus02.md)
+    * [ウィルス分布 評価](model_logstic/tensorflow_logistic_virus03.md)
     * [ガン評価 データ作成](model_logstic/tensorflow_logistic_cancer01.md)
     * [ガン評価 学習](model_logstic/tensorflow_logistic_cancer02.md)
     * [ガン評価 評価]
