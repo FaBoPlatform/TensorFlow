@@ -21,6 +21,8 @@ plt.show()
 
 正規分布で散らばった値の線形回帰のb,wを求めるプログラムをTensorFlowで作成せよ　
 
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/kadai01.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/kadai01.ipynb)
+
 ## 課題2
 
 ![](/img/kadai02.png)
@@ -39,3 +41,6 @@ plt.show()
 ```
 
 非線形に散らばった値の線形回帰のb,wを求めるプログラムをTensorFlowで作成せよ　
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/kadai02.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/kadai02.ipynb)
+
