@@ -58,15 +58,19 @@
     * [線形回帰 課題](model_linear/tensorflow_linear05.md))
 * ロジスティック回帰
     * [交差エントロピーコスト関数](model_logstic/tensorflow_cross_entropy.md)
-    * [ウィルス分布](model_logstic/tensorflow_logistic01.md)
-    * [学習済みデータ](model_logstic/tensorflow_logistic02.md)
-    * [ガン評価 準備編](model_logstic/tensorflow_logistic_cancer01.md)
+    * [ウィルス分布 データ作成](model_logstic/tensorflow_logistic_virus01.md)
+    * [ウィルス分布 学習](model_logstic/tensorflow_virus02.md)
+    * [ウィルス分布 評価](model_logstic/tensorflow_virus03.md)
+    * [ガン評価 データ作成](model_logstic/tensorflow_logistic_cancer01.md)
     * [ガン評価 学習](model_logstic/tensorflow_logistic_cancer02.md)
-    * [ワイン評価 準備編](model_logstic/tensorflow_logistic_wine01.md)
+    * [ガン評価 評価]
+    * [ワイン評価 データ作成](model_logstic/tensorflow_logistic_wine01.md)
     * [ワイン評価 学習](model_logstic/tensorflow_logistic_wine02.md)
-    * [3クラス分類 準備編](model_logstic/tensorflow_three_classification_first.md)
-    * [3クラス分類](model_logstic/tensorflow_three_classification_last.md)
+    * [ワイン評価 評価]
+    * [3クラス分類 データ作成](model_logstic/tensorflow_three_classification_first.md)
+    * [3クラス分類 学習](model_logstic/tensorflow_three_classification_last.md)
     * [3クラス分類 Tensorboard編](model_logstic/tensorflow_three_classification_tensorboard.md)
+    * [3クラス分類 評価]
     * [モーメンタム](model_logstic/tensorflow_iris_momentum.md)
     * [Adam](model_logstic/tensorflow_iris_adam.md)
 * MNIST
