@@ -30,15 +30,6 @@ plt.show()
 
 ```python
 # coding:utf-8
-import tensorflow as tf
-import numpy as np
-
-x_positive = np.random.randn(500,1) + 2
-y_positive = np.random.randn(500,1) + 2
-
-x_negative = np.random.randn(500,1) - 2
-y_negative = np.random.randn(500,1) - 2
-
 N = len(x_positive)
 
 POSITIVE = np.zeros((N,2))
