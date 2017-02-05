@@ -2,11 +2,12 @@
 
 ## 課題1
 
+![](/img/kadai01.png)
+
 ```python
 # coding:utf-8
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
 
 b_train = -1
 w_train = 0.7
@@ -18,17 +19,16 @@ plt.plot(x_train, y_train, 'ro', label='Data')
 plt.show()
 ```
 
-![](/img/linear_kadai001.png)
-
 正規分布で散らばった値の線形回帰のb,wを求めるプログラムをTensorFlowで作成せよ　
 
 ## 課題2
+
+![](/img/kadai02.png)
 
 ```python
 # coding:utf-8
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
 
 x_train = np.linspace(0, 100, 100)
 y_train = x_train + 10 * np.sin(x_train/10)
@@ -37,7 +37,5 @@ plt.figure(1)
 plt.plot(x_train, y_train, 'ro', label='Data')
 plt.show()
 ```
-
-![](/img/linear_kadai002.png)
 
 非線形に散らばった値の線形回帰のb,wを求めるプログラムをTensorFlowで作成せよ　
