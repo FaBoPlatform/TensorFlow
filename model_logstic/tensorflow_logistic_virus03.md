@@ -31,14 +31,14 @@ with tf.Session() as sess:
 
   ...
 
-    # TensorBoardにも反映
-    summary_str = sess.run(summary_op, feed_dict={x: VIRUS, y: STATE})
-    summary_writer.add_summary(summary_str, step)
+        # TensorBoardにも反映
+        summary_str = sess.run(summary_op, feed_dict={x: VIRUS, y: STATE})
+        summary_writer.add_summary(summary_str, step)
 
-    # 学習済みモデルの保存　ファイル：checkpointとvirus-mode-100 (step=100の場合)が作られる
-    saver.save(sess, "virus-model", global_step=step)
+        # 学習済みモデルの保存　ファイル名：checkpointとvirus-model-100.[data-00000-of-00001|index|meta] (step=100の場合)が作られる
+        saver.save(sess, "virus-model", global_step=step)
 
-  summary_writer.flush()
+    summary_writer.flush()
 ```
 
 # 学習済みモデルを読み込む
@@ -186,7 +186,7 @@ with tf.Session() as sess:
         summary_str = sess.run(summary_op, feed_dict={x: VIRUS, y: STATE})
         summary_writer.add_summary(summary_str, step)
 
-        # 学習済みモデルの保存　ファイル名：checkpointとvirus-mode-100.[data-00000-of-00001|index|meta] (step=100の場合)が作られる
+        # 学習済みモデルの保存　ファイル名：checkpointとvirus-model-100.[data-00000-of-00001|index|meta] (step=100の場合)が作られる
         saver.save(sess, "virus-model", global_step=step)
 
     summary_writer.flush()
