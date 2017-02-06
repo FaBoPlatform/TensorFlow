@@ -7,19 +7,66 @@
 ```python  
 # 予測   
 with tf.name_scope('predict'):
-    predict_op = tf.argmax(y_pred, 1)
+  predict_op = tf.argmax(y_pred, 1)
 
-    ...
+  ...
 
-    # check anser
-    data = [[-2,-2]]
-    x_check = np.array(data)
-    flag_pos = sess.run(predict_op, feed_dict={x: x_check})
-    print "flag position is %d" % (flag_pos)
-    data = [[2,2]]
-    x_check = np.array(data)
-    flag_pos = sess.run(predict_op, feed_dict={x: x_check})
-    print "flag position is %d" % (flag_pos)
+  # check anser
+  data = [[-2,-2]]
+  x_check = np.array(data)
+  flag_pos = sess.run(predict_op, feed_dict={x: x_check})
+  print "flag position is %d" % (flag_pos)
+  data = [[2,2]]
+  x_check = np.array(data)
+  flag_pos = sess.run(predict_op, feed_dict={x: x_check})
+  print "flag position is %d" % (flag_pos)
+```
+
+# 学習済みモデルを保存
+```python  
+# 学習済みモデルの保存準備
+saver = tf.train.Saver()
+
+with tf.Session() as sess:
+
+  ...
+
+    # TensorBoardにも反映
+    summary_str = sess.run(summary_op, feed_dict={x: VIRUS, y: STATE})
+    summary_writer.add_summary(summary_str, step)
+
+    # 学習済みモデルの保存　ファイル：checkpointとvirus-mode-100 (step=100の場合)が作られる
+    saver.save(sess, "virus-model", global_step=step)
+
+  summary_writer.flush()
+```
+
+# 学習済みモデルを読み込む
+```python  
+# 学習済みモデルの保存準備
+saver = tf.train.Saver()
+
+with tf.Session() as sess:
+  # 学習済みモデルのcheckpointファイルがあるかどうか
+  ckpt = tf.train.get_checkpoint_state('./')
+  if ckpt:
+    # checkpointファイルから最後に保存したモデルへのパスを取得する
+    last_model = ckpt.model_checkpoint_path
+    print　"load " + last_model
+    # 学習済みモデルを読み込む
+    saver.restore(sess, last_model)
+  else:
+  print "initialization"
+  # 初期化処理
+  init_op = tf.global_variables_initializer()
+  sess.run(init_op)
+
+  # トレーニング
+  learning_rate = 0.01
+  train_op = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost)
+
+  ...
+
 ```
 
 ## Coding
@@ -87,7 +134,7 @@ with tf.name_scope('accuracy'):
 
 # 予測
 with tf.name_scope('predict'):
-    predict_op = tf.argmax(y_pred, 1)
+  predict_op = tf.argmax(y_pred, 1)
 
 # TensorBoardへの反映
 w_graph = tf.summary.histogram("W_graph", w)
@@ -95,11 +142,23 @@ b_graph = tf.summary.histogram("b_graph", b)
 y_graph = tf.summary.histogram("y_graph", y)
 cost_graph = tf.summary.scalar("cost_graph", cost)
 
+# 学習済みモデルの保存準備
+saver = tf.train.Saver()
+
 with tf.Session() as sess:
-  
-  # 初期化処理
-  init_op = tf.global_variables_initializer()
-  sess.run(init_op)
+  # 学習済みモデルのcheckpointファイルがあるかどうか
+  ckpt = tf.train.get_checkpoint_state('./')
+  if ckpt:
+    # checkpointファイルから最後に保存したモデルへのパスを取得する
+    last_model = ckpt.model_checkpoint_path
+    print("load {0}".format(last_model))
+    # 学習済みモデルを読み込む
+    saver.restore(sess, last_model)
+  else:
+    print("initialization")
+    # 初期化処理
+    init_op = tf.global_variables_initializer()
+    sess.run(init_op)  
 
   # トレーニング
   learning_rate = 0.01
@@ -127,6 +186,9 @@ with tf.Session() as sess:
         summary_str = sess.run(summary_op, feed_dict={x: VIRUS, y: STATE})
         summary_writer.add_summary(summary_str, step)
 
+        # 学習済みモデルの保存　ファイル名：checkpointとvirus-mode-100.[data-00000-of-00001|index|meta] (step=100の場合)が作られる
+        saver.save(sess, "virus-model", global_step=step)
+
     summary_writer.flush()
 
     # check anser
@@ -145,10 +207,6 @@ with tf.Session() as sess:
 ![](/img/virus301.png)
 
 > 1なら[1,0], 0なら[0,1]
-
-# 学習済みデータの保存
-
-うまくいかない
 
 ## Notebook
 
