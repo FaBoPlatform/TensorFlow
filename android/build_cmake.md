@@ -1,3 +1,6 @@
+Android Java Inference Interface for TensorFlowをModuleとして、Android Studioに取り込む。BazzelのBuild等もAndroid Studio内から実行。
+
+
 https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/android/cmake
 
 

@@ -1,3 +1,4 @@
+AndroidのDSPに最適化されたBuildをおこなう。
 
 https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/android/cmake
 

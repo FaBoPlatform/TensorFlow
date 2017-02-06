@@ -1,3 +1,5 @@
+Android Java Inference Interface for TensorFlowをBazelでbuildして、so, jarファイルを生成。Android Studioのプロジェクトに組み込む。
+
 https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/android
 
 # Android Java Inference Interface for TensorFlow
@@ -49,6 +51,12 @@ $ bazel build -c opt //tensorflow/contrib/android:libtensorflow_inference.so \
 $ ls bazel-bin/tensorflow/contrib/android/libtensorflow_inference.so
 ```
 
+|ファイル名||
+|:--|:--|
+|libandroid_tensorflow_lib.lo|core TensorFlow runtime + ops for linking into other libraries|
+|libtensorflow_inference.so|core TF runtime+ops with added JNI bindings|
+
+
 ## libandroid_tensorflow_inference_java.jarのBuild
 
 ```
@@ -67,4 +75,11 @@ include ':app',':TensorFlow-Android-Inference'
 findProject(":TensorFlow-Android-Inference").projectDir =
         new File("/Users/sasakiakira/Documents/workspace_ai_android/android/bazel/tensorflow/tensorflow/contrib/android/cmake")
 ```
+
+# ヒント
+
+https://github.com/tensorflow/tensorflow/issues/6356
+
+Build.gradle
+https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/android/build.gradle
 
