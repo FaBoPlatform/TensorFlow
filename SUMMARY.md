@@ -64,13 +64,13 @@
     * [ガンクラス データ作成](model_logstic/tensorflow_logistic_cancer01.md)
     * [ガンクラス 学習](model_logstic/tensorflow_logistic_cancer02.md)
     * [ガンクラス 評価]
-    * [アヤメ データ作成](model_logstic/tensorflow_logistic_wine01.md)
-    * [アヤメ 学習](model_logstic/tensorflow_logistic_wine02.md)
-    * [アヤメ 評価]
-    * [イワナ データ作成](model_logstic/tensorflow_three_classification_first.md)
-    * [イワナ 学習](model_logstic/tensorflow_three_classification_last.md)
-    * [イワナ Tensorboard編](model_logstic/tensorflow_three_classification_tensorboard.md)
-    * [イワナ 評価]
+    * [ワイン等級 データ作成](model_logstic/tensorflow_logistic_wine01.md)
+    * [ワイン等級 学習](model_logstic/tensorflow_logistic_wine02.md)
+    * [ワイン等級 評価]
+    * [IRIS データ作成](model_logstic/tensorflow_three_classification_first.md)
+    * [IRIS 学習](model_logstic/tensorflow_three_classification_last.md)
+    * [IRIS Tensorboard編](model_logstic/tensorflow_three_classification_tensorboard.md)
+    * [IRIS 評価]
     * [モーメンタム](model_logstic/tensorflow_iris_momentum.md)
     * [Adam](model_logstic/tensorflow_iris_adam.md)
 * MNIST
