@@ -69,13 +69,6 @@ $ bazel build //tensorflow/contrib/android:android_tensorflow_inference_java
 $ bazel-bin/tensorflow/contrib/android/libandroid_tensorflow_inference_java.jar
 ```
 
-setting.gradle
-```
-include ':app',':TensorFlow-Android-Inference'
-findProject(":TensorFlow-Android-Inference").projectDir =
-        new File("/Users/sasakiakira/Documents/workspace_ai_android/android/bazel/tensorflow/tensorflow/contrib/android/cmake")
-```
-
 # ヒント
 
 https://github.com/tensorflow/tensorflow/issues/6356

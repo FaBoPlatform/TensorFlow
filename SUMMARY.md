@@ -4,6 +4,7 @@
     * [Android(未動作)](android/build.md)
     * [Android(未動作)](android/build_cmake.md)
     * [Android(未動作)](android/build_dsp.md)
+    * [RaspberryPI(未動作)](raspberryPI/build.md)
 * 開発環境(CloudML)
 	* [CloudMLの設定](cloudml/cloudml.md)
     * [TensorFlowのVersion up](cloudml/versionup.md)

@@ -94,7 +94,12 @@ task findbugs(type: FindBugs, dependsOn: 'assembleDebug') {
     copyNativeLibs
 }
 ```
-
+setting.gradle
+```
+include ':app',':TensorFlow-Android-Inference'
+findProject(":TensorFlow-Android-Inference").projectDir =
+        new File("/Users/sasakiakira/Documents/workspace_ai_android/android/bazel/tensorflow/tensorflow/contrib/android/cmake")
+```
 
 
 ```
