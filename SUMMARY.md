@@ -53,7 +53,6 @@
     * [コマンドライン引数](model_basic/tensorflow_flags.md)
     * [セッションの保存・読み込み](model_basic/tensorflow_session.md)
     * [L2正則化](model_basic/tensorflow_l2_norm.md)
-    * [学習済みデータの保存と読込](model_basic/tensorflow_trained.md)
     * [モデルデータの保存と読込](model_basic/tensorflow_model.md)
 * 線形回帰
     * [平均二乗誤差](model_linear/tensorflow_mse.md)

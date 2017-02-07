@@ -1,13 +1,27 @@
-# Tensorの型・次元数・ランク・サイズ
+# モデルデータの保存と読み込み
 
 ## Sample
 
-![](/img/type01.png)
+モデルデータを保存。
 
-## 参考
+![](/img/model01.png)
 
-* https://www.tensorflow.org/versions/r1.0/resources/dims_types.html
+バイナリ形式のモデルを表示。
+
+![](/img/model02.png)
+
+テキスト形式のモデルを表示。
+
+![](/img/model03.png)
+
+モデルの読み込みと各変数の表示。
+
+![](/img/model04.png)
+
+新しいセッションを立ち上げ、読み込んだモデルで計算。
+
+![](/img/model05.png)
 
 ## Notebook
 
-[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/type.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/type.ipynb)
+
