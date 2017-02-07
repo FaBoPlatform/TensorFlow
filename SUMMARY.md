@@ -1,10 +1,5 @@
 
 * [はじめに](README.md)
-* デバイス
-    * [Android(未動作)](android/build.md)
-    * [Android(未動作)](android/build_cmake.md)
-    * [Android(未動作)](android/build_dsp.md)
-    * [RaspberryPI(未動作)](raspberryPI/build.md)
 * 開発環境(CloudML)
 	* [CloudMLの設定](cloudml/cloudml.md)
     * [TensorFlowのVersion up](cloudml/versionup.md)
@@ -14,6 +9,10 @@
 * 開発環境(Datalab編)
     * [Datalabの環境整備](datalab/datalab.md)
     * [DatalabのTFを1.0.0にUpdate](datalab/datalab_update_tf1.md)
+* 開発環境構築(Android)
+    * [Android(未動作)](android/build.md)
+    * [Android(未動作)](android/build_cmake.md)
+    * [Android(未動作)](android/build_dsp.md)
 * Numpy
     * [配列から行列を作る](numpy/numpy_arrmat.md)
     * [ゼロのはいった行列を作る](numpy/numpy_zerotensor.md)
@@ -54,7 +53,8 @@
     * [コマンドライン引数](model_basic/tensorflow_flags.md)
     * [セッションの保存・読み込み](model_basic/tensorflow_session.md)
     * [L2正則化](model_basic/tensorflow_l2_norm.md)
-    * [モデルデータの保存と読み込み](model_basic/tensorflow_model.md)
+    * [学習済みデータの保存と読込](model_basic/tensorflow_trained.md)
+    * [モデルデータの保存と読込](model_basic/tensorflow_model.md)
 * 線形回帰
     * [平均二乗誤差](model_linear/tensorflow_mse.md)
     * [線形回帰](model_linear/tensorflow_linear01.md))
@@ -67,6 +67,8 @@
     * [ウィルス分布 データ作成](model_logstic/tensorflow_logistic_virus01.md)
     * [ウィルス分布 学習](model_logstic/tensorflow_logistic_virus02.md)
     * [ウィルス分布 評価](model_logstic/tensorflow_logistic_virus03.md)
+    * [ウィルス分布 RaspPI(未動作)](raspberryPI/build.md)
+    * [ウィルス分布 Android(未動作)](raspberryPI/build.md)
     * [ガンクラス データ作成](model_logstic/tensorflow_logistic_cancer01.md)
     * [ガンクラス 学習](model_logstic/tensorflow_logistic_cancer02.md)
     * [ガンクラス 評価]
@@ -79,6 +81,9 @@
     * [IRIS 評価]
     * [モーメンタム](model_logstic/tensorflow_iris_momentum.md)
     * [Adam](model_logstic/tensorflow_iris_adam.md)
+* Android
+    * [Versionを表示する](android/version.md)
+    * [モデルデータを読込](android/load_model.md)
 * MNIST
     * [MNISTデータセットのダウンロード](model_mnist/tensorflow_mnist_download.md)
     * [MNISTデータセットの読み込み](model_mnist/tensorflow_mnist_load.md)
