@@ -24,4 +24,4 @@
 
 ## Notebook
 
-
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/model.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/model.ipynb)
