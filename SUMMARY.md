@@ -13,6 +13,8 @@
     * [Android(未動作)](android/build.md)
     * [Android(未動作)](android/build_cmake.md)
     * [Android(未動作)](android/build_dsp.md)
+* 開発環境構築(RaspPI)
+    * [RaspPI](raspberryPI/build.md)
 * Numpy
     * [配列から行列を作る](numpy/numpy_arrmat.md)
     * [ゼロのはいった行列を作る](numpy/numpy_zerotensor.md)
@@ -66,7 +68,6 @@
     * [ウィルス分布 データ作成](model_logstic/tensorflow_logistic_virus01.md)
     * [ウィルス分布 学習](model_logstic/tensorflow_logistic_virus02.md)
     * [ウィルス分布 評価](model_logstic/tensorflow_logistic_virus03.md)
-    * [ウィルス分布 RaspPI(未動作)](raspberryPI/build.md)
     * [ウィルス分布 Android(未動作)](raspberryPI/build.md)
     * [ガンクラス データ作成](model_logstic/tensorflow_logistic_cancer01.md)
     * [ガンクラス 学習](model_logstic/tensorflow_logistic_cancer02.md)
