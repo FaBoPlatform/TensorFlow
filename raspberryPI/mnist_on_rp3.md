@@ -1,4 +1,4 @@
-# RaspberryPi
+# RaspberryPiで学習済みニューラルネットを動かす
 
 RaspberryPi上で学習済みニューラルネットを利用する
 
