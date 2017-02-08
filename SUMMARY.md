@@ -84,7 +84,6 @@
 * Android
     * [Versionを表示する](android/version.md)
     * [モデルデータを読込](android/load_model.md)
-    * [学習済み結果を読込](android/load_trained.md)
     * [学習済み結果を実行](android/run.md)
 * MNIST
     * [MNISTデータセットのダウンロード](model_mnist/tensorflow_mnist_download.md)
