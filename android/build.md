@@ -69,9 +69,9 @@ git clone -b r1.0 --recurse-submodules https://github.com/tensorflow/tensorflow.
 ########################################
 # TensorFlow Android Interface build with build_all_android.sh
 ########################################
-#export NDK_ROOT=${ANDROID_HOME}/ndk-bundle
-#${ANDROID_HOME}/tools/bin/sdkmanager "platforms;android-24" "platforms;android-21" "platforms;android-21" "build-tools;24.0.2"
-# -march=nativeを削除する r0.12ではなかったけど、r1.0.0.rc2から-march=nativeが追加されていてエラーになるので削除する
+# export NDK_ROOT=${ANDROID_HOME}/ndk-bundle
+# ${ANDROID_HOME}/tools/bin/sdkmanager "platforms;android-24" "platforms;android-21" "platforms;android-21" "build-tools;24.0.2"
+# Makefileから-march=nativeを削除する r0.12ではなかったけど、v1.0.0-rc2から-march=nativeが追加されていてエラーになるので削除する
 # https://github.com/tensorflow/tensorflow/commit/c4e3d4a74e86fce3a09badd20952f067ff340f32
 # tensorflow/tensorflow/contrib/makefile/Makefile L:140
 vi ${HOME}/github/tensorflow/tensorflow/contrib/makefile/Makefile
