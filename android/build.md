@@ -18,8 +18,8 @@ apt-get install oracle-java8-installer
 # https://developer.android.com/studio/index.html
 # コマンドラインツール(tools_r25.2.3-linux.zip)
 # Android StudioとTensorFlow Android Interfaceのビルド設定に合わせて環境変数を設定する
-export ${ANDROID_HOME}=$HOME/Android/Sdk
-export ${NDK_ROOT}=${ANDROID_HOME}/ndk-bundle
+export ANDROID_HOME=${HOME}/Android/Sdk
+export NDK_ROOT=${ANDROID_HOME}/ndk-bundle
 mkdir -p ${ANDROID_HOME}
 
 unzip tools_r25.2.3-linux.zip
