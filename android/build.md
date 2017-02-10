@@ -1,118 +1,119 @@
 Androidアプリ開発環境でTensorFlowの学習済みグラフ(プロトコルバッファ形式のモデル)を読み込み実行するまで
-```mermaid
-graph LR
-subgraph 開発環境
-  A1(TensorFlow実行環境)
-  A2(Androidビルド環境)
-  S1((環境構築済み))
-end
-subgraph Android Java Inference Interface for TensorFlowのライブラリ作成
-  S2{どちらか}
-  B1(NDK-BUILDで<br>TensorFlowのライブラリ作成)
-  B2(CMAKEで<br>TensorFlowのライブラリ作成)
-end
-subgraph Androidアプリ作成
-  D(Android Studioのプロジェクトに組み込む)
-end
 
-style B1 fill:#f9f,stroke:#333,stroke-width:4px;
+<img src="diagram/build-diagram1.png" alt="TensorFlow Android Interface library build environment" title="TensorFlow Android Interface library build environment">
 
-A1-->S1
-A2-->S1
-S1-->S2
-S2-->B1
-S2-->B2
-B1-->D
-B2-->D
 ```
+########################################
+# Java8 インストール
+########################################
+add-apt-repository "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main"
+apt-get update
+add-apt-repository ppa:webupd8team/y-ppa-manager
+apt-get install oracle-java8-installer
+```
+```
+########################################
+# Android SDK インストール
+########################################
+# https://developer.android.com/studio/index.html
+# コマンドラインツール(tools_r25.2.3-linux.zip)
+# Android StudioとTensorFlow Android Interfaceのビルド設定に合わせて環境変数を設定する
+export ${ANDROID_HOME}=$HOME/Android/Sdk
+export ${NDK_ROOT}=${ANDROID_HOME}/ndk-bundle
+mkdir -p ${ANDROID_HOME}
 
-Android Java Inference Interface for TensorFlowをBazelでbuildして、so, jarファイルを生成。
+unzip tools_r25.2.3-linux.zip
+mv tools ${ANDROID_HOME}
+${ANDROID_HOME}tools/bin/sdkmanager --update
+
+# TensorFlow Android Interfaceのビルド設定に合わせてbuild-toolsとndk-bundleとtoolsをインストールする
+${ANDROID_HOME}/tools/bin/sdkmanager --list
+${ANDROID_HOME}/tools/bin/sdkmanager \
+"build-tools;24.0.2" \
+ndk-bundle \
+tools \
+"platforms;android-24" \
+"platforms;android-21" \
+"cmake3.6.3155560" \
+"patcher;v4" \
+"extras;android;m2repository"
+
+# ワーニングが出る時はファイルを作る
+vi ~/.android/repositories.cfg
+### User Sources for Android SDK Manager
+count=0
+```
+```
+########################################
+# build package インストール
+########################################
+# TensorFlow Android Interface ライブラリ作成用
+apt-get install git automake libtool zlib1g-dev
+```
 
 # Android Java Inference Interface for TensorFlow
 
 https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/android
 
-```shell
-$ git clone --recurse-submodules https://github.com/tensorflow/tensorflow.git
-```
-
-## WORKSPACEの設定
-
-tensorflowフォルダに移動し、WORKSPACEファイルを編集する。
+ライブラリが欲しいのですが、ソースコードからbuildしないと手に入らないみたいなのでbuildします。ここではbazelではなく、build_all_android.shを使ってビルドする方法を記載します。
+<img src="diagram/build-diagram2.png" alt="TensorFlow Android Interface library build" title="TensorFlow Android Interface library build">
 
 ```
-$ cd tensorflow
-$ ls -l WORKSPACE
+########################################
+# TensorFlow r1.0 source code
+########################################
+mkdir ~/github; cd ~/github
+git clone -b r1.0 --recurse-submodules https://github.com/tensorflow/tensorflow.git
 ```
-WORKSPACEの`android_sdk_repository`, `android_ndk_repository`を自分の環境に合わせる。`android_sdk_repository`のapi_levelとbuild_tools_versionをAndroid Studioの環境に合わせる。
-tensorflowのdemoはbuild要求がAPI LEVEL 23以上、実行環境がAPI LEVEL 21以上(Android 5.0以上)となっています
-#####android_sdk_repository
-api_level: 開発環境でインストールしたplatformsのバージョン。tensorflow/contrib/android/cmake/build.gradleが24を指定しているので開発環境にはplatforms;android-24を入れておきます。
-build_tools_version: 開発環境でインストールしたbuild-toolsのバージョン。build-tools;25.0.2なら"25.0.2"
-#####android_ndk_repository
-api_level: 21のまま
-
-WORKSPACE
 ```
-android_sdk_repository(
-    name = "androidsdk",
-    api_level = 24,
-    build_tools_version = "25.0.2",
-    # Replace with path to Android SDK on your system
-    path = "/Users/sasakiakira/Library/Android/sdk/",
-)
+########################################
+# TensorFlow Android Interface build with build_all_android.sh
+########################################
+#export NDK_ROOT=${ANDROID_HOME}/ndk-bundle
+#${ANDROID_HOME}/tools/bin/sdkmanager "platforms;android-24" "platforms;android-21" "platforms;android-21" "build-tools;24.0.2"
+# -march=nativeを削除する r0.12ではなかったけど、r1.0.0.rc2から-march=nativeが追加されていてエラーになるので削除する
+# https://github.com/tensorflow/tensorflow/commit/c4e3d4a74e86fce3a09badd20952f067ff340f32
+# tensorflow/tensorflow/contrib/makefile/Makefile L:140
+vi ${HOME}/github/tensorflow/tensorflow/contrib/makefile/Makefile
+#OPTFLAGS := -O2 -march=native
+OPTFLAGS := -O2
 
-android_ndk_repository(
-    name="androidndk",
-    path="/Users/sasakiakira/Library/Android/sdk/ndk-bundle/",
-    api_level=21)
+${HOME}/github/tensorflow/tensorflow/contrib/makefile/build_all_android.sh
+エラーになったらpackage不足かTensorFlowの開発が進んでMakefileやコードが変わっているためだと思うので、エラー内容をみて修正する必要があります。
 ```
 
-## libtensorflow_inference.soのBuild
-
-```shell
-$ bazel build -c opt //tensorflow/contrib/android:libtensorflow_inference.so \
-   --crosstool_top=//external:android/crosstool \
-   --host_crosstool_top=@bazel_tools//tools/cpp:toolchain \
-   --cpu=armeabi-v7a
-もしエラーが出るようならビルド中にリソース不足の可能性があるので、リソース制限オプションを使う
-$ bazel build -c opt //tensorflow/contrib/android:libtensorflow_inference.so \
-   --crosstool_top=//external:android/crosstool \
-   --host_crosstool_top=@bazel_tools//tools/cpp:toolchain \
-   --cpu=armeabi-v7a \
-   --jobs 1 \
-   --local_resources 2048,0.5,1.0 \
-   --verbose_failures
+## Android アプリを作成する
+<img src="diagram/build-diagram3.png" alt="Android App with TensorFlow Android Interface" title="Android App with TensorFlow Android Interface">
 ```
-
-これで、libtensorflow_inference.so が生成される
-
-```shell
-$ ls bazel-bin/tensorflow/contrib/android/libtensorflow_inference.so
+########################################
+# Android Studioをインストールする
+########################################
+# https://developer.android.com/studio/index.html?hl=ja
+unzip android-studio-ide-145.3537739-linux.zip
+mv android-studio ~/
 ```
-
-|ファイル名||
-|:--|:--|
-|libandroid_tensorflow_lib.lo|core TensorFlow runtime + ops for linking into other libraries|
-|libtensorflow_inference.so|core TF runtime+ops with added JNI bindings|
-
-
-## libandroid_tensorflow_inference_java.jarのBuild
-
 ```
-$ bazel build //tensorflow/contrib/android:android_tensorflow_inference_java
+########################################
+# Android Studio - Hello Application JNIプロジェクトを作成する
+########################################
+# Gradle Scripts
+# settings.gradle (Project Settings)
+include ':app',':TensorFlow-Android-Inference'
+findProject(":TensorFlow-Android-Inference").projectDir =
+        new File("/home/guppy/github/tensorflow/tensorflow/contrib/android/cmake")
+
+
+# Gradle Scripts
+# build.gradle(Module:app)
+# tensorflow_inferenceではなく、TensorFlow-Android-Inferenceとする。
+dependencies {
+    ...
+    debugCompile project(path: ':TensorFlow-Android-Inference', configuration: 'debug')
+    releaseCompile project(path: ':TensorFlow-Android-Inference', configuration: 'release')
+}
 ```
-
-これで、libandroid_tensorflow_inference_java.jarが生成される
-
-```
-$ ls bazel-bin/tensorflow/contrib/android/libandroid_tensorflow_inference_java.jar
-```
-
-# ヒント
-
-https://github.com/tensorflow/tensorflow/issues/6356
-
-Build.gradle
-https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/android/build.gradle
+## TensorFlowモデルの読み込み方法
+https://github.com/FaBoPlatform/TensorFlow/blob/master/android/run.md
+## TensorFlowモデル
+https://github.com/FaBoPlatform/TensorFlow/blob/master/android/model.pb
 
