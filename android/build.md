@@ -34,7 +34,7 @@ ndk-bundle \
 tools \
 "platforms;android-24" \
 "platforms;android-21" \
-"cmake3.6.3155560" \
+"cmake;3.6.3155560" \
 "patcher;v4" \
 "extras;android;m2repository"
 
