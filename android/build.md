@@ -24,7 +24,7 @@ mkdir -p ${ANDROID_HOME}
 
 unzip tools_r25.2.3-linux.zip
 mv tools ${ANDROID_HOME}
-${ANDROID_HOME}tools/bin/sdkmanager --update
+${ANDROID_HOME}/tools/bin/sdkmanager --update
 
 # TensorFlow Android Interfaceのビルド設定に合わせてbuild-toolsとndk-bundleとtoolsをインストールする
 ${ANDROID_HOME}/tools/bin/sdkmanager --list
