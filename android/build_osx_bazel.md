@@ -4,7 +4,7 @@
 TensorFlow 1.0をGitでCloneする。
 
 ```shell
-git clone -b r1.0 --recurse-submodules https://github.com/tensorflow/tensorflow.git
+$ git clone -b r1.0 --recurse-submodules https://github.com/tensorflow/tensorflow.git
 ```
 
 ## BREWのインストール
@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
 ## 参考
 
 * TensorFlowモデルの読み込み方法
-https://github.com/FaBoPlatform/TensorFlow/blob/master/android/run.md
+    https://github.com/FaBoPlatform/TensorFlow/blob/master/android/run.md
 * TensorFlowモデル
-https://github.com/FaBoPlatform/TensorFlow/blob/master/android/model.pb
+    https://github.com/FaBoPlatform/TensorFlow/blob/master/android/model.pb
 
