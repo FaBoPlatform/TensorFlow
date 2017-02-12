@@ -14,7 +14,6 @@
     * [Android(OS X)](android/build_osx.md)
     * [Android(OS X)](android/build_osx_bazel.md)
     * [Android(Hexagon)](android/build_hexagon.md)
-    * [Android(未動作)](android/build_dsp.md)
 * 開発環境構築(RaspPI)
     * [RaspPI](raspberryPI/build.md)
 * Numpy
