@@ -69,7 +69,7 @@
     * [ウィルス分布 データ作成](model_logstic/tensorflow_logistic_virus01.md)
     * [ウィルス分布 学習](model_logstic/tensorflow_logistic_virus02.md)
     * [ウィルス分布 評価](model_logstic/tensorflow_logistic_virus03.md)
-    * [ウィルス分布 Android(未動作)](raspberryPI/build.md)
+    * [ウィルス分布 Android](model_logstic/tensorflow_logistic_virus_anroid.md)
     * [ガンクラス データ作成](model_logstic/tensorflow_logistic_cancer01.md)
     * [ガンクラス 学習](model_logstic/tensorflow_logistic_cancer02.md)
     * [ガンクラス 評価]
