@@ -33,14 +33,12 @@ $ brew update bazel
 |ANDROID_HOME|/Users/username/Library/Android/sdk/|
 |NDK_ROOT|${ANDROID_HOME}/ndk-bundle|
 
-```shell
-$ export ANDROID_HOME=/Users/username/Library/Android/sdk/
-$ export NDK_ROOT=${ANDROID_HOME}/ndk-bundle
-```
 
 tensorflow/WORKSPACE を編集する。android_sdk_repositoryとandroid_ndk_repositoryを自分の環境に合わせて設定する。android sdkのフォルダの下にndk-bundleというフォルダがない場合は、Android StudioのManager for Android SDK and ToolsのAndroid ToolsからNDKをインストールしておく。
 
+![](/img/android_build01.png)
 
+![](/img/android_build02.png)
 
 `tensorflow/WORKSPACE`
 ```shell
@@ -59,38 +57,32 @@ android_ndk_repository(
     api_level=21)
 ```
 
-```shell
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-|必要なパッケージ|インストールコマンド|
-|:--|:--|
-|autoconf|$ brew install autoconf|
-|alcocal| $ brew install automake|
-|libtool| $ brew install libtool|
+## Bazelでlibtensorflow_inference.soをBuild
 
 ```shell
-$ brew install autoconf
-$ brew install automake
-$ brew install libtool
+$ bazel build -c opt //tensorflow/contrib/android:libtensorflow_inference.so \
+   --crosstool_top=//external:android/crosstool \
+   --host_crosstool_top=@bazel_tools//tools/cpp:toolchain \
+   --cpu=armeabi-v7a
 ```
 
-Makefileに`-march=native`があると、エラーが発生するので、`-march=native`を削除しておく。
-
-`/tensorflow/tensorflow/contrib/makefile/Makefile`
-```shell
-#OPTFLAGS := -O2 -march=native
-$ OPTFLAGS := -O2
-```
+libtensorflow_inference.soが生成されたか確認する。
 
 ```shell
-$ cd /tensorflow/tensorflow/contrib/makefile/
-$ build_all_android.sh`
+$ ls bazel-bin/tensorflow/contrib/android/libtensorflow_inference.so
 ```
 
+## Bazelでlibandroid_tensorflow_inference_java.jarをBuild
 
+```shell
+$ bazel build //tensorflow/contrib/android:android_tensorflow_inference_java
+```
 
-##  Android Studio - Hello Application JNIプロジェクトを作成する
+libandroid_tensorflow_inference_java.jarが生成されたか確認する。
+
+```shell
+$ bazel-bin/tensorflow/contrib/android/libandroid_tensorflow_inference_java.jar
+```
 
 
 ```shell
