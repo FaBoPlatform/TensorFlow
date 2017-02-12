@@ -111,102 +111,85 @@ https://github.com/FaBoPlatform/TensorFlow/blob/master/android/model.pb
 
 
 ```
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
+
+def bazel_location = '/usr/local/bin/bazel'
+def cpuType = 'armeabi-v7a'
+def nativeDir = 'libs/' + cpuType
+
+project.buildDir = 'gradleBuild'
+getProject().setBuildDir('gradleBuild')
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
-
-    // for debugging native code purpose
-    publishNonDefault true
-
+    buildToolsVersion "25.0.2"
     defaultConfig {
-        archivesBaseName = "Tensorflow-Android-Inference"
+        applicationId "io.fabo.helloandroid"
         minSdkVersion 21
-        targetSdkVersion 21
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-        ndk {
-            abiFilters  'armeabi-v7a'
-        }
-        externalNativeBuild {
-            cmake {
-                arguments '-DANDROID_TOOLCHAIN=gcc',
-                          '-DANDROID_STL=gnustl_static'
-            }
-        }
-    }
-    sourceSets {
-        main {
-            java.srcDirs =  ["../java"]
-        }
-    }
-
-    externalNativeBuild {
-        cmake {
-            path 'CMakeLists.txt'
-        }
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'),
-                          'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
-
-// Build libtensorflow-core.a if necessary
-// Note: the environment needs to be set up already
-//    [ such as installing autoconfig, make, etc ]
-// How to use:
-//    1) install all of the necessary tools to build libtensorflow-core.a
-//    2) inside Android Studio IDE, uncomment buildTensorFlow in
-//       whenTaskAdded{...}
-//    3) re-sync and re-build. It could take a long time if NOT building
-//       with multiple processes.
-import org.apache.tools.ant.taskdefs.condition.Os
-
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties')
-                .newDataInputStream())
-def ndkDir = properties.getProperty('ndk.dir')
-if (ndkDir == null || ndkDir == "") {
-    ndkDir = System.getenv('ANDROID_NDK_HOME')
-}
-
-if(! Os.isFamily(Os.FAMILY_WINDOWS)) {
-    // This script is for non-Windows OS. For Windows OS, MANUALLY build
-    // (or copy the built) libs/headers to the
-    //    ${TENSORFLOW_ROOT_DIR}/tensorflow/contrib/makefile/gen
-    // refer to CMakeLists.txt about lib and header directories for details
-    task buildTensorflow(type: Exec) {
-        group 'buildTensorflowLib'
-        workingDir getProjectDir().toString() + '/../../../../'
-        environment PATH: '/opt/local/bin:/opt/local/sbin:' +
-                          System.getenv('PATH')
-        environment NDK_ROOT: ndkDir
-        commandLine 'tensorflow/contrib/makefile/build_all_android.sh'
+    lintOptions {
+        abortOnError false
     }
 
-    tasks.whenTaskAdded { task ->
-        group 'buildTensorflowLib'
-        if (task.name.toLowerCase().contains('sources')) {
-            def tensorflowTarget = new File(getProjectDir().toString() +
-                    '/../../makefile/gen/lib/libtensorflow-core.a')
-            if (!tensorflowTarget.exists()) {
-                // Note:
-                //    just uncomment this line to use it:
-                //    it can take long time to build by default
-                //    it is disabled to avoid false first impression
-                // task.dependsOn buildTensorflow
-            }
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java/', '../../contrib/android/java']
+            //resources.srcDirs = ['src']
+            //aidl.srcDirs = ['src']
+            //renderscript.srcDirs = ['src']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['asset']
+            jniLibs.srcDirs = ['src/main/libs']
         }
+
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
     }
+
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+    //debugCompile project(path: ':TensorFlow-Android-Inference', configuration: 'debug')
+    //releaseCompile project(path: ':TensorFlow-Android-Inference', configuration: 'release')
+    compile files('src/main/libs/libandroid_tensorflow_inference_java.jar')
+}
+
+task buildNative(type:Exec) {
+    workingDir '/Users/sasakiakira/Documents/workspace_ai_android/tf/tensorflow'
+    commandLine bazel_location, 'build', '-c', 'opt', \
+      'tensorflow/examples/android:tensorflow_native_libs', \
+       '--crosstool_top=//external:android/crosstool', \
+       '--cpu=' + cpuType, \
+       '--host_crosstool_top=@bazel_tools//tools/cpp:toolchain'
+}
+
+task copyNativeLibs(type: Copy) {
+    from('/Users/sasakiakira/Documents/workspace_ai_android/android/tf/tensorflow/bazel-bin/tensorflow/contrib/android/') { include '**/*.so' }
+    into nativeDir
+    duplicatesStrategy = 'include'
+}
+
+copyNativeLibs.dependsOn buildNative
+assemble.dependsOn copyNativeLibs
+task findbugs(type: FindBugs, dependsOn: 'assembleDebug') {
+    copyNativeLibs
 }
 
 ```
