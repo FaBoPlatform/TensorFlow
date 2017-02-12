@@ -172,8 +172,8 @@ public class MainActivity extends AppCompatActivity {
 ```
 ## 参考
 
-* TensorFlowモデルの読み込み方法
+* TensorFlowモデルの読み込み方法<br>
     https://github.com/FaBoPlatform/TensorFlow/blob/master/android/run.md
-* TensorFlowモデル
+* TensorFlowモデル<br>
     https://github.com/FaBoPlatform/TensorFlow/blob/master/android/model.pb
 
