@@ -7,7 +7,26 @@ TensorFlow 1.0をGitでCloneする。
 git clone -b r1.0 --recurse-submodules https://github.com/tensorflow/tensorflow.git
 ```
 
-## Android SDKのパスを通す
+## BREWのインストール
+
+```shell
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+## Java 8.xのインストール
+
+```shell
+$ brew cask install java
+```
+
+## Bazelのインストール
+
+```shell
+$ brew install bazel
+$ brew update bazel
+```
+
+## WORKSPACEの編集
 
 |パス|Defaultの場所|
 |:--|:--|
@@ -19,7 +38,26 @@ $ export ANDROID_HOME=/Users/username/Library/Android/sdk/
 $ export NDK_ROOT=${ANDROID_HOME}/ndk-bundle
 ```
 
-## 必要なパッケージをBREWでインストール
+tensorflow/WORKSPACE を編集する。android_sdk_repositoryとandroid_ndk_repositoryを自分の環境に合わせて設定する。android sdkのフォルダの下にndk-bundleというフォルダがない場合は、Android StudioのManager for Android SDK and ToolsのAndroid ToolsからNDKをインストールしておく。
+
+
+
+`tensorflow/WORKSPACE`
+```shell
+# Uncomment and update the paths in these entries to build the Android demo.
+android_sdk_repository(
+    name = "androidsdk",
+    api_level = 23,
+    build_tools_version = "23.0.1",
+    # Replace with path to Android SDK on your system
+    path = "/Users/sasakiakira/Library/Android/sdk/",
+)
+
+android_ndk_repository(
+    name="androidndk",
+    path="/Users/sasakiakira/Library/Android/sdk/ndk-bundle/",
+    api_level=21)
+```
 
 ```shell
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
