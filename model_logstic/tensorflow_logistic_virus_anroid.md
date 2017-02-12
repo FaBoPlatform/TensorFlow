@@ -2,9 +2,9 @@
 
 ## TensorFlow
 
-* [Notebook]("./virus_android.ipynb")
-* [出力したグラフ]("./graph-virus.pbtxt")
-* [出力したグラフ(バイナリ)]("./graph-virus.pb")
+* [Notebook]("https://github.com/FaBoPlatform/TensorFlow/blob/master/model_logstic/virus_android.ipynb")
+* [出力したグラフ]("https://github.com/FaBoPlatform/TensorFlow/blob/master/model_logstic/graph-virus.pbtxt")
+* [出力したグラフ(バイナリ)]("https://github.com/FaBoPlatform/TensorFlow/blob/master/model_logstic/graph-virus.pb")
 
 ## Androidソースコード
 
