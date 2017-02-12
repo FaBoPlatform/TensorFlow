@@ -72,6 +72,9 @@ libtensorflow_inference.soが生成されたか確認する。
 $ ls bazel-bin/tensorflow/contrib/android/libtensorflow_inference.so
 ```
 
+生成したlibtensorflow_inference.so を任意の場所にコピーしておく。
+
+
 ## Bazelでlibandroid_tensorflow_inference_java.jarをBuild
 
 ```shell
@@ -84,23 +87,38 @@ libandroid_tensorflow_inference_java.jarが生成されたか確認する。
 $ bazel-bin/tensorflow/contrib/android/libandroid_tensorflow_inference_java.jar
 ```
 
+生成したlibtensorflow_inference.jar を任意の場所にコピーしておく。
 
-```shell
-# Gradle Scripts
-# settings.gradle (Project Settings)
-include ':app',':TensorFlow-Android-Inference'
-findProject(":TensorFlow-Android-Inference").projectDir =
-        new File("/home/guppy/github/tensorflow/tensorflow/contrib/android/cmake")
-```
+## Android Studioのプロジェクトへの取り込み
+
+`libtensorflow_inference.so`と`libtensorflow_inference.jar`をそれぞれ、`libs/armedabi-v7a`と`libs`に新規フォルダを作成してコピーする。
+
+![](/img/android_studio101.png)
+
+また、Modelデータは、`aseets`フォイルにコピーする。
+
+今回は、[モデルデータの保存と読込](../model_basic/tensorflow_model.md)で作成した[model.pb](https://github.com/FaBoPlatform/TensorFlow/raw/master/model/model.pb) を使用する。
+
+また、build.gradleを下記のように書き直し、TensorFlowのライブラリをアプリ内で使用できるようにする。
+
+![](/img/android_studio102.png)
 
 ```shell
 # Gradle Scripts
 # build.gradle(Module:app)
-# tensorflow_inferenceではなく、TensorFlow-Android-Inferenceとする。
+android {
+    ...
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            assets.srcDirs = ['assets']
+        }
+    }
+}
+...
 dependencies {
     ...
-    debugCompile project(path: ':TensorFlow-Android-Inference', configuration: 'debug')
-    releaseCompile project(path: ':TensorFlow-Android-Inference', configuration: 'release')
+    compile files('libs/libandroid_tensorflow_interface_java.jar')
 }
 ```
 
@@ -109,87 +127,3 @@ https://github.com/FaBoPlatform/TensorFlow/blob/master/android/run.md
 ## TensorFlowモデル
 https://github.com/FaBoPlatform/TensorFlow/blob/master/android/model.pb
 
-
-```
-apply plugin: 'com.android.application'
-
-def bazel_location = '/usr/local/bin/bazel'
-def cpuType = 'armeabi-v7a'
-def nativeDir = 'libs/' + cpuType
-
-project.buildDir = 'gradleBuild'
-getProject().setBuildDir('gradleBuild')
-
-android {
-    compileSdkVersion 24
-    buildToolsVersion "25.0.2"
-    defaultConfig {
-        applicationId "io.fabo.helloandroid"
-        minSdkVersion 21
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-    lintOptions {
-        abortOnError false
-    }
-
-    sourceSets {
-        main {
-            manifest.srcFile 'src/main/AndroidManifest.xml'
-            java.srcDirs = ['src/main/java/', '../../contrib/android/java']
-            //resources.srcDirs = ['src']
-            //aidl.srcDirs = ['src']
-            //renderscript.srcDirs = ['src']
-            res.srcDirs = ['src/main/res']
-            assets.srcDirs = ['asset']
-            jniLibs.srcDirs = ['src/main/libs']
-        }
-
-        debug.setRoot('build-types/debug')
-        release.setRoot('build-types/release')
-    }
-
-}
-
-dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    testCompile 'junit:junit:4.12'
-    //debugCompile project(path: ':TensorFlow-Android-Inference', configuration: 'debug')
-    //releaseCompile project(path: ':TensorFlow-Android-Inference', configuration: 'release')
-    compile files('src/main/libs/libandroid_tensorflow_inference_java.jar')
-}
-
-task buildNative(type:Exec) {
-    workingDir '/Users/sasakiakira/Documents/workspace_ai_android/tf/tensorflow'
-    commandLine bazel_location, 'build', '-c', 'opt', \
-      'tensorflow/examples/android:tensorflow_native_libs', \
-       '--crosstool_top=//external:android/crosstool', \
-       '--cpu=' + cpuType, \
-       '--host_crosstool_top=@bazel_tools//tools/cpp:toolchain'
-}
-
-task copyNativeLibs(type: Copy) {
-    from('/Users/sasakiakira/Documents/workspace_ai_android/android/tf/tensorflow/bazel-bin/tensorflow/contrib/android/') { include '**/*.so' }
-    into nativeDir
-    duplicatesStrategy = 'include'
-}
-
-copyNativeLibs.dependsOn buildNative
-assemble.dependsOn copyNativeLibs
-task findbugs(type: FindBugs, dependsOn: 'assembleDebug') {
-    copyNativeLibs
-}
-
-```
