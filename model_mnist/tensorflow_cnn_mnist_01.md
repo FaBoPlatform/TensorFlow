@@ -29,9 +29,9 @@ t = tf.placeholder(tf.float32, shape=(None,10))
 # Nはデータ数, 28x28=784
 X = tf.placeholder(tf.float32, shape=(None,784))
 # 重み 784x10行列
-W = tf.Variable(tf.zeros([784,10]))
+W = tf.Variable(tf.zeros([784,10]),trainable=True)
 # バイアス
-b = tf.Variable(tf.zeros([10]))
+b = tf.Variable(tf.zeros([10]),trainable=True)
 # Nx10行列
 # Nはデータ数
 y = tf.matmul(X,W) + b
