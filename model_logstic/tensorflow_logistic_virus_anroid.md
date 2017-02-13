@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-predict_op200, ap_opも処理が走るが値が変わらない。
+predict_op200, app_opも処理が走るが値が変わらない。
 
 ```java
 package fabo.io.hellotensorflow;
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-ap_opが値が変わるが、predict_op200でエラー
+app_opが値が変わるが、predict_op200でエラー
 
 ```
 /fabo.io.hellotensorflow E/native: tensorflow_inference_jni.cc:233 Error during inference: Invalid argument: In[0] is not a matrix
