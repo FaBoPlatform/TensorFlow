@@ -37,7 +37,7 @@ b = tf.Variable(tf.zeros([10]))
 y = tf.matmul(X,W) + b
 
 ### 交差エントロピーコスト関数
-loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(y,t))
+loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=y,labels=t))
 ### 学習アルゴリズム
 # 勾配降下法 学習率:0.5
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.5)
@@ -50,7 +50,7 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 ### 学習の実行
 sess = tf.Session()
-sess.run(tf.initialize_all_variables())
+sess.run(tf.global_variables_initializer())
 i = 0
 for _ in range(2000):
     i += 1
@@ -74,15 +74,15 @@ Extracting MNIST_data/train-images-idx3-ubyte.gz
 Extracting MNIST_data/train-labels-idx1-ubyte.gz
 Extracting MNIST_data/t10k-images-idx3-ubyte.gz
 Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
-[Train] step: 200, loss: 0.366843, acc: 0.910000
-[Train] step: 400, loss: 0.284713, acc: 0.910000
-[Train] step: 600, loss: 0.221735, acc: 0.930000
-[Train] step: 800, loss: 0.171403, acc: 0.960000
-[Train] step: 1000, loss: 0.274226, acc: 0.930000
-[Train] step: 1200, loss: 0.314422, acc: 0.910000
-[Train] step: 1400, loss: 0.268113, acc: 0.910000
-[Train] step: 1600, loss: 0.201741, acc: 0.950000
-[Train] step: 1800, loss: 0.142961, acc: 0.950000
-[Train] step: 2000, loss: 0.248565, acc: 0.920000
-[Test] acc: 0.918700
+[Train] step: 200, loss: 0.407333, acc: 0.890000
+[Train] step: 400, loss: 0.243457, acc: 0.910000
+[Train] step: 600, loss: 0.361597, acc: 0.900000
+[Train] step: 800, loss: 0.315523, acc: 0.920000
+[Train] step: 1000, loss: 0.269812, acc: 0.940000
+[Train] step: 1200, loss: 0.353051, acc: 0.880000
+[Train] step: 1400, loss: 0.243116, acc: 0.950000
+[Train] step: 1600, loss: 0.158794, acc: 0.980000
+[Train] step: 1800, loss: 0.271256, acc: 0.930000
+[Train] step: 2000, loss: 0.207677, acc: 0.930000
+[Test] acc: 0.919700
 ```
