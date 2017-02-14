@@ -40,12 +40,12 @@ def input_image(X):
 def weight_variable(shape):
     """初期化済みの重み"""
     initial = tf.truncated_normal(shape, stddev=0.1)
-    return tf.Variable(initial)
+    return tf.Variable(initial,trainable=True)
 
 def bias_variable(shape):
     """初期化済みのバイアス"""
     initial = tf.constant(0.1, shape=shape)
-    return tf.Variable(initial)
+    return tf.Variable(initial,trainable=True)
 
 def conv2d(X, W):
     """畳込み層"""
@@ -89,7 +89,7 @@ b_fc2 = bias_variable([10])
 y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
 
 ### 交差エントロピーコスト関数
-loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(y_conv, t))
+loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=t, logits=y_conv))
 ### 学習アルゴリズム
 # Adam 学習率:0.0001
 optimizer = tf.train.AdamOptimizer(1e-4)
@@ -102,7 +102,7 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 ### 学習の実行
 sess = tf.Session()
-sess.run(tf.initialize_all_variables())
+sess.run(tf.global_variables_initializer())
 i = 0
 for _ in range(20000):
     i += 1
