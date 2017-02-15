@@ -53,8 +53,8 @@ class ConvPoolLayer:
                 h_pool = self.max_pool_2x2(h_conv, "max_pooling_layer")
             self.output = h_pool
             # ログの設定
-            tf.histogram_summary("%s_weights" % name, W)
-            tf.histogram_summary("%s_biases" % name, b)
+            tf.summary.histogram("%s_weights" % name, W)
+            tf.summary.histogram("%s_biases" % name, b)
 
     def conv2d(self, X, W, name):
         """畳込み層"""
@@ -85,8 +85,8 @@ class FullyConnectedLayer:
                 h_fc_drop = tf.nn.dropout(h_fc, dropout_rate, name="dropout")
             self.output = h_fc_drop
             # ログの設定
-            tf.histogram_summary("%s_weights" % name, W)
-            tf.histogram_summary("%s_biases" % name, b)
+            tf.summary.histogram("%s_weights" % name, W)
+            tf.summary.histogram("%s_biases" % name, b)
 
 class OutputLayer:
     """出力層"""
@@ -98,22 +98,22 @@ class OutputLayer:
                 y = tf.matmul(layer.output, W) + b
                 self.output = y
             # ログの設定
-            tf.histogram_summary("%s_weights" % name, W)
-            tf.histogram_summary("%s_biases" % name, b)
+            tf.summary.histogram("%s_weights" % name, W)
+            tf.summary.histogram("%s_biases" % name, b)
 
 class Optimizer:
     """最適化アルゴリズム"""
     def __init__(self, output_layer, t, name=None):
         with tf.name_scope(name):
             ### 交差エントロピーコスト関数
-            loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(output_layer.output, t), name="loss")
+            loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=output_layer.output, labels=t), name="loss")
             ### 学習アルゴリズム
             # Adam 学習率:0.0001
             optimizer = tf.train.AdamOptimizer(1e-4)
             self.loss = loss
             self.train_step = optimizer.minimize(loss)
             #  ログの設定
-            tf.scalar_summary("loss", loss)
+            tf.summary.scalar("loss", loss)
         
 class Evaluator:
     """評価器"""
@@ -125,7 +125,7 @@ class Evaluator:
             accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32),
                                     name="accuracy")
             #  ログの設定
-            tf.scalar_summary("accuracy", accuracy)
+            tf.summary.scalar("accuracy", accuracy)
             self.accuracy = accuracy
 
 if __name__ == "__main__":
@@ -155,7 +155,7 @@ if __name__ == "__main__":
     
     # トレーニングの実行
     sess = tf.InteractiveSession()
-    sess.run(tf.initialize_all_variables())
+    sess.run(tf.global_variables_initializer())
     summary = tf.merge_all_summaries()
     writer = tf.train.SummaryWriter("./mnist_cnn_log", sess.graph)
     
@@ -163,12 +163,12 @@ if __name__ == "__main__":
     for _ in range(20000):
         i += 1
         # 学習用データのミニバッチを取得する
-        batch_x, batch_t = mnist.train.next_batch(50)
+        batch = mnist.train.next_batch(50)
         # 学習の実行 ドロップアウト率:0.5
         sess.run(optimizer.train_step, feed_dict={X:batch_x,t:batch_t,keep_prob:0.5})
         if i % 1000 == 0:
             summary_, train_acc, train_loss = sess.run([summary, evaluator.accuracy,optimizer.loss], 
-                                            feed_dict={X:batch_x,t:batch_t,keep_prob:1.0})
+                                            feed_dict={X:batch[0],t:batch[1],keep_prob:1.0})
             print "[Train] step: %d, loss: %f, acc: %f" % (i, train_loss, train_acc)
             writer.add_summary(summary_, i)
             # テストデータによるモデルの評価
