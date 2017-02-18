@@ -1,23 +1,25 @@
 # Google Cloud DataLabのTensorFlowをUpdate
+（この項目はTensorFlow r1.0リリース前に、最新版のTensorFlowに更新した際の情報です。ライブラリの更新が必要な時に参考にしてください)
 
 チュートリアルに必要なTensorFlowのVersionは、1.0.0です。
 
-## 起動中のDockerプロセス
+## Dockerコンテナ一覧
 
-`docker ps`で起動中のDockerプロセスの一覧を取得する。
+`docker ps -a`でDockerコンテナの一覧を取得する。(詳細はman docker-ps)
 
 ```shell
-$ docker ps
+$ docker ps -a
 ```
+Dockerコンテナとは：Dockerイメージをdocker runすることで作られるDockerインスタンスのこと。dockerが実行するプロセスイメージ。docker stop/startで停止/起動が可能。
 
 ## Consoleへログイン
 
-取得したNameもしくは、プロセスIDを指定して、ログインする。
+取得したNameもしくは、コンテナIDを指定して、ログインする。
 
 
-[プロセスIDで起動]
+[コンテナIDで起動IDで起動]
 ```shell
-$ docker exec -it プロセスID /bin/bash
+$ docker exec -it コンテナID /bin/bash
 ```
 
 [Nameで起動]
@@ -30,7 +32,7 @@ $ docker exec -it MAME /bin/bash
 ConsoleにログインしたらPythonのVersionを調べる。
 
 ```shell
-$ python -V      
+$ python -V
 Python 2.7.9
 ```
 
@@ -55,13 +57,13 @@ $ pip list
 ## Dockerに保存
 
 最後に、TF1.0.0RC0にUpdateされた状態でDockerを保存する。
-再び、`docker ps`で、起動しているDockerプロセス一覧を取得する。
+再び、`docker ps`で、起動しているDockerコンテナ一覧を取得する。
 
 ```shell
 $ docker ps
 ```
 
-プロセスIDをコピーし、下記のコマンドで変更をコミットする
+コンテナIDをコピーし、下記のコマンドで変更をコミットする
 
 ```shell
 $ docker commit -m "tensorflow version up" 19627749df78 datalab_tf1
@@ -105,12 +107,12 @@ datalab_tf1
 ```
 ## Consoleへログイン
 
-取得したNameもしくは、プロセスIDを指定して、ログインする。
+取得したNameもしくは、コンテナIDを指定して、ログインする。
 
 
-[プロセスIDで起動]
+[コンテナIDで起動]
 ```shell
-$ docker exec -it プロセスID /bin/bash
+$ docker exec -it コンテナID /bin/bash
 ```
 
 [Nameで起動]
