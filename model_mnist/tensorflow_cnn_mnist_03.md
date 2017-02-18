@@ -87,7 +87,7 @@ norm_term = tf.nn.l2_loss(W_conv1) + tf.nn.l2_loss(W_conv2) + tf.nn.l2_loss(W_fc
 # 正則化パラメタ
 lambda_ = 0.001
 ### 交差エントロピーコスト関数
-cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(y_conv, t))
+cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=y_conv, labels=t))
 # コスト関数
 loss = cross_entropy + lambda_ * norm_term
 
