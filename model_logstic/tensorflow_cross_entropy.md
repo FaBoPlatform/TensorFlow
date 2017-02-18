@@ -15,7 +15,10 @@
 Sample
 
 ```python
-# coding:utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# TensorFlow r1.0.0
+# Python 2.7.6
 import random
 import numpy as np
 import tensorflow as tf
@@ -45,7 +48,7 @@ t = tf.constant(t_data, tf.float32, shape=(10,3))
 f = tf.matmul(x, w)+b
 
 # クロスエントロピー
-cross_entropy = tf.nn.softmax_cross_entropy_with_logits(f, t)
+cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels=t,logits=f)
 # クロスエントロピーコスト関数
 cross_entropy_loss = tf.reduce_sum(cross_entropy)
 

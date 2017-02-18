@@ -15,7 +15,10 @@ $ curl -O https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cance
 Sample
 
 ```python
-# coding:utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# TensorFlow r1.0.0
+# Python 2.7.6
 import numpy as np
 import tensorflow as tf
 

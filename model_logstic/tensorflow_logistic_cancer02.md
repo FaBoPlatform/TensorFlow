@@ -5,7 +5,10 @@ breast-cancer-wisconsinデータセットを使い、TensorFlowによるロジ�
 Sample
 
 ```python
-# coding:utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# TensorFlow r1.0.0
+# Python 2.7.6
 import numpy as np
 import tensorflow as tf
 
@@ -67,7 +70,7 @@ correct_pred = tf.equal(tf.sign(p-0.5), tf.sign(t-0.5))
 accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
 with tf.Session() as sess:
-    sess.run(tf.initialize_all_variables())
+    sess.run(tf.global_variables_initializer())
     i = 0
     for _ in range(20000):
         i += 1

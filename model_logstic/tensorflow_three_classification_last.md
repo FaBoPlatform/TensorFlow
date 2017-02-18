@@ -5,7 +5,10 @@ irisデータセットを使った3クラス分類のサンプルコード
 サンプルコード :
 
 ```python
-# coding:utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# TensorFlow r1.0.0
+# Python 2.7.6
 """
 irisデータセットを使った3クラス分類
 """
@@ -95,7 +98,7 @@ accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
 ### 学習の実行
 with tf.Session() as sess:
-    sess.run(tf.initialize_all_variables())
+    sess.run(tf.global_variables_initializer())
     i = 0
     for _ in range(2000):
         i += 1

@@ -1,4 +1,4 @@
-#　ウィルス分布　データ作成
+# ウィルス分布　データ作成
 
 ## 分布の作成
 
@@ -7,6 +7,10 @@
 ![](/img/virus01.png)
 
 ```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# TensorFlow r1.0.0
+# Python 2.7.6
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
@@ -29,7 +33,6 @@ plt.show()
 ![](/img/virus02.png)
 
 ```python
-# coding:utf-8
 N = len(x_positive)
 
 POSITIVE = np.zeros((N,2))

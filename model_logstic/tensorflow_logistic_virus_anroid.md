@@ -97,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "initializeTensorFlow:result:" + result);
 
         float[] x_value = new float[2];
-        x_value[0] = (float) 2.0;
-        x_value[1] = (float) 2.0;
+        x_value[0] = (float) 9.0;
+        x_value[1] = (float) 3.0;
 
         mTensorFlowIF.fillNodeFloat("input",new int[] {2}, x_value);
 
@@ -110,21 +110,57 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "result_add:  " + result_value1[1]);
 
         // Predict
-        mTensorFlowIF.runInference(new String[] {"predict_op200"});
-        float[] result_value2 = new float[2];
-        mTensorFlowIF.readNodeFloat("predict_op200", result_value2);
-        Log.i(TAG, "result_predict:  " + result_value2[0]);
-        Log.i(TAG, "result_predict:  " + result_value2[1]);
-    }
+        int x_cols=2;
+        int x_rows=10;
+        float x_value2[] = {
+                /* x_rows[0] */ -2,-2,
+                /* x_rows[1] */ 0,0,
+                /* x_rows[2] */ -2,2,
+                /* x_rows[3] */ -2 /* error? */
+                /* x_rows[4] */ /* error? */
+                /* x_rows[...] */ /* error? */
+        };
+        mTensorFlowIF.fillNodeFloat("input",new int[] {x_rows,x_cols}, x_value2);
+        int runInference = mTensorFlowIF.runInference(new String[]{"predict_op200"});
 
+        float[] result_value2 = new float[x_rows];
+        mTensorFlowIF.readNodeFloat("predict_op200", result_value2);
+
+        // 入力値->出力を整形
+        String x[]= new String[x_rows];
+        String message = "";
+            for (int row = 0; row < x_rows; row++) {
+                message = "x(";
+
+                for (int col = 0; col < x_cols; col++) {
+                    x[col] = x_value2.length > (row * x_cols + col) ? Float.toString(x_value2[row * x_cols + col]) : "?";
+                    if (col > 0) {
+                        message += ",";
+                    }
+                    message += x[col];
+                }
+                message += ") -> result_predict:  " + result_value2[row];
+                Log.i(TAG, message);
+            }
+        }
+    }
 }
 ```
 
-app_opが値が変わるが、predict_op200でエラー
-
+出力
 ```
-/fabo.io.hellotensorflow E/native: tensorflow_inference_jni.cc:233 Error during inference: Invalid argument: In[0] is not a matrix
-                                                                   [[Node: MatMul = MatMul[T=DT_FLOAT, transpose_a=false, transpose_b=false, _device="/job:localhost/replica:0/task:0/cpu:0"](_recv_input_0, constant_w)]]
-02-13 06:13:56.592 32487-32487/fabo.io.hellotensorflow E/native: tensorflow_inference_jni.cc:170 Output [predict_op200] not found, aborting!
+I/TF_LOG: result_add:  18.0
+I/TF_LOG: result_add:  6.0
+
+I/TF_LOG: x(-2.0,-2.0) -> result_predict:  1.0
+I/TF_LOG: x(0.0,0.0) -> result_predict:  0.0
+I/TF_LOG: x(-2.0,2.0) -> result_predict:  1.0
+I/TF_LOG: x(-2.0,?) -> result_predict:  0.0
+I/TF_LOG: x(?,?) -> result_predict:  0.0
+I/TF_LOG: x(?,?) -> result_predict:  0.0
+I/TF_LOG: x(?,?) -> result_predict:  0.0
+I/TF_LOG: x(?,?) -> result_predict:  0.0
+I/TF_LOG: x(?,?) -> result_predict:  0.0
+I/TF_LOG: x(?,?) -> result_predict:  0.0
 ```
 

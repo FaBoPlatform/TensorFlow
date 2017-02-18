@@ -72,7 +72,10 @@ with tf.Session() as sess:
 ## Coding
 
 ```python
-# coding:utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# TensorFlow r1.0.0
+# Python 2.7.6
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt

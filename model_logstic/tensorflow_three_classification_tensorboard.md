@@ -1,11 +1,18 @@
 # 3クラス分類 Tensorboard編
 
 Tensorboardによりトレーニングの様子を可視化する。
+先にIRISデータ作成を実行し、bazdekIris.dataを作成しておくこと。
 
 サンプルコード :
 
 ```python
-# coding:utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# TensorFlow r1.0.0
+# Python 2.7.6
+"""
+irisデータセットを使った3クラス分類
+"""
 import numpy as np
 import tensorflow as tf
 
@@ -83,16 +90,16 @@ accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 ### 学習の実行
 with tf.Session() as sess:
     # ログの設定
-    tf.histogram_summary("Hidden_layer_wights", w_hidden)
-    tf.histogram_summary("Hidden_layer_biases", b_hidden)
-    tf.histogram_summary("Output_layer_wights", w_output)
-    tf.histogram_summary("Output layer_wights", b_output)
-    tf.scalar_summary("Accuracy", accuracy)
-    tf.scalar_summary("Loss", loss)
-    summary = tf.merge_all_summaries()
+    tf.summary.histogram("Hidden_layer_wights", w_hidden)
+    tf.summary.histogram("Hidden_layer_biases", b_hidden)
+    tf.summary.histogram("Output_layer_wights", w_output)
+    tf.summary.histogram("Output_layer_wights", b_output)
+    tf.summary.scalar("Accuracy", accuracy)
+    tf.summary.scalar("Loss", loss)
+    summary = tf.summary.merge_all()
 
-    writer = tf.train.SummaryWriter("./iris_cassification_log", sess.graph)
-    sess.run(tf.initialize_all_variables())
+    writer = tf.summary.FileWriter("./iris_cassification_log", sess.graph)
+    sess.run(tf.global_variables_initializer())
 
     i = 0
     for _ in range(2000):

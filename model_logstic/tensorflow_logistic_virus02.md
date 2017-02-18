@@ -1,4 +1,4 @@
-#　ウィルス分布　学習
+# ウィルス分布　学習
 
 TensorBoardに表示するグラフをリセットし、TensorFlowの変数とプレースフォルダを定義する。
 
@@ -23,7 +23,10 @@ TensorBoardに表示するグラフをリセットし、TensorFlowの変数と�
 ## Coding
 
 ```python
-# coding:utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# TensorFlow r1.0.0
+# Python 2.7.6
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
@@ -63,7 +66,7 @@ print STATE
 
 tf.reset_default_graph()
 LOGDIR = "./data_virus"
- 
+
 x = tf.placeholder(tf.float32, shape=(None,2), name="input")
 y = tf.placeholder(tf.float32, shape=(None,2), name="output")
 w = tf.Variable(tf.random_normal([2,2], stddev=0.01), dtype=tf.float32, name="weight")
@@ -90,7 +93,7 @@ y_graph = tf.summary.histogram("y_graph", y)
 cost_graph = tf.summary.scalar("cost_graph", cost)
 
 with tf.Session() as sess:
-  
+
   # 初期化処理
   init_op = tf.global_variables_initializer()
   sess.run(init_op)
@@ -104,7 +107,7 @@ with tf.Session() as sess:
   summary_op = tf.summary.merge_all()
 
   with tf.Graph().as_default():
-    
+
     # トレーニング回数
     training_step = 1000
     validation_step = 100
@@ -134,6 +137,8 @@ TensorBoardを起動する。TensorBoardは、DatalabではTensorBoardをForegro
 
 > !tensorboard --logdir=data_virus/
 
+docker環境でtensorboardを利用するには6066ポートへのトンネルも必要
+docker run -it -p 6006:6006 -p 8888:8888 tensorflow/tensorflow
 
 ![](/img/logistic002.png)
 
