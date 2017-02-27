@@ -7,12 +7,18 @@ RaspberryPi上で学習済みニューラルネットを利用する
 * Raspberry Pi3 Model B
 * Raspbian Jessie Lite 2016-09-23
 * Python 2.7.9
-* TensorFlow 0.12.1
+* Python 3.4.2
+* TensorFlow 1.0.0
 
 ## サンプルコード
 
 ```python
 # coding:utf-8
+
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
@@ -28,13 +34,15 @@ tf.import_graph_def(graph_def, name="")
 f.close()
 
 sess = tf.Session()
+
 # オペレーションおよびテンソルの一覧を表示する
 for op in sess.graph.get_operations():
     print(op.name, op.outputs)
 
 # テスト用データを1000個利用
-test_acc = sess.run("accuracy:0", feed_dict={"X:0":mnist.test.images[:1000],"t:0":mnist.test.labels[:1000],"keep_prob:0":1.0})
-print "accuracy: %f" % test_acc
+acc = sess.run("accuracy:0", feed_dict={"X:0":mnist.test.images[:1000],"t:0":mnist.test.labels[:1000],"keep_prob:0":1.0})
+
+print("accuracy: %f" % acc)
 sess.close()
 ```
 
