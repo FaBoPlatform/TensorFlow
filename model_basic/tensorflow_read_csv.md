@@ -53,10 +53,13 @@ coord = tf.train.Coordinator()  # スレッドを管理するクラス
 threads = tf.train.start_queue_runners(coord=coord, sess=sess)
 
 for _ in range(20):
+    # 特徴量とラベルを取り出す
     _features_, _label = sess.run([features, label])
     print(_features_, _label)
 
+# スレッドの停止を要求する
 coord.request_stop()
+# スレッドの停止を待ち合わせる
 coord.join(threads)
 sess.close()
 ```
