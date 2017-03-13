@@ -100,6 +100,8 @@
     * [MNIST 畳込みニューラルネットワーク セッションの保存・書込み](model_mnist/tensorflow_cnn_mnist_05.md)
     * [MNIST 畳込みニューラルネットワーク バッチ正規化](model_mnist/tensorflow_cnn_mnist_06.md)
     * [DeepDream](model_mnist/tensorflow_deep_dream.md)
+* RNN
+    * [RNNによるクラス分類](model_sequence/rnn_basic.md)
 * Matplotlib
     * [Matplotlibのインストール](matplotlib/matplotlib.md)
     * [点をうつ](matplotlib/matplotlib_point.md)
