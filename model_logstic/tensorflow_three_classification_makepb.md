@@ -45,6 +45,24 @@ train_data = data[:120]
 test_labels = labels[120:]
 test_data = data[120:]
 
+def single_layer(X):
+    """隠れ層"""
+    node_num = 1024
+    w = tf.Variable(tf.truncated_normal([4,node_num]))
+    b = tf.Variable(tf.zeros([node_num]))
+    f = tf.matmul(X, w) + b
+    layer = tf.nn.relu(f)
+    return layer
+
+def output_layer(layer):
+    """出力層"""
+    node_num = 1024
+    w = tf.Variable(tf.zeros([node_num,3]))
+    b = tf.Variable(tf.zeros([3]))
+    f = tf.matmul(layer, w) + b
+    p = tf.nn.softmax(f)
+    return p
+
 g = tf.Graph()
 
 with g.as_default():
@@ -59,8 +77,6 @@ with g.as_default():
     cross_entropy = y_ * tf.log(y)
     loss = -tf.reduce_sum(cross_entropy)
     train_step = tf.train.GradientDescentOptimizer(0.001).minimize(loss)
-    correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
-    accuracy = tf.reduce_sum(tf.cast(correct_prediction, tf.float32))
     sess = tf.Session()
 
     # Train
@@ -69,15 +85,10 @@ with g.as_default():
 
     for i in range(2000):
       sess.run(train_step, feed_dict={x:train_data,y_:train_labels})
-    # Test trained model
-      if i % 200 == 0:
-        train_loss, train_acc = sess.run([loss, accuracy], feed_dict={x:train_data,y_:train_labels})
-        # テスト用データを使って評価
-        test_loss, test_acc = sess.run([loss, accuracy], feed_dict={x:test_data,y_:test_labels})
-        print "Step: %d" % i
-        print "[Train] cost: %f, acc: %f" % (train_loss, train_acc)
-        print "[Test] cost: %f, acc: %f" % (test_loss, test_acc)
 
+    correct_pred = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
+    # モデルの精度
+    accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
     print(accuracy.eval({x:train_data,y_:train_labels}, sess))
 
 # Store variable
@@ -86,13 +97,15 @@ _b = b.eval(sess)
 
 sess.close()
 
+# Create new graph for exporting
 g_2 = tf.Graph()
 with g_2.as_default():
-
+    # Reconstruct graph
     x_2 = tf.placeholder(tf.float32, shape=(None,4), name="input")
     W_2 = tf.constant(_W, name="constant_W")
     b_2 = tf.constant(_b, name="constant_b")
     y_2 = tf.nn.softmax(tf.matmul(x_2, W_2) + b_2, name="output")
+    print y_2
     sess_2 = tf.Session()
 
     init_2 = tf.global_variables_initializer()
@@ -102,7 +115,14 @@ with g_2.as_default():
     graph_def = g_2.as_graph_def()
 
     tf.train.write_graph(graph_def, './tmp/iris-practice',
-                         'iris-graph.pb', as_text=False)
+                         'iris-graph-notLayer.pb', as_text=False)
+
+    # Test trained model
+    y__2 = tf.placeholder(tf.float32, [None, 3])
+    correct_prediction_2 = tf.equal(tf.argmax(y_2, 1), tf.argmax(y__2, 1))
+    accuracy_2 = tf.reduce_mean(tf.cast(correct_prediction_2, tf.float32))
+    print(accuracy_2.eval({x_2:train_data,y__2:train_labels}, sess_2))
+
 ```
 
 学習で得た重みとバイアスの値をグラフに書き込むため、学習した後に再度グラフを生成している  
@@ -110,34 +130,8 @@ with g_2.as_default():
 実行結果 :
 
 ```
-Step: 0
-[Train] cost: 125.357887, acc: 42.000000
-[Test] cost: 33.425045, acc: 8.000000
-Step: 200
-[Train] cost: 26.913116, acc: 117.000000
-[Test] cost: 8.419387, acc: 27.000000
-Step: 400
-[Train] cost: 19.190422, acc: 118.000000
-[Test] cost: 6.213128, acc: 29.000000
-Step: 600
-[Train] cost: 15.989846, acc: 118.000000
-[Test] cost: 5.438169, acc: 29.000000
-Step: 800
-[Train] cost: 14.082930, acc: 118.000000
-[Test] cost: 4.964983, acc: 29.000000
-Step: 1000
-[Train] cost: 12.801308, acc: 118.000000
-[Test] cost: 4.642159, acc: 29.000000
-Step: 1200
-[Train] cost: 11.872371, acc: 118.000000
-[Test] cost: 4.406115, acc: 29.000000
-Step: 1400
-[Train] cost: 11.163244, acc: 118.000000
-[Test] cost: 4.225133, acc: 29.000000
-Step: 1600
-[Train] cost: 10.601051, acc: 118.000000
-[Test] cost: 4.081491, acc: 29.000000
-Step: 1800
-[Train] cost: 10.142324, acc: 118.000000
-[Test] cost: 3.964453, acc: 29.000000
+Tensor("Softmax:0", shape=(?, 3), dtype=float32)
+0.983333
+Tensor("output:0", shape=(?, 3), dtype=float32)
+0.983333
 ```
