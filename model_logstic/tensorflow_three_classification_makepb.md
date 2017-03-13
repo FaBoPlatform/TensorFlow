@@ -45,24 +45,6 @@ train_data = data[:120]
 test_labels = labels[120:]
 test_data = data[120:]
 
-def single_layer(X):
-    """隠れ層"""
-    node_num = 1024
-    w = tf.Variable(tf.truncated_normal([4,node_num]))
-    b = tf.Variable(tf.zeros([node_num]))
-    f = tf.matmul(X, w) + b
-    layer = tf.nn.relu(f)
-    return layer
-
-def output_layer(layer):
-    """出力層"""
-    node_num = 1024
-    w = tf.Variable(tf.zeros([node_num,3]))
-    b = tf.Variable(tf.zeros([3]))
-    f = tf.matmul(layer, w) + b
-    p = tf.nn.softmax(f)
-    return p
-
 g = tf.Graph()
 
 with g.as_default():
