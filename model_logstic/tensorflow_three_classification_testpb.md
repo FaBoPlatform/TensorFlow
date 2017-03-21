@@ -12,7 +12,7 @@ import tensorflow as tf
 from tensorflow.python.platform import gfile
 
 #pbファイルを読み込む
-with tf.gfile.FastGFile("./tmp/iris-practice/iris-graph-notLayer.pb", 'rb') as f:
+with tf.gfile.FastGFile("./tmp/iris-practice/iris-graph.pb", 'rb') as f:
     graph_def = tf.GraphDef()
     graph_def.ParseFromString(f.read())
     _ = tf.import_graph_def(graph_def, name='')
@@ -38,7 +38,7 @@ elif(Index == 2):
 実行結果 :
 
 ```
-[[  6.30469572e-07   2.21286863e-02   9.77870703e-01]]
+[[ 0.11481573  0.42691165  0.45827267]]
 answer : Iris-virginica
 ```
 
