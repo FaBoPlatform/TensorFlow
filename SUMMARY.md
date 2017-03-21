@@ -10,7 +10,7 @@
     * [Datalabの環境整備](datalab/datalab.md)
     * [DatalabのTFを1.0.0にUpdate](datalab/datalab_update_tf1.md)
 * 開発環境構築(Android)
-    * [Android(Ubuntsu)](android/build.md)
+    * [Android(Ubuntu)](android/build.md)
     * [Android(OS X)](android/build_osx.md)
     * [Android(OS X)](android/build_osx_bazel.md)
     * [Android(Hexagon)](android/build_hexagon.md)
