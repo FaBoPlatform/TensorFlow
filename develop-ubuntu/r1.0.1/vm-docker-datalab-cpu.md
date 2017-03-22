@@ -1,10 +1,14 @@
+# 仮想マシン上のUbuntu 16.04
+```
 UbuntuOSインストール
 
 # OSインストール後、アップデートする
 apt-get upgrade
 apt-get update
 apt-get dist-upgrade
+```
 
+```
 ########################################
 # dockerをインストールする
 # https://docs.docker.com/engine/installation/linux/ubuntu/
@@ -28,8 +32,9 @@ apt-get install docker-engine
 apt-cache madison docker-engine
 # docker動作確認
 docker run hello-world
+```
 
-
+```
 ########################################
 # Docker image datalab版
 ########################################
@@ -88,4 +93,4 @@ docker run -itd -v /home/ubuntu/notebooks:/content/datalab/notebooks -e DATALAB_
 # jupyterは http://localhost:8081
 # datalabのjupyterはdockerコンテナでは8080で動作しているが、sign-inのauthコールバックがlocalhost:8081になっているため、localhost:8081をdocker:8080に転送して使う
 # tensorboardも入っているけれども、実行はCloud MLにするのでここでは起動していない
-
+```

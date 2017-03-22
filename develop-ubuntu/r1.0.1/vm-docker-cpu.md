@@ -1,10 +1,14 @@
+# 仮想マシン上のUbuntu 16.04
+```
 UbuntuOSインストール
 
 # OSインストール後、アップデートする
 apt-get upgrade
 apt-get update
 apt-get dist-upgrade
+```
 
+```
 ########################################
 # dockerをインストールする
 # https://docs.docker.com/engine/installation/linux/ubuntu/
@@ -28,8 +32,9 @@ apt-get install docker-engine
 apt-cache madison docker-engine
 # docker動作確認
 docker run hello-world
+```
 
-
+```
 ########################################
 # TensorFlow Docker インストール
 ########################################
@@ -53,8 +58,9 @@ docker run -itd -v /home/ubuntu/notebooks:/notebooks -e "PASSWORD=mypassword" -p
 
 # jupyterは http://localhost:8888
 # tensorboardは http://localhost:6006
+```
 
-
+```
 ########################################
 # pipライブラリを入れる
 ########################################
@@ -63,4 +69,4 @@ pip install seaborn
 pip install requests
 # pipフル更新
 pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
-
+```
