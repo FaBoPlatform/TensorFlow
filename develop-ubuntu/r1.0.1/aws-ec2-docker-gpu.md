@@ -1,4 +1,5 @@
-AWS Ubuntu 16.04
+# AWS Ubuntu 16.04
+```
 kernelは
 root@ip-172-21-2-7:/home/ubuntu# uname -a
 Linux ip-172-21-2-7 4.4.0-64-generic #85-Ubuntu SMP Mon Feb 20 11:50:30 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
@@ -8,8 +9,9 @@ apt-get upgrade
 apt-get update
 apt-get dist-upgrade
 reboot
+```
 
-
+```
 ########################################
 # dockerをインストールする
 # https://docs.docker.com/engine/installation/linux/ubuntu/
@@ -33,8 +35,9 @@ apt-get install docker-engine
 apt-cache madison docker-engine
 # docker動作確認
 docker run hello-world
+```
 
-
+```
 ########################################
 # Setup Nvidia Drivers on EC2 Instance Host
 ########################################
@@ -44,8 +47,9 @@ apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos
 sh -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64 /" > /etc/apt/sources.list.d/cuda.list'
 
 apt-get update && apt-get install -y --no-install-recommends cuda-drivers
+```
 
-
+```
 ########################################
 # NVIDIA dockerをインストールする
 ########################################
@@ -56,8 +60,9 @@ sudo dpkg -i /tmp/nvidia-docker*.deb && rm /tmp/nvidia-docker*.deb
 
 # Test nvidia-smi
 nvidia-docker run --rm nvidia/cuda nvidia-smi
+```
 
-
+```
 ########################################
 # TensorFlow Docker インストール
 ########################################
@@ -88,8 +93,9 @@ nvidia-docker run -itd -v /home/ubuntu/notebooks:/notebooks -e "PASSWORD=mypassw
 
 # jupyterは http://localhost:8888
 # tensorboardは http://localhost:6006
+```
 
-
+```
 ########################################
 # pipライブラリを入れる
 ########################################
@@ -98,4 +104,4 @@ pip install seaborn
 pip install requests
 # pipフル更新
 pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
-
+```
