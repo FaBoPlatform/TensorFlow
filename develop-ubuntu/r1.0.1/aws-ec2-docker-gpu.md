@@ -1,5 +1,6 @@
 # AWS Ubuntu 16.04
 ```
+AWS Ubuntu 16.04
 kernelは
 root@ip-172-21-2-7:/home/ubuntu# uname -a
 Linux ip-172-21-2-7 4.4.0-64-generic #85-Ubuntu SMP Mon Feb 20 11:50:30 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux

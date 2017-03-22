@@ -10,6 +10,7 @@ apt-get update
 apt-get dist-upgrade
 reboot
 ```
+
 ```
 ########################################
 # dockerをインストールする
