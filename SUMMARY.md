@@ -91,6 +91,7 @@
     * [Versionを表示する](android/version.md)
     * [モデルデータを読込](android/load_model.md)
     * [学習済み結果を実行](android/run.md)
+		* [学習済み結果を実行 その2](android/load_model2.md)
 * MNIST
     * [MNISTデータセットのダウンロード](model_mnist/tensorflow_mnist_download.md)
     * [MNISTデータセットの読み込み](model_mnist/tensorflow_mnist_load.md)
@@ -113,5 +114,3 @@
     * [線を引く](matplotlib/matplotlib_line.md)
 * Etc
     * [Link](link/link.md)
-
-
