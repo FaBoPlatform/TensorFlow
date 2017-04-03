@@ -396,5 +396,5 @@ sourceSets {
 }
 ```
 
+<img src="/img/load_model2_result.png" width="320px" align="left"><br>
 データセットからサンプルを選び、正解ラベルが返ってきたら成功
-<img src="/img/load_model2_result.png" width="320px">
