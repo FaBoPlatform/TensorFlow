@@ -208,9 +208,22 @@ with tf.Session(graph=graph) as sess:
     _v1 = sess.run(v1) # v1の値を取得する
     print("v1=%d" % (_v1))
 ```
-実行結果：my_prefixをつけているため、v1のnodeは'my_prefix/this_is_my_v1:0'となる。(:0はoperationのreturn配列の0番目の配列を意味する。例えばv1_add_opのreturnが return a,bである場合にbを取りたいときは:1となる。ここではv1=tf.Variableであったもの(今はConst)なので:0しかない)
+実行結果：v1に変更を加えた値(10)が入っていることがわかる。
 ```
 ----- operations in graph -----
 my_prefix/this_is_my_v1 [<tf.Tensor 'my_prefix/this_is_my_v1:0' shape=() dtype=float32>]
 v1=10
+```
+##### pbファイルに保存する際は、学習済み値をConstに変換して保存することが最も重要な点となる。
+pbを読み込み、実行時に「Attempting to use uninitialized value」が出る場合はここが原因となる。
+
+my_prefixをつけているため、v1のnodeは'my_prefix/this_is_my_v1:0'となる。(:0はoperationのreturn配列の0番目の配列を意味する。例えばv1_add_opのreturnが return a,bである場合にbを取りたいときは:1となる。ここではv1=tf.Variableであったもの(今はConst)なので:0しかない)
+
+OUTPUT_NODE_NAMESで必要なnodeのみを指定することで、pbファイルには指定されたnodeとその算出に必要なnodeしか入らないため、ファイルサイズも小さくなる。
+```
+4 -rw-r--r--  1 root root   77  4月  3 18:38 checkpoint
+4 -rw-r--r--  1 root root   60  4月  3 18:39 frozen_model.pb
+4 -rw-r--r--  1 root root    4  4月  3 18:38 model.ckpt.data-00000-of-00001
+4 -rw-r--r--  1 root root  129  4月  3 18:38 model.ckpt.index
+4 -rw-r--r--  1 root root 2866  4月  3 18:38 model.ckpt.meta
 ```
