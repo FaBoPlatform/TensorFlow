@@ -397,4 +397,4 @@ sourceSets {
 ```
 
 データセットからサンプルを選び、正解ラベルが返ってきたら成功
-![load_model2_result](/img/load_model2_result.png)
+<img src="/img/load_model2_result.png" width="320px">
