@@ -92,6 +92,7 @@
     * [モデルデータを読込](android/load_model.md)
     * [学習済み結果を実行](android/run.md)
     * [学習済み結果を実行その2](android/load_model2.md)
+    * [学習済み結果を実行(TFversion1.0.1用)](android/load_model3.md)
 * MNIST
     * [MNISTデータセットのダウンロード](model_mnist/tensorflow_mnist_download.md)
     * [MNISTデータセットの読み込み](model_mnist/tensorflow_mnist_load.md)
