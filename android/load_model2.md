@@ -173,6 +173,7 @@ def freeze_graph(model_folder):
 ```
 
 ## モデルデータをAndroidで読み込みテストする
+pbファイルの置き場所についてはモデルデータを読込の記事を参照  
 ```java
 import android.content.DialogInterface;
 import android.content.res.AssetManager;
@@ -265,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
         TensorFlowInferenceInterface mTensorFlowIF = new TensorFlowInferenceInterface();
         AssetManager mAssetManager = getAssets();
         //モデルデータ読み込み
-        int result = mTensorFlowIF.initializeTensorFlow(mAssetManager, "file:///android_asset/iris_FIFO_frozen_model.pb");
+        int result = mTensorFlowIF.initializeTensorFlow(mAssetManager, "file:///android_asset/frozen_model.pb");
 
         ansView.setText("");
         //入力データを入れる
