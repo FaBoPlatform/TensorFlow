@@ -45,7 +45,10 @@ Python 2.7系で、TensorFlow 1.0.0にUpdateする。
 $ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.0rc0-cp27-none-linux_x86_64.whl
 $ pip install --ignore-installed --upgrade $TF_BINARY_URL
 ```
-
+または
+```shell
+pip install tensorflow -U
+```
 ## Updateの確認
 
 一通りアップデートが終わったら
