@@ -49,7 +49,7 @@ Python 2.7.9 (default, Sep 17 2016, 20:26:04)
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import tensorflow as tf
 >>> tf.VERSION
-'1.0.0'
+'1.0.1'
 ```
 
 **Python3系**：
