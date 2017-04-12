@@ -62,6 +62,13 @@
     * [セッションの保存・読み込み](model_basic/tensorflow_session.md)
     * [L2正則化](model_basic/tensorflow_l2_norm.md)
     * [モデルデータの保存と読込](model_basic/tensorflow_model.md)
+    * [Tensorflowのグラフ操作 Part1](building_graph/tensorflow_graph_part1.md)
+    * [Tensorflowのグラフ操作 Part2](building_graph/tensorflow_graph_part2.md)
+    * [Tensorflowのグラフ操作 Part3](building_graph/tensorflow_graph_part3.md)
+    * [プロトコルバッファ Part1](building_graph/tensorflow_protocol_buffers_part1.md)
+    * [プロトコルバッファ Part2](building_graph/tensorflow_protocol_buffers_part2.md)
+    * [プロトコルバッファ Part3](building_graph/tensorflow_protocol_buffers_part3.md)
+    * [プロトコルバッファ Part4](building_graph/tensorflow_protocol_buffers_part4.md)
 * 線形回帰
     * [平均二乗誤差](model_linear/tensorflow_mse.md)
     * [線形回帰](model_linear/tensorflow_linear01.md))
