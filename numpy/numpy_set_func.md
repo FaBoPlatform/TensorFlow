@@ -2,6 +2,8 @@
 
 Numpyオブジェクトに対する集合関数のサンプル
 
+|||
+|:-:|:-:|
 |`np.unique(x)`|重複した値を省く|
 |`np.intersect1d(x,y)`|積集合|
 |`np.union1d(x,y)`|和集合|
