@@ -82,7 +82,7 @@ apt-get vim
 vi /root/.jupyter/jupyter_notebook_config.py
 c.NotebookApp.allow_origin="http://YOURDOMAIN:8888"
 
-# 一度dockerを抜けてコンテナを停止し、cpu/tensorflowとしてimageを作っておく
+# 一度dockerを抜けてコンテナを停止し、gpu/tensorflowとしてimageを作っておく
 docker ps -a
 docker stop d0b399c9ff83
 docker commit d0b399c9ff83 gpu/tensorflow
