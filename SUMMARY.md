@@ -26,7 +26,7 @@
     * [ゼロのはいった行列を作る](numpy/numpy_zerotensor.md)
     * [ゼロのはいった配列を作る](numpy/numpy_zeroarray.md)
     * [標準正規分布の配列を作る](numpy/numpy_randn.md)
-    * [行列の演算](numpy/numpy006.md)
+    * [行列の演算](numpy/numpy006.ipynb)
     * [乱数のシード](numpy/numpy007.md)
     * [スライシング](numpy/numpy008.md)
     * [ブールインデックス](numpy/numpy009.md)
