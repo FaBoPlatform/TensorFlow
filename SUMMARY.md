@@ -37,7 +37,7 @@
     * [平均・標準偏差](numpy/numpy014.md)
     * [ユニバーサル関数](numpy/numpy015.md)
     * [ソート](numpy/numpy_sort.md)
-    * [集合関数](nnumpy/umpy_set_func.md)
+    * [集合関数](numpy/numpy_set_func.md)
     * [行列関数](numpy/numpy_matrix_func.md)
     * [さまざまな乱数](numpy/numpy_random.md)
     * [結合関数](numpy/numpy_concat.md)
