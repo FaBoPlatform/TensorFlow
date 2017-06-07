@@ -1,0 +1,2 @@
+model_checkpoint_path: "virus-model"
+all_model_checkpoint_paths: "virus-model"
