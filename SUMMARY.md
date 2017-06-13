@@ -13,7 +13,7 @@
     * [Local環境の整備](local/local.md)
 * 開発環境(Datalab編)
     * [Datalabの環境整備](datalab/datalab.md)
-    * [DatalabのTFを1.0.0にUpdate](datalab/datalab_update_tf1.md)
+    * [DatalabのTFを1.0.0にUpdate](datalab/datalab_update_tf1.md)  
     * [DatalabのPythonのversionを2系から3系に変更する](datalab/python_update.md)
 * 開発環境構築(Android)
     * [Android(Ubuntu)](android/build.md)
