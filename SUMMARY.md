@@ -116,7 +116,7 @@
     * [MNIST 畳込みニューラルネットワーク バッチ正規化](model_mnist/tensorflow_cnn_mnist_06.md)
     * [DeepDream](model_mnist/tensorflow_deep_dream.md)
     * [任意のデータセットで画像認識 その1](model_mnist/createDataset.md)
-    * [任意のデータセットで画像認識 その2](model_mnist/Leaning_myDataset.md)
+    * [任意のデータセットで画像認識 その2](model_mnist/Learning_myDataset.md)
 * RNN
     * [RNNによるクラス分類](model_sequence/rnn_basic.md)
 * Matplotlib
