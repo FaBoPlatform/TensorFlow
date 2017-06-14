@@ -88,3 +88,7 @@ print(y[2][:,np.newaxis])
  [10]
  [11]]
 ```
+
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy008.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy008.ipynb)

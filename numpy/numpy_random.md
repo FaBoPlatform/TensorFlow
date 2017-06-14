@@ -51,3 +51,7 @@ print uniform
 [[ 0.43489813  0.25007418]
  [ 0.42769298  0.19222238]]
 ```
+
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_random.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_random.ipynb)

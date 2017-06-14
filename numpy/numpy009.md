@@ -29,3 +29,7 @@ print x[x >= 0]
 [ 0.12279827  1.49845472  0.20197336  0.9706688 ]
 [ 0.12279827  1.49845472  0.20197336  0.9706688 ]
 ```
+
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy009.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy009.ipynb)

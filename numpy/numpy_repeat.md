@@ -27,3 +27,7 @@ print z
 [[7 2 4 7 2 4]
  [7 2 4 7 2 4]]
 ```
+
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_repeat.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_repeat.ipynb)

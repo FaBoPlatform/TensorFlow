@@ -46,3 +46,6 @@ int64
 8
 ```
 
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy013.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy013.ipynb)
