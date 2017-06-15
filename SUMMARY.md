@@ -95,6 +95,7 @@
     * [IRIS 評価]
     * [モーメンタム](model_logstic/tensorflow_iris_momentum.md)
     * [Adam](model_logstic/tensorflow_iris_adam.md)
+    * [乱数からクラス分類](model_logstic/classification_sample.md) 
 * Android
     * [Versionを表示する](android/version.md)
     * [モデルデータを読込](android/load_model.md)
