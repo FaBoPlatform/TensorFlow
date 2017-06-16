@@ -47,3 +47,7 @@ print x.std(1)
 [ 0.66666667  0.66666667  0.66666667]
 [ 0.81649658  0.81649658  0.81649658]
 ```
+
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy014.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy014.ipynb)

@@ -1,4 +1,3 @@
-
 * [はじめに](README.md)
 * [開発環境 Ubuntu](./develop-ubuntu/README.md)
 	* [AWS EC2 c4.large Docker (CPU)](./develop-ubuntu/r1.0.1/aws-ec2-docker-cpu.md)

@@ -66,3 +66,7 @@ print x3
 [[3 4 5]]
 [[6 7 8]]
 ```
+
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_concat.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_concat.ipynb)

@@ -60,3 +60,7 @@ print np.in1d(a, b)
 [0 1 2 5 6 7]
 [False False False  True  True]
 ```
+
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_repeat.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_set_func.ipynb)

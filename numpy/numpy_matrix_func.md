@@ -79,3 +79,6 @@ print np.linalg.solve(a, b)
  [ 3.]]
 ```
 
+## Notebook
+
+[https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_matrix_func.ipynb](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_matrix_func.ipynb)
