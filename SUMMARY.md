@@ -26,23 +26,23 @@
     * [ゼロのはいった行列を作る](numpy/numpy_zerotensor.md)
     * [ゼロのはいった配列を作る](numpy/numpy_zeroarray.md)
     * [標準正規分布の配列を作る](numpy/numpy_randn.md)
-    * [行列の演算](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy006.ipynb)
-    * [乱数のシード](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy007.md)
-    * [スライシング](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy008.ipynb)
-    * [ブールインデックス](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy009.ipynb)
+    * [行列の演算](numpy/numpy006.md)
+    * [乱数のシード](numpy/numpy007.md)
+    * [スライシング](numpy/numpy008.md)
+    * [ブールインデックス](numpy/numpy009.md)
     * [転置行列](numpy/numpy010.md)
     * [Numpyオブジェクトの保存](numpy/numpy011.md)
     * [CSVファイルの読み込み・保存](numpy/numpy012.md)
-    * [Numpyオブジェクトの型・次元数・サイズ](https://github.com/FaBoPlatform/TensorFlow/numpy/numpy013.ipynb)
-    * [平均・標準偏差](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy014.ipynb)
-    * [ユニバーサル関数](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy015.ipynb)
-    * [ソート](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_sort.ipynb)
-    * [集合関数](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_set_func.ipynb)
-    * [行列関数](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_matrix_func.ipynb)
-    * [さまざまな乱数](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_random.ipynb)
-    * [結合関数](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_concat.ipynb)
+    * [Numpyオブジェクトの型・次元数・サイズ](numpy/numpy013.md)
+    * [平均・標準偏差](numpy/numpy014.md)
+    * [ユニバーサル関数](numpy/numpy015.md)
+    * [ソート](numpy/numpy_sort.md)
+    * [集合関数](numpy/numpy_set_func.md)
+    * [行列関数](numpy/numpy_matrix_func.md)
+    * [さまざまな乱数](numpy/numpy_random.md)
+    * [結合関数](numpy/numpy_concat.md)
     * [平坦化](numpy/numpy_flatten.md)
-    * [配列の繰り返し](https://github.com/FaBoPlatform/TensorFlow/blob/master/numpy/numpy_repeat.ipynb)
+    * [配列の繰り返し](numpy/numpy_repeat.md)
     * [次元数の増加](numpy/numpy_newaxis.md)
     * [Numpyオブジェクトのコピー](numpy/numpy_copy.md)
 * TensorFlow
@@ -85,6 +85,7 @@
     * [ガンクラス データ作成](model_logstic/tensorflow_logistic_cancer01.md)
     * [ガンクラス 学習](model_logstic/tensorflow_logistic_cancer02.md)
     * [ガンクラス 評価]
+* 多クラス分類
     * [ワイン等級 データ作成](model_logstic/tensorflow_logistic_wine01.md)
     * [ワイン等級 学習](model_logstic/tensorflow_logistic_wine02.md)
     * [ワイン等級 評価]
@@ -94,6 +95,8 @@
     * [IRIS 評価]
     * [モーメンタム](model_logstic/tensorflow_iris_momentum.md)
     * [Adam](model_logstic/tensorflow_iris_adam.md)
+    * [乱数からクラス分類](model_logstic/classification_sample.md)
+
 * Android
     * [Versionを表示する](android/version.md)
     * [モデルデータを読込](android/load_model.md)
