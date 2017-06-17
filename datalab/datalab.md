@@ -37,16 +37,22 @@ gcr.io/cloud-datalab/datalab:local
 ```
 
 [windowsで実行:プロジェクトIDを未指定]
+ - docker-toolboxを要求されない場合
 
-Quick Start Terminalを使用します。
+`OS Xで実行：プロジェクトIDを未指定`と**恐らく**同様です。
+ 
+ - docker-toolboxを要求された場合
 
-```shel
+boot2dockerを要求された場合は、`Docker Quickstart Terminal`を起動して、以下のコマンドを使用します。
+
+```shell
 $ cd ~
 $ mkdir -p ./datalab
 $ docker run -p 8081:8080 -p 6006:6006 -v "${HOME}/datalab:/content" \
 gcr.io/cloud-datalab/datalab:local
 ```
-`docker run`　した後に、ブラウザで http://192.168.99.100:8081　にアクセスしましょう。
+
+その後、ブラウザで[192.168.99.100:8081](http://192.168.99.100:8081)にアクセスしましょう。
 
 
 |引数|意味|
