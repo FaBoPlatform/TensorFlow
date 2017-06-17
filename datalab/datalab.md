@@ -36,6 +36,19 @@ $ docker run -it -p 127.0.0.1:8081:8080 -p 6006:6006 -v "${HOME}/datalab:/conten
 gcr.io/cloud-datalab/datalab:local
 ```
 
+[windowsで実行:プロジェクトIDを未指定]
+
+Quick Start Terminalを使用します。
+
+```shel
+$ cd ~
+$ mkdir -p ./datalab
+$ docker run -p 8081:8080 -p 6006:6006 -v "${HOME}/datalab:/content" \
+gcr.io/cloud-datalab/datalab:local
+```
+`docker run`　した後に、ブラウザで http://192.168.99.100:8081　にアクセスしましょう。
+
+
 |引数|意味|
 |:--|:--|
 |-p 127.0.0.1:8081:8080 | Datalabに8081ポートでアクセスできるようにする|
