@@ -1,6 +1,10 @@
 # 開発環境 Ubuntu
 
-##### Ubuntu 16.04 LTS - TensorFlow r1.1.0 Python/C++
+##### Ubuntu 16.04 LTS - TensorFlow r1.2 GPU/XLA/MKL Python/C++
+TensorFlow r1.2からIntel Math Kernel Libraryがサポートされるようになりました。AWS p2インスタンスはMKLに対応したCPUなので、MKLを有効にしたTensorFlowをビルドしたいと思います。
+* [AWS EC2 p2.8xlarge Docker + git source compile (GPU)](./r1.2+c++/aws-ec2-docker-git-c++.md)
+
+##### Ubuntu 16.04 LTS - TensorFlow r1.1.0 GPU/XLA Python/C++
 TensorFlow r1.1.0はpip install --upgrade tensorflowで普通に使えるのですが、C++でも実行したいのでソースからビルドすることにします。
 * [AWS EC2 p2.xlarge Docker + git source compile (GPU)](./r1.1.0+c++/aws-ec2-docker-git-c++.md)
 
