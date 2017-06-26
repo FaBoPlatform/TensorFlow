@@ -1,4 +1,4 @@
-# AWS Ubuntu 16.04 - TensorFlor GPU Python/C++
+# AWS Ubuntu 16.04 - TensorFlor GPU/XLA Python/C++
 PythonとC++の両方を使えるようにします
 インスタンス準備は
 [AWS EC2 p2.xlarge Docker (GPU)](../r1.0.1/aws-ec2-docker-gpu.md)
