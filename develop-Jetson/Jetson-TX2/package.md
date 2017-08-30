@@ -14,10 +14,8 @@ Python環境、特にnumpyバージョンがシビアなので、パッケージ
   * bash環境変数追加
   * レポジトリ登録
   * Python-3.6インストール
-  * Python-3.6設定
   * pipパッケージインストール
   * Jupyter設定
-  * Java8インストール
   * パッケージインストール
   * locateファイルパスデータベース登録
   * CUDA demoQueryコンパイル
@@ -126,12 +124,10 @@ export LC_CTYPE=$LANG
 
 ```
 ########################################
-# Python3.6, Java8 レポジトリ追加
+# Python3.6 レポジトリ追加
 ########################################
 apt-get install -y software-properties-common
 { echo;cat /dev/stdin; } | add-apt-repository ppa:jonathonf/python-3.6
-add-apt-repository "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main"
-{ echo;cat /dev/stdin; } | add-apt-repository ppa:webupd8team/y-ppa-manager
 apt-get update
 ```
 
@@ -142,12 +138,6 @@ apt-get update
 apt-get install -y python3.6 python3.6-dev
 update-alternatives --install /usr/bin/python3 python /usr/bin/python3.6 0
 apt-get install -y python3-pip
-```
-
-```
-########################################
-# ENV Python3.6設定
-########################################
 rm -rf /usr/bin/python
 ln -s /usr/bin/python3.6 /usr/bin/python
 ```
@@ -202,13 +192,6 @@ if 'PASSWORD' in os.environ:\n\
 
 ```
 ########################################
-# Java8 インストール
-########################################
-echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections && apt-get install -y oracle-java8-installer
-```
-
-```
-########################################
 # Build Tools Install
 ########################################
 apt-get install -y zip git curl locate libeigen3-dev libprotobuf-dev
@@ -245,28 +228,12 @@ dpkg --print-foreign-architectures
 ########################################
 apt-get install -y build-essential cmake libeigen3-dev libatlas-base-dev gfortran git wget libavformat-dev libavcodec-dev libswscale-dev libavresample-dev ffmpeg pkg-config unzip qtbase5-dev libgtk-3-dev libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev v4l-utils liblapacke-dev libopenblas-dev checkinstall libgdal-dev
 
-# https://devtalk.nvidia.com/default/topic/1007290/building-opencv-with-opengl-support-/
-# #error Please include the appropriate gl headers before including cuda_gl_interop.h
-# make中にエラーが発生するため、cudaヘッダを書き換える
-vi /usr/local/cuda-8.0/include/cuda_gl_interop.h
-####################
-#else /* __APPLE__ */
-
-//#if defined(__arm__) || defined(__aarch64__)
-//#ifndef GL_VERSION
-//#error Please include the appropriate gl headers before including cuda_gl_interop.h
-//#endif
-//#else
-#include <GL/gl.h>
-//#endif
-
-#endif /* __APPLE__ */
-####################
 cd /usr/lib/aarch64-linux-gnu/
 ln -sf tegra/libGL.so libGL.so
 
 # パッケージダウンロード
-wget --no-check-certificate https://github.com/FaBoPlatform/TensorFlow/tree/master/develop-Jetson/Jetson-TX2/binary/opencv-3.2.deb
+cd
+wget --no-check-certificate https://github.com/FaBoPlatform/TensorFlow/raw/master/develop-Jetson/Jetson-TX2/binary/opencv-3.2.deb
 dpkg -i opencv-3.2.deb
 
 ldconfig
@@ -279,7 +246,8 @@ ldconfig
 apt-get remove -y openmpi-common libopenmpi1.10
 
 # パッケージダウンロード
-wget --no-check-certificate https://github.com/FaBoPlatform/TensorFlow/tree/master/develop-Jetson/Jetson-TX2/binary/openmpi-2.1.1.deb
+cd
+wget --no-check-certificate https://github.com/FaBoPlatform/TensorFlow/raw/master/develop-Jetson/Jetson-TX2/binary/openmpi-2.1.1.deb
 dpkg -i openmpi-2.1.1.deb
 ```
 
@@ -288,11 +256,13 @@ dpkg -i openmpi-2.1.1.deb
 # TensorFlow r1.3.0
 ########################################
 # TensorFlow r1.3.0 Python API
-wget --no-check-certificate https://github.com/FaBoPlatform/TensorFlow/tree/master/develop-Jetson/Jetson-TX2/binary/tensorflow-1.3.0-cp36-cp36m-linux_aarch64.whl
+cd
+wget --no-check-certificate https://github.com/FaBoPlatform/TensorFlow/raw/master/develop-Jetson/Jetson-TX2/binary/tensorflow-1.3.0-cp36-cp36m-linux_aarch64.whl
 pip3 install tensorflow-1.3.0-cp36-cp36m-linux_aarch64.whl
 
 # TensorFlow r1.3.0 C++ API
-wget --no-check-certificate https://github.com/FaBoPlatform/TensorFlow/tree/master/develop-Jetson/Jetson-TX2/binary/tensorflow-cpp-1.3.0.deb
+cd
+wget --no-check-certificate https://github.com/FaBoPlatform/TensorFlow/raw/master/develop-Jetson/Jetson-TX2/binary/tensorflow-cpp-1.3.0.deb
 dpkg -i tensorflow-cpp-1.3.0.deb
 ```
 
