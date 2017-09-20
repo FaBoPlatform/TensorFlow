@@ -321,6 +321,13 @@ vi /compile/tensorflow/tensorflow/workspace.bzl
       build_file = str(Label("//third_party:eigen.BUILD")),
   )
 
+# github内容が書き換えられてprotobuf/llvmのchecksumが通らなくなった対策としてsha256をコメントアウト
+# https://github.com/tensorflow/tensorflow/issues/12979
+vi /compile/tensorflow/tensorflow/workspace.bzl
+
+#      sha256 = "00fb4a83a4dd1c046b19730a80e2183acc647715b7a8dcc8e808d49ea5530ca8",
+#      sha256 = "6d43b9d223ce09e5d4ce8b0060cb8a7513577a35a64c7e3dad10f0703bf3ad93",
+
 
 # build/install Python API
 cd /compile/tensorflow \
