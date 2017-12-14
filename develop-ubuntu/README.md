@@ -1,4 +1,10 @@
-# 開発環境 Ubuntu
+# TensorFlow Ubuntu 開発環境
+
+##### Ubuntu 16.04 LTS - AWS EC2
+* [AWS EC2 P3/P2 Instance](./aws-ec2/readme.md)
+
+
+##以下古い情報  
 
 ##### Ubuntu 16.04 LTS - TensorFlow r1.2 GPU/XLA/MKL Python/C++
 TensorFlow r1.2からIntel Math Kernel Libraryがサポートされるようになりました。AWS p2インスタンスはMKLに対応したCPUなので、MKLを有効にしたTensorFlowをビルドしたいと思います。
