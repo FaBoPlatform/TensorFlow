@@ -7,5 +7,5 @@ mkdir -p /compile \
 && unzip bazel-0.5.4-dist.zip -d bazel-0.5.4 \
 && cd bazel-0.5.4 \
 && ./compile.sh \
-&& cp output/bazel /usr/local/bin/
+&& cp -f output/bazel /usr/local/bin/
 

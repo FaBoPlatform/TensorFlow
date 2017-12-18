@@ -3,4 +3,4 @@
 ########################################
 dpkg -i ../binary/tensorflow-cpp-1.4.1.deb
 
-rm -rf /var/lib/apt/lists/* && updatedb
+updatedb

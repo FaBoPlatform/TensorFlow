@@ -1,13 +1,20 @@
 ########################################
 # TensorFlow r1.4.1
 ########################################
+SCRIPT_DIR=$(cd $(dirname $0); pwd)
 # TensorFlow r1.4.1 download
-cat /usr/local/cuda/version.txt
-grep "#define CUDNN_MAJOR" -A2 /usr/include/cudnn.h
+
+#Cuda compilation tools, release 9.0, V9.0.252
+#9.0.252
 
 mkdir -p /compile \
 && cd /compile \
 && git clone -b r1.4 https://github.com/tensorflow/tensorflow
+
+nvcc --version
+grep "#define CUDNN_MAJOR" -A2 /usr/include/cudnn.h
+#TF_CUDA_VERSION=9.0.252
+#TF_CUDNN_VERSION=7.0.5
 
 # build/install Python API
 cd /compile/tensorflow
@@ -31,8 +38,8 @@ env CI_BUILD_PYTHON=python \
     TF_NEED_CUDA=1 \
     TF_CUDA_CLANG=0 \
     TF_CUDA_COMPUTE_CAPABILITIES=6.2 \
-    TF_CUDA_VERSION=9.0.252 \
-    TF_CUDNN_VERSION=7.0.5 \
+    TF_CUDA_VERSION=`nvcc --version |grep 'Cuda compilation tools,'| sed -e 's/^.*, V//g'` \
+    TF_CUDNN_VERSION=`grep "#define CUDNN_MAJOR" -A2 /usr/include/cudnn.h | sed -e 's/\#define\s[A-Z_]*\s\(.*\)$/\1/g' | sed -e ':loop; N; $!b loop; s/\n/./g'` \
     TF_NEED_MPI=0 \
     ./configure
 
@@ -41,10 +48,7 @@ env CI_BUILD_PYTHON=python \
 
 # IntelじゃないのでMKLは使わない
 time bazel build --config=cuda --config="opt" --copt='-march=native' --copt="-O3" --verbose_failures --subcommands //tensorflow/tools/pip_package:build_pip_package \
-&& bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg \
-&& pip3 install --upgrade /tmp/tensorflow_pkg/tensorflow-1.4.1-cp36-cp36m-linux_aarch64.whl
+&& bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 
-cd /compile
-python -c 'import tensorflow as tf; print(tf.__version__)'
-
-rm -rf /var/lib/apt/lists/* && updatedb
+mkdir -p $SCRIPT_DIR/../binary
+mv -f /tmp/tensorflow_pkg/tensorflow-1.4.1-cp36-cp36m-linux_aarch64.whl $SCRIPT_DIR/../binary

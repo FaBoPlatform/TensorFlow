@@ -58,7 +58,7 @@ dpkg --print-architecture
 
 
 ########################################
-# patchを当てる
+# OpenCV用にCUDAヘッダーパッチ適用
 ########################################
 # OpenCV make中にエラーが発生するため、cudaヘッダを書き換えるパッチを当てる
 ./cv_patch.sh
@@ -67,7 +67,7 @@ dpkg --print-architecture
 ########################################
 # OpenCV 3.3.1 パッケージ作成/インストール
 ########################################
-#build_opencv-3.3.1.sh
+#./build_opencv-3.3.1.sh
 ./install_opencv-3.3.1.sh
 
 
@@ -81,20 +81,20 @@ dpkg --print-architecture
 # OpenMPI v3.0.0 パッケージ作成/インストール
 ########################################
 # Jetson TX2はメモリ消費量を抑えるために不要な機能は無効にしておく
-#build_openmpi-3.0.0.sh
+#./build_openmpi-3.0.0.sh
 #./install_openmpi-3.0.0.sh
 
 
 ########################################
 # TensorFlow r1.4.1
 ########################################
-#build_tensorflow-r1.4.1.sh
+#./build_tensorflow-r1.4.1.sh
 ./install_tensorflow-r1.4.1.sh
 
 
 ########################################
 # TensorFlow c++ r1.4.1
 ########################################
-#build_tensorflow-cpp-r1.4.1.sh
+#./build_tensorflow-cpp-r1.4.1.sh
 ./install_tensorflow-cpp-r1.4.1.sh
 

@@ -1,6 +1,13 @@
 ########################################
 # SPIDev有効化
 ########################################
+# 参考
+#  * [\*C] https://elinux.org/Jetson/TX1_SPI#Installing_SPIdev_Kernel_Module
+#  * [\*D] https://elinux.org/Jetson/TX1_SPI#Installing_DTC_Tool
+#  * [\*B] https://devtalk.nvidia.com/default/topic/1008929/jetson-tx2/enabling-spi-and-spidev-on-the-tx2/
+#  * [\*A] https://devtalk.nvidia.com/default/topic/1023007/how-to-use-uart0-as-normal-uart-port-on-r28-1-/?offset=12
+#  * [\*E] https://devtalk.nvidia.com/default/topic/1020708/method-to-modify-use-different-device-tree-in-r28-1/
+
 # ソースコードのファイル名、展開後のディレクトリ名は毎回変わっているので確認すること
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 

@@ -1,6 +1,7 @@
 ########################################
 # OpenMPI v3.0.0 パッケージ作成/インストール
 ########################################
+SCRIPT_DIR=$(cd $(dirname $0); pwd)
 apt-get remove -y openmpi-common libopenmpi1.10
 mkdir -p /compile \
 && cd /compile \
@@ -23,7 +24,6 @@ Description: OpenMPI version 3.0.0\n"\
 > /package_build/openmpi-3.0.0/DEBIAN/control \
 && fakeroot dpkg-deb --build openmpi-3.0.0
 
-cd /package_build \
-&& dpkg -i openmpi-3.0.0.deb
+mkdir -p $SCRIPT_DIR/../binary
+mv -f /package_build/openmpi-3.3.0.deb $SCRIPT_DIR/../binary
 
-#dpkg --add-architectureでaarch64を登録しないとパッケージがデフォルトのamd64になってしまい、自作パッケージをインストール出来ない。

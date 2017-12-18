@@ -62,7 +62,6 @@ Architecture: $ARCHI
 Depends: 
 Description: TensorFlow CPP API version $TENSORFLOW_VERSION" \
 > /package_build/${PACKAGE_NAME}-${TENSORFLOW_VERSION}/DEBIAN/control \
-&& fakeroot dpkg-deb --build ${PACKAGE_NAME}-${TENSORFLOW_VERSION} \
-&& dpkg -i ${PACKAGE_NAME}-${TENSORFLOW_VERSION}.deb
+&& fakeroot dpkg-deb --build ${PACKAGE_NAME}-${TENSORFLOW_VERSION}
 
-ldconfig
+echo "${PACKAGE_NAME}-${TENSORFLOW_VERSION}.deb"

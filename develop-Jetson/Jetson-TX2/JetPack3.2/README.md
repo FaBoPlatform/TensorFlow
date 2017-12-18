@@ -16,7 +16,7 @@
 > \#wait 2 hours  
 
 ## 内容
- * #### 初期設定 (setup_scripts/setup.sh)
+ * #### 初期設定 40分 (setup_scripts/setup.sh)
    * CPUファン自動起動 (setup_cpufun.sh)
    * Ubuntu 16.04 パッケージ更新 (setup_update.sh)
    * .bashrc書き換え (setup_bash.sh)
@@ -25,13 +25,13 @@
    * reboot
  * #### TensorFlow r1.4.1 インストール (install_scripts/install.sh)
    * Ubuntu 16.04 パッケージ更新
-   * Python 3.6.3 インストール(install_python3.6.sh)
-   * pip3 インストール(install_pip3.sh)
-   * jupyter インストール(install_jupyter.sh)
-   * Java8 インストール(install_java8.sh)
-   * Build Tools インストール(install_build_tools.sh)
+   * Python 3.6.3 インストール (install_python3.6.sh)
+   * pip3 インストール (install_pip3.sh)
+   * jupyter インストール (install_jupyter.sh)
+   * Java8 インストール (install_java8.sh)
+   * Build Tools インストール (install_build_tools.sh)
    * CUDA deviceQuery ビルド (install_cuda_deviceQuery.sh)
-   * patchを当てる (cv_patch.sh)
+   * OpenCV用にCUDAヘッダーパッチ適用 (cv_patch.sh)
    * OpenCV 3.3.1 インストール (install_opencv-3.3.1.sh)
    * bazel 0.5.4 ビルド (build_bazel-0.5.4.sh)
    * TensorFlow r1.4.1 インストール (install_tensorflow-r1.4.1.sh)
