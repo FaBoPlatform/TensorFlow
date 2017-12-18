@@ -6,11 +6,12 @@ OpenCV 3.3.1
 TensorFlow r1.4.1
 
 
-1. setup_for_JetsonTX2_JetPack3.2.sh
-setup_for_JetsonTX2_JetPack3.2.sh
+1. sudo su
+2. chmod 755 ../setup_scripts/*.sh
+3. chmod 755 ../install_scripts/*.sh
+4. ../setup_scripts/setup.sh
 # wait reboot
 
-2. install.sh
-install.sh
+5. ./install.sh
 # package: wait 2 hours (default)
 # build: wait 6-7 hours (edit install.sh)

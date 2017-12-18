@@ -23,7 +23,7 @@
    * .dircolors追加 (setup_dircolors.sh)
    * SPIDev有効化 (setup_spi.sh)
    * reboot
- * #### TensorFlow r1.4.1 インストール (install_scripts/install.sh)
+ * #### TensorFlow r1.4.1 インストール 40分 (install_scripts/install.sh)
    * Ubuntu 16.04 パッケージ更新
    * Python 3.6.3 インストール (install_python3.6.sh)
    * pip3 インストール (install_pip3.sh)
