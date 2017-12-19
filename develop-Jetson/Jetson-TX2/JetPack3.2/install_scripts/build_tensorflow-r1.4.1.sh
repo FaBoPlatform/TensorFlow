@@ -33,7 +33,7 @@ env CI_BUILD_PYTHON=python \
     TF_NEED_S3=0 \
     TF_NEED_OPENCL=0 \
     TF_NEED_GDR=0 \
-    TF_ENABLE_XLA=1 \
+    TF_ENABLE_XLA=0 \
     TF_NEED_VERBS=0 \
     TF_NEED_CUDA=1 \
     TF_CUDA_CLANG=0 \
@@ -45,6 +45,7 @@ env CI_BUILD_PYTHON=python \
 
 # TX2は、メモリ消費量を抑えたいのでOpenMPIは使わない
 # TX2は、GCP,HDFS,S3のどれかが原因で実行時にエラーとなる。この3つを切るとr1.4.1が出来上がる
+# TX2は、XLAを無効にする。理由はJetPack3.2/TensorFlow r1.4.1では公式Object Detectionがエラーになってしまう。
 
 # IntelじゃないのでMKLは使わない
 time bazel build --config=cuda --config="opt" --copt='-march=native' --copt="-O3" --verbose_failures --subcommands //tensorflow/tools/pip_package:build_pip_package \

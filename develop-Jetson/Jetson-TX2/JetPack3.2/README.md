@@ -128,8 +128,11 @@ except KeyboardInterrupt:
 ## 議論
  * TX2: メモリが豊富ではないので学習には向かない
  * TX2: GPUしか使わないのでSWAPは要らない
- * TensorFlow: JEMALLOC,CLA,CUDAを有効
- * TensorFlow: S3,GCP,HDFS,MPIを無効
+ * TensorFlow: JEMALLOC,CUDAを有効
+ * TensorFlow: S3,GCP,HDFS,XLA,MPIを無効
  * TensorFlow: MKLはIntelなのでARMのTX2では使わない
  * TX2: DenverコアはOpenCVビルドに失敗するので使わない
  * TX2: パッケージはARM64で作成する
+ * TensorFlow: XLAを無効 <- 有効だとJetPack 3.2ではObject Detectionのobject_detection_tutorial.ipynbをJupyterで実行するとThe kernel appears to have died. It will restart automatically.で落ちる。無効だと実行できる。
+ * TX2: JetPack 3.1はCUDA 8.0.84, nvcc 8.0.72でバージョンが違う
+ * TX2: JetPack 3.2はCUDA 9.0.252, nvcc 9.0.252でバージョンが一致
