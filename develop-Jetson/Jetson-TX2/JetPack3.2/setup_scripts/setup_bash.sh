@@ -21,7 +21,7 @@ sed -i 's/alias ls='\''ls --color=auto'\''/alias ls='\''ls -asiF --color=auto'\'
 cat <<EOF>> /home/ubuntu/.bashrc
 
 export PATH=/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/lib:
 export __GL_PERFMON_MODE=1
 export LANG="en_US.UTF-8"
 export LC_ALL=$LANG

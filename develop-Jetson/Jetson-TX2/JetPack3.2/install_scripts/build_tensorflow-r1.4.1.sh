@@ -29,7 +29,6 @@ env CI_BUILD_PYTHON=python \
     CC_OPT_FLAGS='-march=native' \
     TF_NEED_JEMALLOC=1 \
     TF_NEED_GCP=0 \
-    TF_NEED_CUDA=1 \
     TF_NEED_HDFS=0 \
     TF_NEED_S3=0 \
     TF_NEED_OPENCL=0 \
@@ -64,6 +63,7 @@ time bazel build --config=cuda --config="opt" --copt='-march=native' --copt="-O3
 cd /compile/tensorflow/bazel-bin/tensorflow/tools/benchmark
 wget --no-check-certificate https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip
 unzip inception5h.zip
+
 /compile/tensorflow/bazel-bin/tensorflow/tools/benchmark/benchmark_model \
   --graph=tensorflow_inception_graph.pb \
   --input_layer="input:0" \

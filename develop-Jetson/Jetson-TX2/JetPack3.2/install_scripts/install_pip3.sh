@@ -22,6 +22,10 @@ pip3 install --upgrade numpy
 pip3 install --upgrade smbus2
 pip3 install --upgrade spidev
 pip3 install --upgrade absl-py
+#pip3 install --upgrade Cython
+#pip3 install -e 'git+https://github.com/pdollar/coco.git#egg=pycocotools&subdirectory=PythonAPI'
+#pip3 install --upgrade Keras
+#pip3 install h5py
 # 1時間半くらいかかる
 
 ## NG memo
