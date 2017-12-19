@@ -11,6 +11,7 @@ mkdir -p /compile \
 && cd /compile \
 && git clone -b r1.4 https://github.com/tensorflow/tensorflow
 
+cat /usr/local/cuda/version.txt
 nvcc --version
 grep "#define CUDNN_MAJOR" -A2 /usr/include/cudnn.h
 #TF_CUDA_VERSION=9.0.252
@@ -39,7 +40,7 @@ env CI_BUILD_PYTHON=python \
     TF_CUDA_CLANG=0 \
     TF_CUDA_COMPUTE_CAPABILITIES=6.2 \
     TF_CUDA_VERSION=`nvcc --version |grep 'Cuda compilation tools,'| sed -e 's/^.*, V//g'` \
-    TF_CUDNN_VERSION=`grep "#define CUDNN_MAJOR" -A2 /usr/include/cudnn.h | sed -e 's/\#define\s[A-Z_]*\s\(.*\)$/\1/g' | sed -e ':loop; N; $!b loop; s/\n/./g'` \
+    TF_CUDNN_VERSION=`grep "#define CUDNN_MAJOR" -A2 /usr/include/cudnn.h | sed -e 's/\#define\s[A-Z_]*\s*\(.*\)$/\1/g' | sed -e ':loop; N; $!b loop; s/\n/./g'` \
     TF_NEED_MPI=0 \
     ./configure
 
@@ -52,3 +53,20 @@ time bazel build --config=cuda --config="opt" --copt='-march=native' --copt="-O3
 
 mkdir -p $SCRIPT_DIR/../binary
 mv -f /tmp/tensorflow_pkg/tensorflow-1.4.1-cp36-cp36m-linux_aarch64.whl $SCRIPT_DIR/../binary
+
+
+# benchmark
+cd /compile/tensorflow/tools
+git clone https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/benchmark
+cd /compile/tensorflow
+time bazel build --config=cuda --config="opt" --copt='-march=native' --copt="-O3" --verbose_failures --subcommands //tensorflow/tools/benchmark:benchmark_model
+
+cd /compile/tensorflow/bazel-bin/tensorflow/tools/benchmark
+wget --no-check-certificate https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip
+unzip inception5h.zip
+/compile/tensorflow/bazel-bin/tensorflow/tools/benchmark/benchmark_model \
+  --graph=tensorflow_inception_graph.pb \
+  --input_layer="input:0" \
+  --input_layer_shape="1,224,224,3" \
+  --input_layer_type="float" \
+  --output_layer="output:0"

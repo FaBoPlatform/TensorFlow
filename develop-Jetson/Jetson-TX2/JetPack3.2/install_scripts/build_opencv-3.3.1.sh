@@ -36,4 +36,4 @@ Description: OpenCV version 3.3.1\n"\
 && fakeroot dpkg-deb --build opencv-3.3.1
 
 mkdir -p $SCRIPT_DIR/../binary
-mv -f /package_buildopencv-3.3.1.dev $SCRIPT_DIR/../binary
+mv -f /package_build/opencv-3.3.1.deb $SCRIPT_DIR/../binary
