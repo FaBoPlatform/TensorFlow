@@ -92,6 +92,7 @@
     * [MNIST 畳込みニューラルネットワーク TensorBoard編](model_mnist/tensorflow_cnn_mnist_04.md)
     * [MNIST 畳込みニューラルネットワーク セッションの保存・書込み](model_mnist/tensorflow_cnn_mnist_05.md)
     * [MNIST 畳込みニューラルネットワーク バッチ正規化](model_mnist/tensorflow_cnn_mnist_06.md)
+    * [MNIST 評価](https://github.com/FaBoPlatform/TensorFlow/blob/master/notebooks/tensorflow-mnist-demo.ipynb)
     * [DeepDream](model_mnist/tensorflow_deep_dream.md)
     * [任意のデータセットで画像認識 その1](model_mnist/createDataset.md)
     * [任意のデータセットで画像認識 その2](model_mnist/Learning_myDataset.md)
