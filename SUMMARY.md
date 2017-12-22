@@ -86,8 +86,6 @@
     * [MNISTデータセットの読み込み](model_mnist/tensorflow_mnist_load.md)
     * [MNISTデータセットのバッチ読み込み](model_mnist/tensorflow_mnist_batch.md)
     * [MNISTデータセットの情報](model_mnist/tensorflow_mnist_info.md)
-    * [多項式フィッティング](model_mnist/tensorflow_fitting.md)
-    * [パーセプトロンによるフィッティング](model_mnist/tensorflow_perceptron_fitting.md)
     * [MNIST 畳込みニューラルネットワーク 準備編](model_mnist/tensorflow_cnn_mnist_01.md)
     * [MNIST 畳込みニューラルネットワーク](model_mnist/tensorflow_cnn_mnist_02.md)
     * [MNIST 畳込みニューラルネットワーク 重み減衰](model_mnist/tensorflow_cnn_mnist_03.md)
@@ -97,6 +95,8 @@
     * [DeepDream](model_mnist/tensorflow_deep_dream.md)
     * [任意のデータセットで画像認識 その1](model_mnist/createDataset.md)
     * [任意のデータセットで画像認識 その2](model_mnist/Learning_myDataset.md)
+    * [多項式フィッティング](model_mnist/tensorflow_fitting.md)
+    * [パーセプトロンによるフィッティング](model_mnist/tensorflow_perceptron_fitting.md)
 * RNN
     * [RNNによるクラス分類](model_sequence/rnn_basic.md)
 * Matplotlib
