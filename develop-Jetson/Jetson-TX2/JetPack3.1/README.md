@@ -133,4 +133,4 @@ except KeyboardInterrupt:
  * TX2: DenverコアはOpenCVビルドに失敗するので使わない
  * TX2: パッケージはARM64で作成する
  * TX2: JetPack 3.1にはCUDAライブラリバージョン8.0.84とnvccバージョン8.0.72でパッチレベルのバージョンが異なるため、TF_CUDA_VERSIONは8.0までの指定とする
- * TensorFlow: モデルチューニングを行うためには、ソースコードをビルドする必要がある。(./with_python3.6_custom_packages/install_scripts/build_tensorflow-r1.4.1.sh)
+ * TensorFlow: モデルチューニングを行うためには、ソースコードをビルドする必要がある。[build_tensorflow-r1.4.1.sh](./with_python3.6_custom_packages/install_scripts/build_tensorflow-r1.4.1.sh)
