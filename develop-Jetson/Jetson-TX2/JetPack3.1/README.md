@@ -38,13 +38,13 @@
   * TensorFlow c++ r1.4.1 インストール (install_tensorflow-cpp-r1.4.1.sh)
 * #### パッケージ作成
   * OpenCV 3.3.1 パッケージ作成 (build_opencv-3.3.1.sh)
-  * OpenMPI 3.3.0 パッケージ作成 (build_openmpi-3.3.0.sh)
   * TensorFlow r1.4.1 pipパッケージ作成 (build_tensorflow-r1.4.1.sh)
   * TensorFlow c++ api r1.4.1 パッケージ作成 (build_tensorflow-cpp-api-r1.4.1.sh)
 
 ## Jupyter 起動方法
 install_scripts/install_jupyter.shでTX2起動時に自動起動するように設定してある。  
-初期パスワードはmypassword  
+初期パスワードはmypassword
+> #/etc/init.d/jupyterd
 > env PASSWORD=mypassword jupyter notebook --allow-root --NotebookApp.iopub_data_rate_limit=10000000
 
 ## Jupyter アクセス方法
@@ -128,8 +128,9 @@ except KeyboardInterrupt:
 ## 議論
  * TX2: メモリが豊富ではないので学習には向かない
  * TX2: GPUしか使わないのでSWAPは要らない
- * TensorFlow: JEMALLOC,CLA,CUDAを有効
- * TensorFlow: S3,GCP,HDFS,MPIを無効
+ * TensorFlow: メモリ消費抑制、エラー回避のためにJEMALLOC,CUDAのみ有効
  * TensorFlow: MKLはIntelなのでARMのTX2では使わない
  * TX2: DenverコアはOpenCVビルドに失敗するので使わない
  * TX2: パッケージはARM64で作成する
+ * TX2: JetPack 3.1にはCUDAライブラリバージョン8.0.84とnvccバージョン8.0.72でパッチレベルのバージョンが異なるため、TF_CUDA_VERSIONは8.0までの指定とする
+ * TensorFlow: モデルチューニングを行うためには、ソースコードをビルドする必要がある。(./with_python3.6_custom_packages/install_scripts/build_tensorflow-r1.4.1.sh)

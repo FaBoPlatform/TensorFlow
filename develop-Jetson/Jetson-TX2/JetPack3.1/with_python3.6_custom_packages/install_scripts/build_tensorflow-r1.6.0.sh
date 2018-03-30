@@ -54,6 +54,7 @@ env CI_BUILD_PYTHON=python \
     ./configure
 
 # TX2は、メモリ消費量を抑えたいのでOpenMPI,GCP,HDFS,S3,XLAを無効にする
+# XLAを無効 <- 有効だとJetPack 3.2ではObject Detectionのobject_detection_tutorial.ipynbをJupyterで実行するとThe kernel appears to have died. It will restart automatically.で落ちる。無効だと実行できる。
 
 # IntelじゃないのでMKLは使わない
 time bazel build --config=cuda --config="opt" --copt='-march=native' --copt="-O3" --verbose_failures --subcommands //tensorflow/tools/pip_package:build_pip_package \
@@ -72,6 +73,19 @@ time bazel build --config=cuda --config="opt" --copt='-march=native' --copt="-O3
 #real	0m50.780s
 #user	0m0.024s
 #sys	0m0.020s
+
+
+# Inspecting Graphs
+time bazel build --config=cuda --config="opt" --copt='-march=native' --copt="-O3" --verbose_failures --subcommands //tensorflow/tools/graph_transforms:summarize_graph
+
+# Optimizing for Deployment
+time bazel build --config=cuda --config="opt" --copt='-march=native' --copt="-O3" --verbose_failures --subcommands //tensorflow/tools/graph_transforms:transform_graph
+
+# memmapped
+time bazel build --config=cuda --config="opt" --copt='-march=native' --copt="-O3" --verbose_failures --subcommands //tensorflow/contrib/util:convert_graphdef_memmapped_format
+
+# Quantize Graph
+time bazel build --config=cuda --config="opt" --copt='-march=native' --copt="-O3" --verbose_failures --subcommands //tensorflow/tools/quantization:quantize_graph
 
 
 cd /compile/tensorflow/bazel-bin/tensorflow/tools/benchmark

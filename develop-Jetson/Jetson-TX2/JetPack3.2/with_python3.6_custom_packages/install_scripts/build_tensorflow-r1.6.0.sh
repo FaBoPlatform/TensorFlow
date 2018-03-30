@@ -51,6 +51,7 @@ env CI_BUILD_PYTHON=python \
     ./configure
 
 # TX2は、メモリ消費量を抑えたいのでOpenMPI,GCP,HDFS,S3,XLAを無効にする
+# XLAを無効 <- 有効だとJetPack 3.2ではObject Detectionのobject_detection_tutorial.ipynbをJupyterで実行するとThe kernel appears to have died. It will restart automatically.で落ちる。無効だと実行できる。
 
 # IntelじゃないのでMKLは使わない
 time bazel build --config=cuda --config="opt" --copt='-march=native' --copt="-O3" --verbose_failures --subcommands //tensorflow/tools/pip_package:build_pip_package \
