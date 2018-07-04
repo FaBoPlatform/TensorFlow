@@ -111,3 +111,4 @@
     * [Link](link/link.md)
 * GAN
     * [MLPでのGANによるMNIST画像生成](model_GAN/Tensorflow_GAN_mnist.md)
+    * [DCGANによるMNIST画像生成](model_DCGAN/Tensorflow_DCGAN_mnist.md)
