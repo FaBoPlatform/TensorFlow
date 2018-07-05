@@ -140,8 +140,11 @@ model_h5 = './model.h5'
 model_save(model_json,model_h5)
 ```
 
+![](img/model08.png)
+
+
 ## 学習済みモデル
 
 model.json, model.h5ができれば成功
 
-![](img/model08.png)
+![](img/model09.png)
