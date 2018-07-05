@@ -1,16 +1,24 @@
-# Docker
+# 開発環境
+
+TensorFlow等の実行環境は、Docker上に、TensorFlow + JupyterでLocalに構築します。
+
+## Dockerのインストール
 
 https://www.docker.com/
 
 Docker Community Edition for Mac
 https://store.docker.com/editions/community/docker-ce-desktop-mac
 
-をインストール
+Docker Community Edition for Windows
+https://store.docker.com/editions/community/docker-ce-desktop-windows
+
+を各環境に合わせてインストールします。
 
 ## TensorFlow Dockerをインストール
 
-> $ docker run -it -p 8888:8888 tensorflow/tensorflow
+Dockerのインストールが完了したら、マウスのDoubleクリックでDockerを起動し、DockerコマンドでTensorFlow Dockerをダウンロードしてきます。
 
+> $ docker run -it -p 8888:8888 tensorflow/tensorflow
 
 ```
 [C 16:50:37.847 NotebookApp] 
@@ -22,23 +30,5 @@ https://store.docker.com/editions/community/docker-ce-desktop-mac
 
 localhost:8888に接続。上のリンクをコピーして接続する。
 
-## 必要なライブラリのインストール
-
-> docker images
-> docker ps
-> docker run tensorflow/tensorflow
-
-> control"を押した状態で"P、Q 
-で抜ける
-
-## DatasetをUpload
-
-zipに固めてUpload
-
-> !pip install keras
-> !apt-get update
-> !apt-get  -y install python-opencv
-
-
-
+![](img/docker01.png)
 
