@@ -109,6 +109,7 @@
     * [開発環境](end2end/dev.md)
     * [必要なパッケージ](end2end/package.md)
     * [学習モデル](end2end/model.md)
+    * [実行](end2end/run.md)
 * Etc
     * [Link](link/link.md)
 * GAN
