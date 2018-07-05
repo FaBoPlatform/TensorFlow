@@ -107,6 +107,7 @@
 * End to End Learning
     * [Emulator](end2end/emulator.md)
     * [開発環境](end2end/dev.md)
+    * [必要なパッケージ](end2end/package.md)
 * Etc
     * [Link](link/link.md)
 * GAN
