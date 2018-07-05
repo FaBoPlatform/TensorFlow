@@ -108,6 +108,7 @@
     * [Emulator](end2end/emulator.md)
     * [開発環境](end2end/dev.md)
     * [必要なパッケージ](end2end/package.md)
+    * [学習モデル](end2end/model.md)
 * Etc
     * [Link](link/link.md)
 * GAN
