@@ -1,0 +1,19 @@
+--- a/boot/dtb/tegra186-quill-p3310-1000-c03-00-base.dts	2017-12-18 04:08:58.327769405 +0000
++++ b/boot/dtb/tegra186-quill-p3310-1000-c03-00-base.dts	2017-11-09 04:50:52.903004944 +0000
+@@ -4083,6 +4083,16 @@
+ 		status = "okay";
+ 		linux,phandle = <0x80>;
+ 		phandle = <0x80>;
++                spidev@0 {
++                            compatible = "spidev";
++                            reg = <0>;
++                            spi-max-frequency=<25000000>;
++                };
++                spidev@1 {
++                            compatible = "spidev";
++                            reg = <1>;
++                            spi-max-frequency=<25000000>;
++                };
+ 	};
+ 
+ 	pwm@3280000 {

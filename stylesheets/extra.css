@@ -1,0 +1,8 @@
+@media print {
+    .md-sidebar--primary, .md-sidebar--secondary {
+        display: none;
+    }
+    .md-content {
+      margin-left: 0;
+    }
+}
